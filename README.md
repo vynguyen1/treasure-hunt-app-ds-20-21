@@ -6,23 +6,23 @@ WS 2020/2021
 
 **1. UML Diagrams**
 
-1. Class Diagram
+1. Class Diagram  
 	*In the making...*
-2. Use-Case Diagram
+2. Use-Case Diagram  
 	*In the making...*
-3. Sequence Diagram
+3. Sequence Diagram  
 	*In the making...*
 
-**2. Domain-Driven Design (DDD)**
+**2. Domain-Driven Design (DDD)**  
 *In the making...*
 
-**5. Metrics**
+**5. Metrics**  
 *In the making...*
 
-**6. Clean Code Development (CCD)**
+**6. Clean Code Development (CCD)**  
 *In the making...*
 
-**7. Build**
+**7. Build**  
 *In the making...*
 
 **8. Unit-Tests**  
@@ -30,7 +30,8 @@ See Test Folders: [Tests](https://github.com/vynguyen1/treasure-hunt-app-ds-20-2
 
 *More tests are in the making!*
 
-**9. Continuous Integration/Continuous Delivery (CI/CD)**
+**9. Continuous Integration/Continuous Delivery (CI/CD)**  
+*In the making...*
 
 **10. IDE**  
 For this project XCode 12.2 was used. Some very useful shortcuts were the following:
@@ -43,8 +44,9 @@ For this project XCode 12.2 was used. Some very useful shortcuts were the follow
 | Command+Shift+7	  	| Comment in/out blocks or lines.     			   |
 | Command+B			  	| Build. 							    		   |
 | Command+U			  	| Run Tests.						     		   |
-	
-**11. Domain-Specific Language (DSL)**
+
+
+**11. Domain-Specific Language (DSL)**  
 *In the making...*
 
 **12. Functional Programming**  
