@@ -16,7 +16,7 @@ struct TreasureHuntsListView: View {
             Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
                 /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Button")/*@END_MENU_TOKEN@*/
             }
-            Text("Treasure Hunts")
+            Text("Treasure Hunts").font(.system(size: 28, weight: .light))
             List(treasureHunts) {
                 treasueHunt in TreasureHuntRow(treasureHunt: treasueHunt)
             }
