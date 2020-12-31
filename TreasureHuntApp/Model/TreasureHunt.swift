@@ -7,6 +7,7 @@
 
 import Foundation
 
+//TODO: Change class to struct
 class TreasureHunt:Identifiable {
     
     var id = UUID()
@@ -24,6 +25,7 @@ class TreasureHunt:Identifiable {
         self.inProgress = inProgress
     }
     
+    //TODO: Remove static function
     // Später mit Datenbank ersetzen, erstmal als static Variable:
     static func getTreasureHunts() -> [TreasureHunt] {
         var treasureHunts = [TreasureHunt]()
