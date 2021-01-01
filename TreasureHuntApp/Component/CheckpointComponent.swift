@@ -10,21 +10,19 @@ import MapKit
 
 class CheckpointComponent {
     
-    func createCheckpoint(name:String, latitude:Double, longitude:Double) -> Checkpoint {
-        let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        return Checkpoint(name: name, coordinate: coordinate)
-    }
-    
-    func editCheckpoint(checkpoint:Checkpoint, newName:String = "", newCoordinate:CLLocationCoordinate2D = CLLocationCoordinate2D()) -> Void {
+    func editCheckpoint(checkpoint:Checkpoint, newName:String = "", newHint:String = "", newCoordinate:CLLocationCoordinate2D = CLLocationCoordinate2D()) -> Void {
         let index = findCheckpoint(checkpoint: checkpoint)
         if index != nil {
             if !newName.isEmpty {
                 checkpoint.name = newName
             }
+            if !newHint.isEmpty {
+                checkpoint.hint = newHint
+            }
             if !newCoordinate.latitude.isNaN && !newCoordinate.longitude.isNaN {
                 checkpoint.coordinate = newCoordinate
             }
-            TreasureHunt.getTreasureHunts().first!.checkpoints[index!] = checkpoint
+            //TreasureHunt.getTreasureHunts().first!.checkpoints[index!] = checkpoint
         }
     }
     

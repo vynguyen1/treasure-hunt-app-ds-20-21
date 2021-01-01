@@ -14,18 +14,21 @@ class LocationComponent {
 
     static func getCurrentLocation() -> CLLocationCoordinate2D {
         let userLocation = UserLocation()
+        print("User latitude: \(userLocation.userLatitude), longtitude: \(userLocation.userLongitude)")
         return CLLocationCoordinate2D(latitude: userLocation.userLatitude, longitude: userLocation.userLongitude)
     }
 
     static func checkpointHasBeenReached() -> Bool {
         let userLocation = getCurrentLocation()
         let checkpointLocation = getLocationOfCurrentCheckpoint()
+        print(checkpointLocation)
         return (abs(userLocation.latitude - checkpointLocation.latitude) <= errorThreshold) && (abs(userLocation.longitude - checkpointLocation.longitude) <= errorThreshold)
     }
 
     static func getLocationOfCurrentCheckpoint() -> CLLocationCoordinate2D {
         let currentCheckpoint = getCurrentCheckpoint()
         if currentCheckpoint != nil {
+            print(currentCheckpoint!)
             return currentCheckpoint!.coordinate
         } else {
             return CLLocationCoordinate2D()

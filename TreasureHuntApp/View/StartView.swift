@@ -10,18 +10,20 @@ import SwiftUI
 struct StartView: View {
     
     var body: some View {
-        VStack(spacing: 80) {
-            Text("Treasure Hunt APP")
-                .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
-            
-            VStack(spacing: 30) {
-                Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
-                    Text("Treasure Hunts")
-                        .modifyStartButton(backgroundColor: Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
-                }
-                Button(action: { print("Instructions") }) {
-                    Text("Instructions")
-                        .modifyStartButton(backgroundColor: Color.init(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
+        NavigationView {
+            VStack {
+                Text("Treasure Hunt APP")
+                    .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
+                VStack(spacing: 30) {
+                    NavigationLink(destination: TreasureHuntsListView()) {
+                        Text("Treasure Hunts")
+                                .modifyStartButton(backgroundColor: Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
+                        
+                    }
+                    NavigationLink(destination: InstructionsView()) {
+                        Text("Instructions")
+                                .modifyStartButton(backgroundColor: Color.init(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
+                    }
                 }
             }
         }

@@ -9,20 +9,38 @@ import SwiftUI
 
 struct CheckpointEditRow: View {
     
+    @ObservedObject var treasureHunt: TreasureHunt
     var checkpoint: Checkpoint
     
     var body: some View {
-        HStack() {
+        HStack {
             Text(checkpoint.name)
             Spacer()
-            Group {
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                    Image(systemName: "pencil.circle")
-                }
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+            HStack {
+//                Button(action: {print("Edit Checkpoint with id: \(checkpoint.id)")}) {
+//                    Image(systemName: "pencil.circle")
+//                }
+                Button(action: {
+                    print("Delete Checkpoint with id: \(checkpoint.id)")
+                    deleteCheckpoint()
+                }) {
                     Image(systemName: "trash")
-                }
+                }.buttonStyle(BorderlessButtonStyle())
             }
         }
     }
+    
+    func deleteCheckpoint() -> Void {
+        let index = findCheckpoint()
+        if index != nil {
+            treasureHunt.checkpoints.remove(at: index!)
+        }
+    }
+    
+    func findCheckpoint() -> Int? {
+        let index = treasureHunt.checkpoints.firstIndex{$0.id == checkpoint.id}
+        return index
+    }
+
+
 }

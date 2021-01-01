@@ -10,40 +10,35 @@ import MapKit
 
 struct CreateCheckpointView: View {
     
+    @ObservedObject var treasureHunt: TreasureHunt
+    
+    @State private var name: String = ""
+    @State private var hint: String = ""
+    @State private var latitude: String = "0.0"
+    @State private var longitude: String = "0.0"
+    
     @State private var putQuestion = false
     @State private var answer1 = false
     @State private var answer2 = false
     @State private var answer3 = false
     
-    // Default region (Berlin coordinates)
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: UserLocation().userLatitude, longitude: UserLocation().userLongitude), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
     
     var body: some View {
         VStack {
-            //TODO: Navigation vereinheitlichen und überall gleich machen -> als View auslagern
-            HStack {
-                Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
-                    Image(systemName: "arrow.backward")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                        .frame(width: 40, height: 30, alignment: .topLeading)
-                }.padding(.top, 5)
-                .padding(.leading, 10)//EdgeInsets(top: 5, leading: 10, bottom: 0, trailing: 0))
-                Spacer()
-            }
             Text("Add a Checkpoint")
                 .font(.system(size: 24, weight: .light))
                 .padding()
             
-            
-            TextField("Name...", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+            TextField("Name...", text: $name)
                 .padding()
                 .frame(height: 20, alignment: .leading)
-            TextField("Description...", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+            TextField("Description...", text: $hint)
                 .padding()
                 .frame(height: 100, alignment: Alignment.topLeading)
-            TextField("Latitude...", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+            TextField("Latitude...", text: $latitude)
                 .padding()
-            TextField("Longitude...", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+            TextField("Longitude...", text: $longitude)
                 .padding()
             //TODO: Change to tap on map
             //Map(coordinateRegion: $region)
@@ -75,10 +70,10 @@ struct CreateCheckpointView: View {
                     }
                 }
             }
-            Spacer()
             //TODO: Buttons als eigene View auslagern damit überall einheitlich
             // Create Checkpoint
-            Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
+//            NavigationLink(destination: CreateTreasureHuntView(treasureHunt: TreasureHunt("", "", [Checkpoint](), false, false))) {
+            Button(action: addCheckpointToHunt()) {
                 Text("Create")
                     .padding()
                     .frame(width: 130, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -89,10 +84,27 @@ struct CreateCheckpointView: View {
             
         }.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }
+    
+    func addCheckpointToHunt() -> () -> () {
+        return {
+            if let _ = Double(latitude), let _ = Double(longitude) {
+                let checkpoint = createCheckpoint()
+                treasureHunt.checkpoints.append(checkpoint)
+            } else {
+                print("Not a valid number: \(latitude) and \(longitude)")
+            }
+        }
+    }
+    
+    func createCheckpoint() -> Checkpoint {
+        let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: Double(latitude)!, longitude: Double(longitude)!)
+        return Checkpoint(name: name, hint: hint, coordinate: coordinate)
+    }
+
 }
 
 struct CreateCheckpointView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateCheckpointView()
+        CreateCheckpointView(treasureHunt: TreasureHunt.getTreasureHunts().first!)
     }
 }

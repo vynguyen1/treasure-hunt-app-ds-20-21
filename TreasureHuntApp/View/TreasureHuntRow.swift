@@ -8,18 +8,24 @@ import SwiftUI
 
 struct TreasureHuntRow: View {
     
-    var treasureHunt: TreasureHunt
+    @ObservedObject var treasureHunt: TreasureHunt
     
     var body: some View {
         Button(action: {}) {
-            Label(treasureHunt.name, systemImage: "leaf.fill")
-                .font(.system(size: 18))
-            if treasureHunt.description.count >= 40 {
-                Text(treasureHunt.description.prefix(40)+"...")
+            VStack {
+                HStack {
+                    Text(treasureHunt.name)
+                        .font(.system(size: 18))
+                    Spacer()
+                    Image(systemName: "leaf.fill").overlay(
+                        Circle().stroke(Color.green, lineWidth: 1)
+                    )
+                }
+                Text(treasureHunt.description.count >= 100 ? treasureHunt.description.prefix(100)+"...":treasureHunt.description)
+                    .multilineTextAlignment(.leading)
+                    .padding([.top, .leading], 0)
                     .font(.system(size: 16, weight: .light))
-            } else {
-                Text(treasureHunt.description)
-                    .font(.system(size: 16, weight: .light))
+                    .frame(height: 70, alignment: .topLeading)
             }
         }
     }

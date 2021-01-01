@@ -2,12 +2,12 @@
 //  CreateTreasureHuntView.swift
 //  TreasureHuntApp
 //
-//  Created by Vy on 01.01.21.
+//  Created by Vy on 29.12.20.
 //
 
 import SwiftUI
 
-struct CreateTreasureHuntView: View {
+struct EditTreasureHuntView: View {
     
     @ObservedObject var treasureHunt: TreasureHunt
     
@@ -17,13 +17,13 @@ struct CreateTreasureHuntView: View {
                 .resizable()
                 .frame(height: 200.0)
             
-            Text("Create a treasure hunt")
+            Text("Edit treasure hunt")
                 .padding()
                 .font(.system(size: 24, weight: .light))
             TextField("Name...", text: $treasureHunt.name)
                 .padding()
                 .frame(height: 10, alignment: .center)
-            TextEditor(text: $treasureHunt.name)
+            TextEditor(text: $treasureHunt.description)
                 .padding()
                 .frame(width: UIScreen.main.bounds.width, height: 80, alignment: .topLeading)
             
@@ -39,26 +39,22 @@ struct CreateTreasureHuntView: View {
             List(treasureHunt.checkpoints) {
                 checkpoint in CheckpointEditRow(treasureHunt: treasureHunt, checkpoint: checkpoint)
             }
-            Button(action: addTreasureHunt) {
-                Image(systemName: "checkmark")
-                .padding()
-                .frame(width: 130, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .foregroundColor(.white)
-                .background(Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
-                .cornerRadius(10.0)
-            }.padding()
+//            NavigationLink(
+//                destination: DetailedHuntView(treasureHunt: treasureHunt)) {
+//                Image(systemName: "checkmark")
+//                .padding()
+//                .frame(width: 130, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+//                .foregroundColor(.white)
+//                .background(Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
+//                .cornerRadius(10.0)
+//            }.padding()
         }//.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-    }
-    
-    
-    func addTreasureHunt() -> Void {
-        //TODO
-        //var TreasureHunt.getTreasureHunts().append(treasureHunt)
     }
 }
 
-struct CreateTreasureHuntView_Previews: PreviewProvider {
+struct EditTreasureHuntView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateTreasureHuntView(treasureHunt: TreasureHunt("", "", [Checkpoint](), false, false))
+        let treasureHunt = TreasureHunt.getTreasureHunts().first!
+        EditTreasureHuntView(treasureHunt: treasureHunt)
     }
 }
