@@ -18,11 +18,6 @@ class Checkpoint:Identifiable {
     var coordinate: CLLocationCoordinate2D
     var checked: Bool
     
-    // Später mit Datenbank ersetzen, erstmal als Variable:
-//    static var checkpoints = [Checkpoint(name: "Home", coordinate: CLLocationCoordinate2D(latitude: 52.39949, longitude: 8.006106)),
-//        Checkpoint(name: "Kreuzung", coordinate: CLLocationCoordinate2D(latitude: 52.398325, longitude: 8.001591)),
-//        Checkpoint(name: "Kanal", coordinate: CLLocationCoordinate2D(latitude:52.399924, longitude:8.003733))]
-    
     init(name:String, hint:String, coordinate:CLLocationCoordinate2D, checked:Bool = false) {
         self.name = name
         self.hint = hint
@@ -40,5 +35,4 @@ class Checkpoint:Identifiable {
 
         return checkpoints
     }
-    
 }

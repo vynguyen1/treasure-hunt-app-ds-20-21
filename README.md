@@ -40,7 +40,7 @@ For this project XCode 12.2 was used. Some very useful shortcuts were the follow
 | ------------------------- | --------------------------------------------------------- |
 | Command+Shift+O   		| Open quickly: Find a file quickly and open it.   			|
 | Option/Alt+Click  		| See the declaration of a variable.     		   			|
-| Command+Click		    	| To jump to the definition of a variable/function etc.		|
+| Command+Click		    	| To jump to the definition of a variable/function etc., to e.g. embed View in HStack...	|
 | Command+Option+Enter  	| Open/close the Preview window of Views.		   			|
 | Command+Option+P		  	| Load Preview.		   										|
 | Command+Shift+F		  	| Search for something in the project.				   		|

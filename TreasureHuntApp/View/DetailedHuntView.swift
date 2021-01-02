@@ -10,6 +10,7 @@ import SwiftUI
 struct DetailedHuntView: View {
     
     @ObservedObject var treasureHunt: TreasureHunt
+    @ObservedObject var treasureHunts: TreasureHunts
     
     var body: some View {
         VStack {
@@ -29,7 +30,7 @@ struct DetailedHuntView: View {
             }
             // Start/Continue Hunt
             HStack {
-                NavigationLink(destination: MapView(locations:treasureHunt.checkpoints.filter {$0.checked})) {
+                NavigationLink(destination: MapView(treasureHunt: treasureHunt, treasureHuntId: treasureHunt.id, treasureHunts: treasureHunts)) {
                     Text(!treasureHunt.inProgress ? "Start" : "Continue")
                         .padding()
                         .frame(width: 130, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -54,7 +55,8 @@ struct DetailedHuntView: View {
 
 struct DetailedHuntView_Previews: PreviewProvider {
     static var previews: some View {
-        let treasureHunt = TreasureHunt.getTreasureHunts().first!
-        DetailedHuntView(treasureHunt: treasureHunt)
+        let treasureHunts = TreasureHunts()
+        let treasureHunt = treasureHunts.treasureHunts.first!
+        DetailedHuntView(treasureHunt: treasureHunt, treasureHunts: treasureHunts)
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct CreateTreasureHuntView: View {
     
     @ObservedObject var treasureHunt: TreasureHunt
+    @ObservedObject var treasureHunts: TreasureHunts
     
     var body: some View {
         VStack {
@@ -23,7 +24,7 @@ struct CreateTreasureHuntView: View {
             TextField("Name...", text: $treasureHunt.name)
                 .padding()
                 .frame(height: 10, alignment: .center)
-            TextEditor(text: $treasureHunt.name)
+            TextEditor(text: $treasureHunt.description)
                 .padding()
                 .frame(width: UIScreen.main.bounds.width, height: 80, alignment: .topLeading)
             
@@ -53,12 +54,12 @@ struct CreateTreasureHuntView: View {
     
     func addTreasureHunt() -> Void {
         //TODO
-        //var TreasureHunt.getTreasureHunts().append(treasureHunt)
+        treasureHunts.treasureHunts.append(treasureHunt)
     }
 }
 
 struct CreateTreasureHuntView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateTreasureHuntView(treasureHunt: TreasureHunt("", "", [Checkpoint](), false, false))
+        CreateTreasureHuntView(treasureHunt: TreasureHunt("", "", [Checkpoint](), false, false), treasureHunts: TreasureHunts())
     }
 }

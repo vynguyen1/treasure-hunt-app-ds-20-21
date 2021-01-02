@@ -105,6 +105,6 @@ struct CreateCheckpointView: View {
 
 struct CreateCheckpointView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateCheckpointView(treasureHunt: TreasureHunt.getTreasureHunts().first!)
+        CreateCheckpointView(treasureHunt: TreasureHunts().treasureHunts.first!)
     }
 }

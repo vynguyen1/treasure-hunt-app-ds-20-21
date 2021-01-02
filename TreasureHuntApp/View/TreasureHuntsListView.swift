@@ -6,23 +6,26 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct TreasureHuntsListView: View {
     
-    @State private var treasureHunts = TreasureHunt.getTreasureHunts()
+    @ObservedObject var treasureHunts = TreasureHunts()
     
     var body: some View {
         //NavigationView {
         
             VStack {
-                List(treasureHunts, id: \.id) { treasueHunt in
-                    NavigationLink(destination: DetailedHuntView(treasureHunt: treasueHunt)) {
-                        TreasureHuntRow(treasureHunt: treasueHunt)
-                    }
+                List {
+                    ForEach(treasureHunts.treasureHunts, id: \.id) { treasueHunt in
+                        NavigationLink(destination: DetailedHuntView(treasureHunt: treasueHunt, treasureHunts: treasureHunts)) {
+                            TreasureHuntRow(treasureHunt: treasueHunt)
+                        }
+                    }.onDelete(perform: deleteTreasureHunt)
                 }.listStyle(InsetGroupedListStyle())
                 
                 NavigationLink(
-                    destination: CreateTreasureHuntView(treasureHunt: TreasureHunt("", "", [Checkpoint](), false, false))) {
+                    destination: CreateTreasureHuntView(treasureHunt: TreasureHunt("", "", [Checkpoint](), false, false), treasureHunts: treasureHunts)) {
                     Image(systemName: "plus.circle")
                         .padding()
                         .frame(width: 130, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -32,6 +35,12 @@ struct TreasureHuntsListView: View {
                 }.padding()
             }.navigationBarTitle("Treasure Hunts", displayMode: .inline)
         //}
+    }
+
+    func deleteTreasureHunt(at offsets: IndexSet) {
+        treasureHunts.treasureHunts.remove(atOffsets: offsets)
+        print(treasureHunts.treasureHunts.count)
+        print("Delete Hunts with id: \(offsets)")
     }
 }
 

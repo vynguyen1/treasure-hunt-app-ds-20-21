@@ -54,7 +54,7 @@ struct EditTreasureHuntView: View {
 
 struct EditTreasureHuntView_Previews: PreviewProvider {
     static var previews: some View {
-        let treasureHunt = TreasureHunt.getTreasureHunts().first!
+        let treasureHunt = TreasureHunts().treasureHunts.first!
         EditTreasureHuntView(treasureHunt: treasureHunt)
     }
 }

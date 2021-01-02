@@ -14,21 +14,6 @@ class UserLocation: NSObject, ObservableObject {
     @Published var userLatitude: Double = 0
     @Published var userLongitude: Double = 0
     
-//    @Published var userLatitude: Double = 0 {
-//        willSet {
-//            if LocationComponent.checkpointHasBeenReached() {
-//                LocationComponent.getCurrentCheckpoint()!.checked = true
-//            }
-//        }
-//    }
-//    @Published var userLongitude: Double = 0 {
-//        willSet {
-//            if LocationComponent.checkpointHasBeenReached() {
-//                LocationComponent.getCurrentCheckpoint()!.checked = true
-//            }
-//        }
-//    }
-    
     private let locationManager = CLLocationManager()
       
     override init() {
