@@ -23,40 +23,56 @@ struct MapView: View {
     @ObservedObject var treasureHunts: TreasureHunts
     
     private let treasureHuntIndex: Int
+    @State private var finished: Bool = false
     
     @ObservedObject var userLocation = UserLocation()
     
     var body: some View {
-        VStack {
-            Map(coordinateRegion: $region,
-                interactionModes: .all,
-                showsUserLocation: true,
-                userTrackingMode: $trackingMode,
-                annotationItems: treasureHunt.checkpoints.filter {$0.checked == true},
-                annotationContent: {loc in MapMarker(coordinate: loc.coordinate, tint: .blue)})
-            Divider()
-            Text("Your Location").font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
-            Text("Latitude: \(userLocation.userLatitude)\nLongitude: \(userLocation.userLongitude)")
-                .multilineTextAlignment(.center)
-            Text(messageText).padding()
-//            Menu("Menu") {
-//                Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
-//                    Label("Go back", systemImage: "arrow.backward")
-//                }
-//                Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
-//                    Label("Menu Item 1", systemImage: "scribble")
-//                }
-//            }
-//            .frame(width: 120, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-//            .foregroundColor(.white)
-//            .background(Color.init(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
-//            .cornerRadius(10.0)
-            Button(action: updateCheckpoint()) {
-                Text("Check location")
+        ZStack {
+            VStack {
+                Map(coordinateRegion: $region,
+                    interactionModes: .all,
+                    showsUserLocation: true,
+                    userTrackingMode: $trackingMode,
+                    annotationItems: treasureHunt.checkpoints.filter {$0.checked == true},
+                    annotationContent: {loc in MapMarker(coordinate: loc.coordinate, tint: .blue)})
+                Divider()
+                Text("\(treasureHunt.checkpoints.filter{$0.checked == true}.count)/\(treasureHunt.checkpoints.count)")
+                if !finished {
+                    Text("Your Location").font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
+                    Text("Latitude: \(userLocation.userLatitude)\nLongitude: \(userLocation.userLongitude)")
+                        .multilineTextAlignment(.center)
+                }
+                Text(messageText).padding()
+    //            Menu("Menu") {
+    //                Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
+    //                    Label("Go back", systemImage: "arrow.backward")
+    //                }
+    //                Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
+    //                    Label("Menu Item 1", systemImage: "scribble")
+    //                }
+    //            }
+    //            .frame(width: 120, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+    //            .foregroundColor(.white)
+    //            .background(Color.init(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
+    //            .cornerRadius(10.0)
+                if !finished {
+                    Button(action: updateCheckpoint()) {
+                        Text("Check location")
+                    }
+                    Divider()
+                }
             }
-            Divider()
+            if finished {
+                Text("Congratulations!!\nYou’ve reached the goal! Hope you’ve enjoyed this little adventure :)")
+                    .frame(width: UIScreen.main.bounds.width-20, height: 300)
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .multilineTextAlignment(.center)
+                    .background(Color.init(#colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)))
+                    .foregroundColor(.white)
+            }
         }
-        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        //.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }
     
     func updateCheckpoint() -> () -> () {
@@ -66,11 +82,16 @@ struct MapView: View {
                     $0.id == getCurrentCheckpoint()!.id
                 }.first!.checked = true
                 treasureHunts.treasureHunts[treasureHuntIndex] = treasureHunt
-                print("Checkpoint has been reached")
-                messageText = "Checkpoint has been reached"
+                messageText = "Checkpoint has been reached."
             } else {
-                print("Not quite there yet!")
                 messageText = "Not quite there yet!"
+            }
+            finished = isFinished()
+            if finished {
+                messageText = "Finished!"
+                treasureHunt.finished = true
+                treasureHunt.inProgress = false
+                treasureHunts.treasureHunts[treasureHuntIndex] = treasureHunt
             }
         }
     }
@@ -99,12 +120,22 @@ struct MapView: View {
     
     init(treasureHunt: TreasureHunt, treasureHuntId: UUID, treasureHunts: TreasureHunts) {
         self.treasureHunt = treasureHunt
+        if treasureHunt.finished == false && treasureHunt.inProgress == false {
+            treasureHunt.inProgress = true
+        }
         self.treasureHuntIndex = treasureHunts.treasureHunts.firstIndex(where: { (item) -> Bool in
             item.id == treasureHuntId
         })!
         self.treasureHunts = treasureHunts
         self.region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.userLocation.userLatitude, longitude: self.userLocation.userLongitude), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-        self.hintText = getCurrentCheckpoint()!.hint
+        if let checkpoint = getCurrentCheckpoint() {
+            self.hintText = checkpoint.hint
+        }
+        self.finished = isFinished()
+    }
+    
+    func isFinished() -> Bool {
+        return treasureHunt.checkpoints.count == treasureHunt.checkpoints.filter {$0.checked == true}.count
     }
 }
 
