@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='TreasureHuntAppUITests.xctest' tests='5' failures='0'>
+  <testsuite name='TreasureHuntAppTests.TreasureHuntAppTests' tests='2' failures='0'>
+    <testcase classname='TreasureHuntAppTests.TreasureHuntAppTests' name='testExample' time='0.004'/>
+    <testcase classname='TreasureHuntAppTests.TreasureHuntAppTests' name='testPerformanceExample' time='0.312'/>
+  </testsuite>
+  <testsuite name='TreasureHuntAppTests.UserLocationTest' tests='1' failures='0'>
+    <testcase classname='TreasureHuntAppTests.UserLocationTest' name='test_user_location_updates' time='0.010'/>
+  </testsuite>
+  <testsuite name='TreasureHuntAppUITests.TreasureHuntAppUITests' tests='2' failures='0'>
+    <testcase classname='TreasureHuntAppUITests.TreasureHuntAppUITests' name='testExample' time='1.702'/>
+    <testcase classname='TreasureHuntAppUITests.TreasureHuntAppUITests' name='testLaunchPerformance' time='15.477'/>
+  </testsuite>
+</testsuites>

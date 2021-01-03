@@ -8,7 +8,7 @@
 import Foundation
 import MapKit
 
-//TODO: Change class to struct
+//TODO: Change class to struct?
 class TreasureHunt: Identifiable,ObservableObject {
     
     let id = UUID()
@@ -18,7 +18,7 @@ class TreasureHunt: Identifiable,ObservableObject {
     @Published var finished: Bool
     @Published var inProgress: Bool
 
-    init(_ name:String, _ description:String, _ checkpoints:Array<Checkpoint>, _ finished:Bool, _ inProgress:Bool) {
+    init(name:String, description:String, checkpoints:Array<Checkpoint>, finished:Bool = false, inProgress:Bool = false) {
         self.name = name
         self.description = description
         self.checkpoints = checkpoints

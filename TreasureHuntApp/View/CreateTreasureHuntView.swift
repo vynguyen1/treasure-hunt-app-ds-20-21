@@ -60,6 +60,6 @@ struct CreateTreasureHuntView: View {
 
 struct CreateTreasureHuntView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateTreasureHuntView(treasureHunt: TreasureHunt("", "", [Checkpoint](), false, false), treasureHunts: TreasureHunts())
+        CreateTreasureHuntView(treasureHunt: TreasureHunt(name: "", description: "", checkpoints: [Checkpoint]()), treasureHunts: TreasureHunts())
     }
 }

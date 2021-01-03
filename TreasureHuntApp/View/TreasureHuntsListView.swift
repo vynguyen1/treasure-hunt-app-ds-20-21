@@ -25,7 +25,7 @@ struct TreasureHuntsListView: View {
                 }.listStyle(InsetGroupedListStyle())
                 
                 NavigationLink(
-                    destination: CreateTreasureHuntView(treasureHunt: TreasureHunt("", "", [Checkpoint](), false, false), treasureHunts: treasureHunts)) {
+                    destination: CreateTreasureHuntView(treasureHunt: TreasureHunt(name: "", description: "", checkpoints: [Checkpoint]()), treasureHunts: treasureHunts)) {
                     Image(systemName: "plus.circle")
                         .padding()
                         .frame(width: 130, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)

@@ -1,0 +1,29 @@
+# For more information about this configuration visit
+# https://docs.fastlane.tools/actions/scan/#scanfile
+
+# In general, you can use the options available
+# fastlane scan --help
+
+# The project scheme you want to build and test
+scheme("TreasureHuntApp")
+
+# If it should clean the project before testing
+clean(true)
+
+# The output report types
+output_types("html,junit")
+
+# The output directory for the test reports
+output_directory("./reports")
+
+# If it should open the reports
+open_report(false)
+
+# Generate code coverage files
+code_coverage(true)
+
+# Device on which the test will be ran
+device("iPhone 8‚")
+
+# Enable skip_build to skip debug builds for faster test performance
+skip_build(true)
