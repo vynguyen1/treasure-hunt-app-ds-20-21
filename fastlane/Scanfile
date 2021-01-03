@@ -23,7 +23,7 @@ open_report(false)
 code_coverage(true)
 
 # Device on which the test will be ran
-device("iPhone 8‚")
+device("iPhone 8")
 
 # Enable skip_build to skip debug builds for faster test performance
 skip_build(true)
