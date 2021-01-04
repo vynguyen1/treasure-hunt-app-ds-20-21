@@ -10,9 +10,13 @@ import SwiftUI
 
 struct MapView: View {
     
-    private let errorThreshold: Double = 0.0002
+    private let errorThreshold: Double = 0.001 // 0.0002
+    private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    private let treasureHuntIndex: Int
     
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+    @State private var finished: Bool = false
+    
+    @State private var region: MKCoordinateRegion //= MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
     
     @State private var trackingMode = MapUserTrackingMode.follow
     
@@ -21,11 +25,7 @@ struct MapView: View {
     
     @ObservedObject var treasureHunt: TreasureHunt
     @ObservedObject var treasureHunts: TreasureHunts
-    
-    private let treasureHuntIndex: Int
-    @State private var finished: Bool = false
-    
-    @ObservedObject var userLocation = UserLocation()
+    @ObservedObject var userLocation: UserLocation = UserLocation()
     
     var body: some View {
         ZStack {
@@ -36,9 +36,18 @@ struct MapView: View {
                     userTrackingMode: $trackingMode,
                     annotationItems: treasureHunt.checkpoints.filter {$0.checked == true},
                     annotationContent: {loc in MapMarker(coordinate: loc.coordinate, tint: .blue)})
+                    .onDisappear(perform: {
+                        self.timer.upstream.connect().cancel()
+                    })
                 Divider()
                 Text("\(treasureHunt.checkpoints.filter{$0.checked == true}.count)/\(treasureHunt.checkpoints.count)")
-                if !finished {
+                    .onReceive(timer) { _ in
+                        updateCheckpoint()()
+                        if finished == true {
+                            self.timer.upstream.connect().cancel()
+                        }
+                }
+                if !self.finished {
                     Text("Your Location").font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
                     Text("Latitude: \(userLocation.userLatitude)\nLongitude: \(userLocation.userLongitude)")
                         .multilineTextAlignment(.center)
@@ -56,14 +65,15 @@ struct MapView: View {
     //            .foregroundColor(.white)
     //            .background(Color.init(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
     //            .cornerRadius(10.0)
-                if !finished {
-                    Button(action: updateCheckpoint()) {
-                        Text("Check location")
-                    }
-                    Divider()
-                }
+                
+//                if !self.finished {
+//                    Button(action: updateCheckpoint()) {
+//                        Text("Check location")
+//                    }
+//                    Divider()
+//                }
             }
-            if finished {
+            if self.finished {
                 Text("Congratulations!!\nYou’ve reached the goal! Hope you’ve enjoyed this little adventure :)")
                     .frame(width: UIScreen.main.bounds.width-20, height: 300)
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
@@ -71,8 +81,7 @@ struct MapView: View {
                     .background(Color.init(#colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)))
                     .foregroundColor(.white)
             }
-        }
-        //.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        }//.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }
     
     func updateCheckpoint() -> () -> () {
@@ -86,8 +95,8 @@ struct MapView: View {
             } else {
                 messageText = "Not quite there yet!"
             }
-            finished = isFinished()
-            if finished {
+            self.finished = isFinished()
+            if self.finished {
                 messageText = "Finished!"
                 treasureHunt.finished = true
                 treasureHunt.inProgress = false
@@ -106,6 +115,7 @@ struct MapView: View {
         let currentCheckpoint = getCurrentCheckpoint()
         if currentCheckpoint != nil {
             print(currentCheckpoint!)
+            print("\(userLocation.userLatitude), \(userLocation.userLongitude)")
             return currentCheckpoint!.coordinate
         } else {
             return CLLocationCoordinate2D()
@@ -118,8 +128,9 @@ struct MapView: View {
         }.first
     }
     
-    init(treasureHunt: TreasureHunt, treasureHuntId: UUID, treasureHunts: TreasureHunts) {
+    init(treasureHunt: TreasureHunt, treasureHuntId: UUID, treasureHunts: TreasureHunts, userLocation: UserLocation) {
         self.treasureHunt = treasureHunt
+        self.userLocation = userLocation
         if treasureHunt.finished == false && treasureHunt.inProgress == false {
             treasureHunt.inProgress = true
         }
@@ -127,7 +138,7 @@ struct MapView: View {
             item.id == treasureHuntId
         })!
         self.treasureHunts = treasureHunts
-        self.region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.userLocation.userLatitude, longitude: self.userLocation.userLongitude), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        _region = State(initialValue: MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: userLocation.userLatitude, longitude: userLocation.userLongitude), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)))
         if let checkpoint = getCurrentCheckpoint() {
             self.hintText = checkpoint.hint
         }
@@ -143,6 +154,6 @@ struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         let treasureHunts = TreasureHunts()
         let treasureHunt = treasureHunts.treasureHunts.first!
-        MapView(treasureHunt: treasureHunt, treasureHuntId: treasureHunt.id, treasureHunts: treasureHunts)
+        MapView(treasureHunt: treasureHunt, treasureHuntId: treasureHunt.id, treasureHunts: treasureHunts, userLocation: UserLocation())
     }
 }

@@ -1,7 +1,6 @@
 
 # Treasure Hunt App
 "Forgeschrittene Softwaretechnik"  
-Data Science MSc at Beuth University Berlin  
 WS 2020/2021
 
 **1. UML Diagrams**

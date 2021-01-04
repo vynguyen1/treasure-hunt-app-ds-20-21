@@ -82,7 +82,7 @@ struct CreateCheckpointView: View {
                     .cornerRadius(10.0)
             }.padding()
             
-        }.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        }//.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }
     
     func addCheckpointToHunt() -> () -> () {

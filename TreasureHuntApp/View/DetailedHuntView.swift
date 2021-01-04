@@ -30,7 +30,7 @@ struct DetailedHuntView: View {
             }
             // Start/Continue Hunt
             HStack {
-                NavigationLink(destination: MapView(treasureHunt: treasureHunt, treasureHuntId: treasureHunt.id, treasureHunts: treasureHunts)) {
+                NavigationLink(destination: MapView(treasureHunt: treasureHunt, treasureHuntId: treasureHunt.id, treasureHunts: treasureHunts, userLocation: UserLocation())) {
                     Text(!treasureHunt.inProgress ? "Start" : "Continue")
                         .padding()
                         .frame(width: 130, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)

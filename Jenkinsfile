@@ -1,3 +1,5 @@
+#!groovy
+
 node {
-	sh ‘echo HelloWorld’
+	sh 'echo HelloWorld'
 }
