@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+    	stage('Checkout and Setup') {
+        	steps {
+            	echo 'Checkout and Setup..'
+				checkout scm
+				sh 'cd fastlane'
+        	}
+    	}
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+				sh 'fastlane test_app'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building..'
+				sh 'fastlane beta'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+				echo 'This stage could be used to deploy the built IPA and symbols on, for example, Testflight for beta testing.'
+            }
+        }
+    }
+}
