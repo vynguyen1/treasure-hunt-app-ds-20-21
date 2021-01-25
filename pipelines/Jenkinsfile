@@ -2,30 +2,50 @@ pipeline {
     agent any
 
     stages {
-    	stage('Checkout and Setup') {
-        	steps {
-            	echo 'Checkout and Setup..'
-				checkout scm
-				sh 'cd fastlane'
-        	}
-    	}
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-				sh 'fastlane test_app'
-            }
-        }
-        stage('Build') {
-            steps {
-                echo 'Building..'
-				sh 'fastlane beta'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-				echo 'This stage could be used to deploy the built IPA and symbols on, for example, Testflight for beta testing.'
-            }
-        }
+		try {
+	    	stage('Checkout and Setup') {
+	        	steps {
+					notifyBuild('STARTED')
+	            	echo 'Checkout and Setup..'
+					checkout scm
+					sh 'cd fastlane'
+	        	}
+	    	}
+	        stage('Test') {
+	            steps {
+	                echo 'Testing..'
+					sh 'fastlane test_app'
+	            }
+	        }
+	        stage('Build') {
+	            steps {
+	                echo 'Building..'
+					sh 'fastlane beta'
+	            }
+	        }
+	        stage('Deploy') {
+	            steps {
+	                echo 'Deploying....'
+					echo 'This stage could be used to deploy the built IPA and symbols on, for example, Testflight for beta testing.'
+	            }
+	        }
+		} catch (e) {
+			currentBuild.result = "FAILED"
+			throw e
+		} finally {
+			notifyBuild(currentBuild.result)
+		}
     }
+}
+
+def notifyBuild(String buildStatus = 'STARTED') {
+	buildStatus = buildStatus ?: 'SUCCESS'
+	def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
+	def details = """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+	  <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>"""
+	emailext (
+		subject: subject,
+	    body: details,
+	    recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+	)
 }
