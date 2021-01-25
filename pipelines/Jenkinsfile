@@ -47,6 +47,7 @@ def notifyBuild(String buildStatus) {
 	emailext (
 		subject: subject,
 	    body: details,
-	    to: '$DEFAULT_RECIPIENTS'
+	    to: '$DEFAULT_RECIPIENTS',
+		from: 'Jenkins <jenkins@host.com>',
 	)
 }

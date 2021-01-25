@@ -49,7 +49,7 @@ playground.xcworkspace
 # .swiftpm
 
 .build/
-.reports/
+reports/
 
 # CocoaPods
 #

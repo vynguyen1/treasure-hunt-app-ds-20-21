@@ -44,7 +44,8 @@ See Test Folders: [Tests](https://github.com/vynguyen1/treasure-hunt-app-ds-20-2
 *More tests are in the making!*
 
 **9. Continuous Integration/Continuous Delivery (CI/CD)**  
-For CI/CD Jenkins + Fastlane are used. The configuration/pipeline can be found in the [Jenkinsfile](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/pipelines/Jenkinsfile). When something is being pushed to the git repository a job in Jenkins is being triggered via webhook. Since Jenkins is run locally ngrok is used which provides public URLs (creates a secure tunnel from a public endpoint to a locally running web service).
+For CI/CD Jenkins + Fastlane are used. The configuration/pipeline can be found in the [Jenkinsfile](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/pipelines/Jenkinsfile). When something is being pushed to the git repository a job in Jenkins is being triggered via webhook. Since Jenkins is run locally ngrok is used which provides public URLs (creates a secure tunnel from a public endpoint to a locally running web service).  
+Defined recipients are notified via email when a build starts and also receive an email when a build has finished with the respective build status.
 
 **10. IDE**  
 For this project XCode 12.2 was used. Some very useful shortcuts were the following:
