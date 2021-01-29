@@ -209,6 +209,7 @@
 				1646F5E7259778590073714B /* Sources */,
 				1646F5E8259778590073714B /* Frameworks */,
 				1646F5E9259778590073714B /* Resources */,
+				16F55D8125BF8A5500F4342C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -322,6 +323,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16F55D8125BF8A5500F4342C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint --config /Users/vy/documents/TreasureHuntApp/fastlane/.swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1646F5E7259778590073714B /* Sources */ = {

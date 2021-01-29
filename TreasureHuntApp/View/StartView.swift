@@ -31,7 +31,7 @@ struct StartView: View {
 }
 
 extension View {
-    func modifyStartButton(backgroundColor:Color?) -> some View {
+    func modifyStartButton(backgroundColor: Color?) -> some View {
         self.modifier(StartButtonModifier(backgroundColor: backgroundColor))
     }
 }
@@ -43,7 +43,7 @@ struct StartButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content.padding()
             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            .frame(width: 250, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .frame(width: 250, height: 70, alignment: .center/*@END_MENU_TOKEN@*/)
             .foregroundColor(.white)
             .background(backgroundColor)
             .cornerRadius(20.0)
@@ -55,4 +55,3 @@ struct StartView_Previews: PreviewProvider {
         StartView()
     }
 }
-

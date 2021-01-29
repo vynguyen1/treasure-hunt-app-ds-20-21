@@ -13,7 +13,7 @@ struct TreasureHuntsListView: View {
     @ObservedObject var treasureHunts = TreasureHunts()
     
     var body: some View {
-        //NavigationView {
+        // NavigationView {
         
             VStack {
                 List {
@@ -28,13 +28,13 @@ struct TreasureHuntsListView: View {
                     destination: CreateTreasureHuntView(treasureHunt: TreasureHunt(name: "", description: "", checkpoints: [Checkpoint]()), treasureHunts: treasureHunts)) {
                     Image(systemName: "plus.circle")
                         .padding()
-                        .frame(width: 130, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .frame(width: 130, height: 50, alignment: .center/*@END_MENU_TOKEN@*/)
                         .foregroundColor(.white)
                         .background(Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
                         .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                 }.padding()
             }.navigationBarTitle("Treasure Hunts", displayMode: .inline)
-        //}
+        // }
     }
 
     func deleteTreasureHunt(at offsets: IndexSet) {

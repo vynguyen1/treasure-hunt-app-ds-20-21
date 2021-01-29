@@ -16,12 +16,13 @@ struct MapView: View {
     
     @State private var finished: Bool = false
     
-    @State private var region: MKCoordinateRegion //= MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+    @State private var region: MKCoordinateRegion // = MKCoordinateRegion(center: CLLocationCoordinate2D(
+    // latitude: 0.0, longitude: 0.0), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
     
     @State private var trackingMode = MapUserTrackingMode.follow
     
-    @State private var messageText:String = ""
-    @State private var hintText:String = ""
+    @State private var messageText: String = ""
+    @State private var hintText: String = ""
     
     @ObservedObject var treasureHunt: TreasureHunt
     @ObservedObject var treasureHunts: TreasureHunts
@@ -40,7 +41,7 @@ struct MapView: View {
                         self.timer.upstream.connect().cancel()
                     })
                 Divider()
-                Text("\(treasureHunt.checkpoints.filter{$0.checked == true}.count)/\(treasureHunt.checkpoints.count)")
+                Text("\(treasureHunt.checkpoints.filter {$0.checked == true}.count)/\(treasureHunt.checkpoints.count)")
                     .onReceive(timer) { _ in
                         updateCheckpoint()()
                         if finished == true {
@@ -65,7 +66,7 @@ struct MapView: View {
     //            .foregroundColor(.white)
     //            .background(Color.init(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
     //            .cornerRadius(10.0)
-                
+
 //                if !self.finished {
 //                    Button(action: updateCheckpoint()) {
 //                        Text("Check location")
@@ -81,10 +82,10 @@ struct MapView: View {
                     .background(Color.init(#colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)))
                     .foregroundColor(.white)
             }
-        }//.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        }// .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }
-    
-    func updateCheckpoint() -> () -> () {
+
+    func updateCheckpoint() -> () -> Void {
         return {
             if checkpointHasBeenReached() {
                 treasureHunt.checkpoints.filter {
@@ -104,11 +105,12 @@ struct MapView: View {
             }
         }
     }
-    
+
     func checkpointHasBeenReached() -> Bool {
         let checkpointLocation = getLocationOfCurrentCheckpoint()
         print(checkpointLocation)
-        return (abs(userLocation.userLatitude - checkpointLocation.latitude) <= errorThreshold) && (abs(userLocation.userLongitude - checkpointLocation.longitude) <= errorThreshold)
+        return (abs(userLocation.userLatitude - checkpointLocation.latitude) <= errorThreshold)
+            && (abs(userLocation.userLongitude - checkpointLocation.longitude) <= errorThreshold)
     }
 
     func getLocationOfCurrentCheckpoint() -> CLLocationCoordinate2D {
@@ -121,13 +123,13 @@ struct MapView: View {
             return CLLocationCoordinate2D()
         }
     }
-    
+
     func getCurrentCheckpoint() -> Checkpoint? {
         return treasureHunt.checkpoints.filter { checkpoint in
             return checkpoint.checked == false
         }.first
     }
-    
+
     init(treasureHunt: TreasureHunt, treasureHuntId: UUID, treasureHunts: TreasureHunts, userLocation: UserLocation) {
         self.treasureHunt = treasureHunt
         self.userLocation = userLocation
@@ -138,13 +140,15 @@ struct MapView: View {
             item.id == treasureHuntId
         })!
         self.treasureHunts = treasureHunts
-        _region = State(initialValue: MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: userLocation.userLatitude, longitude: userLocation.userLongitude), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)))
+        _region = State(initialValue: MKCoordinateRegion(center: CLLocationCoordinate2D(
+            latitude: userLocation.userLatitude, longitude: userLocation.userLongitude),
+            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)))
         if let checkpoint = getCurrentCheckpoint() {
             self.hintText = checkpoint.hint
         }
         self.finished = isFinished()
     }
-    
+
     func isFinished() -> Bool {
         return treasureHunt.checkpoints.count == treasureHunt.checkpoints.filter {$0.checked == true}.count
     }
@@ -154,6 +158,7 @@ struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         let treasureHunts = TreasureHunts()
         let treasureHunt = treasureHunts.treasureHunts.first!
-        MapView(treasureHunt: treasureHunt, treasureHuntId: treasureHunt.id, treasureHunts: treasureHunts, userLocation: UserLocation())
+        MapView(treasureHunt: treasureHunt, treasureHuntId: treasureHunt.id,
+                treasureHunts: treasureHunts, userLocation: UserLocation())
     }
 }

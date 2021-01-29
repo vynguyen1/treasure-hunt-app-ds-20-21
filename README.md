@@ -17,7 +17,8 @@ WS 2020/2021
 
 **5. Metrics**  
 *In the making...*  
-Planning on using SonarQube and gathering the SonarQube metrics using Fastlane.
+Planning on using SonarQube and gathering the SonarQube metrics using Fastlane.  
+The configuration for Swiftlint can be found in [.swiftlint.yml](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/fastlane/.swiftlint.yml)
 
 **6. Clean Code Development (CCD)**  
 *In the making...*

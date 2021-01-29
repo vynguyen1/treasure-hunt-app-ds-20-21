@@ -14,7 +14,7 @@ clean(true)
 output_types("html,junit")
 
 # The output directory for the test reports
-output_directory("./reports")
+output_directory("./sonar-reports")
 
 # If it should open the reports
 open_report(false)

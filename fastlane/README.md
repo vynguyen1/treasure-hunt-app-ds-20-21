@@ -16,16 +16,21 @@ or alternatively using `brew install fastlane`
 
 # Available Actions
 ## iOS
+### ios lint
+```
+fastlane ios lint
+```
+Does a static analysis of the project. Configure the options in .swiftlint.yml
 ### ios test_app
 ```
 fastlane ios test_app
 ```
-Test the application
+Test the application. Configure options in fastlane/Scanfile
 ### ios beta
 ```
 fastlane ios beta
 ```
-Build the application
+Build the application. Configure options in fastlane/Gymfile
 ### ios test_build_app
 ```
 fastlane ios test_build_app

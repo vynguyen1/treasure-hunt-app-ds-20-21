@@ -11,8 +11,8 @@ import CoreLocation
 
 class UserLocation: NSObject, ObservableObject {
     
-    @Published var userLatitude: Double = 0 //52.520008 <- TODO: Berlin coordinates as default?
-    @Published var userLongitude: Double = 0 //13.404954
+    @Published var userLatitude: Double = 0 // 52.520008 <- TODO: Berlin coordinates as default?
+    @Published var userLongitude: Double = 0 // 13.404954
     
     private let locationManager = CLLocationManager()
       

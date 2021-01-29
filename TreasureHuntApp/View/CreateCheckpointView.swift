@@ -22,7 +22,9 @@ struct CreateCheckpointView: View {
     @State private var answer2 = false
     @State private var answer3 = false
     
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: UserLocation().userLatitude, longitude: UserLocation().userLongitude), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: UserLocation().userLatitude,
+                                                                                  longitude: UserLocation().userLongitude),
+                                                   span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
     
     var body: some View {
         VStack {
@@ -40,52 +42,52 @@ struct CreateCheckpointView: View {
                 .padding()
             TextField("Longitude...", text: $longitude)
                 .padding()
-            //TODO: Change to tap on map
-            //Map(coordinateRegion: $region)
+            // TODO: Change to tap on map
+            // Map(coordinateRegion: $region)
             
             // Question feature disabled
-            //TODO: Use Picker View
+            // TODO: Use Picker View
             Toggle(isOn: $putQuestion) {
                 Label("Put a question", systemImage: "questionmark.circle")
             }.padding().disabled(true)
             if putQuestion {
-                TextField("Question...", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                TextField("Question...", text: .constant("")/*@END_MENU_TOKEN@*/)
                     .padding()
                 HStack {
-                    TextField("Answer 1...", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                    TextField("Answer 1...", text: .constant("")/*@END_MENU_TOKEN@*/)
                     Toggle(isOn: $answer1) {
                         Label("", systemImage: "checkmark.circle")
                     }
                 }
                 HStack {
-                    TextField("Answer 2...", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                    TextField("Answer 2...", text: .constant("")/*@END_MENU_TOKEN@*/)
                     Toggle(isOn: $answer2) {
                         Label("", systemImage: "checkmark.circle")
                     }
                 }
                 HStack {
-                    TextField("Answer 3...", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                    TextField("Answer 3...", text: .constant("")/*@END_MENU_TOKEN@*/)
                     Toggle(isOn: $answer3) {
                         Label("", systemImage: "checkmark.circle")
                     }
                 }
             }
-            //TODO: Buttons als eigene View auslagern damit überall einheitlich
+            // TODO: Buttons als eigene View auslagern damit überall einheitlich
             // Create Checkpoint
 //            NavigationLink(destination: CreateTreasureHuntView(treasureHunt: TreasureHunt("", "", [Checkpoint](), false, false))) {
             Button(action: addCheckpointToHunt()) {
                 Text("Create")
                     .padding()
-                    .frame(width: 130, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .frame(width: 130, height: 50, alignment: .center/*@END_MENU_TOKEN@*/)
                     .foregroundColor(.white)
                     .background(Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
                     .cornerRadius(10.0)
             }.padding()
             
-        }//.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        }// .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }
     
-    func addCheckpointToHunt() -> () -> () {
+    func addCheckpointToHunt() -> () -> Void {
         return {
             if let _ = Double(latitude), let _ = Double(longitude) {
                 let checkpoint = createCheckpoint()
@@ -97,7 +99,7 @@ struct CreateCheckpointView: View {
     }
     
     func createCheckpoint() -> Checkpoint {
-        let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: Double(latitude)!, longitude: Double(longitude)!)
+        let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: Double(latitude)!, longitude: Double(longitude)!)
         return Checkpoint(name: name, hint: hint, coordinate: coordinate)
     }
 

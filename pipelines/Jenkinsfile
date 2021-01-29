@@ -1,53 +1,54 @@
 pipeline {
     agent any
-
     stages {
-		stage('Start') {
-			steps {
-				notifyBuild('STARTED')
-			}
-		}
-	    stage('Checkout and Setup') {
+        stage('Start') {
+            steps {
+                notifyBuild('STARTED')
+            }
+        }
+		stage('Checkout and Setup') {
 	        steps {
-	           	echo 'Checkout and Setup..'
-				checkout scm
-				sh 'cd fastlane'
-        	}
-    	}
-	    stage('Test') {
-	        steps {
-	            echo 'Testing..'
-				sh 'fastlane test_app'
-	        }
-	    }
-	    stage('Build') {
-			steps {
-	            echo 'Building..'
-				sh 'fastlane beta'
-	        }
-	    }
-	    stage('Deploy') {
-	        steps {
-	            echo 'Deploying....'
-				echo 'This stage could be used to deploy the built IPA and symbols on, for example, Testflight for beta testing.'
-	        }
+			    echo 'Checkout and Setup..'
+                checkout scm
+                sh 'cd fastlane'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+   	            sh 'fastlane test_app publish_reports:true'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building..'
+                sh 'fastlane beta'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+                echo 'This stage could be used to deploy the built IPA and symbols on, for example, Testflight for beta testing.'
+            }
         }
     }
-	post {
-		always {
-			notifyBuild(currentBuild.result)
-		}
-	}
+    post {
+        always {
+            notifyBuild(currentBuild.result)
+        }
+    }
 }
 
 def notifyBuild(String buildStatus) {
 	def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
-	def details = """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
-	  <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>"""
+	def details = """<p>${buildStatus}: Job '${env.JOB_NAME}':</p>
+	  <p>Check console output at <a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a></p>"""
 	emailext (
+		replyTo: '$DEFAULT_REPLYTO',
 		subject: subject,
 	    body: details,
+		from: 'no-reply@jenkins.com',
 	    to: '$DEFAULT_RECIPIENTS',
-		from: 'Jenkins <jenkins@host.com>',
+		recipientProviders: [[$class: 'DevelopersRecipientProvider']]
 	)
 }

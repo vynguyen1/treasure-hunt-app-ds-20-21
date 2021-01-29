@@ -8,24 +8,24 @@
 import Foundation
 import MapKit
 
-//TODO: Change class to struct?
-class Checkpoint:Identifiable {
+// TODO: Change class to struct?
+class Checkpoint: Identifiable {
     
     let id: UUID = UUID()
     var name: String
-    //var location: Location
+    // var location: Location
     var hint: String
     var coordinate: CLLocationCoordinate2D
     var checked: Bool
     
-    init(name:String, hint:String, coordinate:CLLocationCoordinate2D, checked:Bool = false) {
+    init(name: String, hint: String, coordinate: CLLocationCoordinate2D, checked: Bool = false) {
         self.name = name
         self.hint = hint
         self.coordinate = coordinate
         self.checked = checked
     }
     
-    //TODO: Remove static function
+    // TODO: Remove static function
 //    static func getCheckpoints() -> [Checkpoint] {
 //        var checkpoints = [Checkpoint]()
 //

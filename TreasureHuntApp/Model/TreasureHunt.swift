@@ -8,17 +8,17 @@
 import Foundation
 import MapKit
 
-//TODO: Change class to struct?
-class TreasureHunt: Identifiable,ObservableObject {
+// TODO: Change class to struct?
+class TreasureHunt: Identifiable, ObservableObject {
     
     let id = UUID()
     @Published var name: String
     @Published var description: String
-    @Published var checkpoints: Array<Checkpoint>
+    @Published var checkpoints: [Checkpoint]
     @Published var finished: Bool
     @Published var inProgress: Bool
 
-    init(name:String, description:String, checkpoints:Array<Checkpoint>, finished:Bool = false, inProgress:Bool = false) {
+    init(name: String, description: String, checkpoints: [Checkpoint], finished: Bool = false, inProgress: Bool = false) {
         self.name = name
         self.description = description
         self.checkpoints = checkpoints
@@ -26,13 +26,18 @@ class TreasureHunt: Identifiable,ObservableObject {
         self.inProgress = inProgress
     }
     
-    //TODO: Remove static function
+    // TODO: Remove static function
     // Später mit Datenbank ersetzen, erstmal als static Variable:
 //    static func getTreasureHunts() -> [TreasureHunt] {
 //        var treasureHunts = [TreasureHunt]()
 //
-//        treasureHunts.append(TreasureHunt("Test Schnitzeljagd", "Dies ist ein erster Test Hunt aus dem bescheidenen Örtchen Bramsche :-)\nshdjkfjkjg gjwiotrhwpitnsg snrthipn", Checkpoint.getCheckpoints(), false, false))
-//        treasureHunts.append(TreasureHunt("Test 2", "asdfghjkl. Dies ist ein zweiter Test Hunt. Beschreibung folgt.", [Checkpoint(name: "Test", hint: "Test hint", coordinate: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0))], false, true))
+//        treasureHunts.append(TreasureHunt("Test Schnitzeljagd",
+//                                          "Dies ist ein erster Test Hunt aus dem bescheidenen Örtchen Bramsche :-)\nshdjkfjkjg gjwiotrhwpitnsg snrthipn",
+//                                          Checkpoint.getCheckpoints(), false, false))
+//        treasureHunts.append(TreasureHunt("Test 2", "asdfghjkl. Dies ist ein zweiter Test Hunt. Beschreibung folgt.",
+//                                          [Checkpoint(name: "Test", hint: "Test hint",
+//                                                      coordinate: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0))],
+//                                          false, true))
 //        treasureHunts.append(TreasureHunt("Test 3", "Lorem Ipsum", [], true, false))
 //        treasureHunts.append(TreasureHunt("Test 4", "", [], true, false))
 //

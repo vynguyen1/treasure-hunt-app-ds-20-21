@@ -30,7 +30,7 @@ struct CheckpointEditRow: View {
         }
     }
     
-    func deleteCheckpoint() -> Void {
+    func deleteCheckpoint() {
         let index = findCheckpoint()
         if index != nil {
             treasureHunt.checkpoints.remove(at: index!)
@@ -38,9 +38,8 @@ struct CheckpointEditRow: View {
     }
     
     func findCheckpoint() -> Int? {
-        let index = treasureHunt.checkpoints.firstIndex{$0.id == checkpoint.id}
+        let index = treasureHunt.checkpoints.firstIndex {$0.id == checkpoint.id}
         return index
     }
-
 
 }
