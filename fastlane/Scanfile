@@ -13,6 +13,9 @@ clean(true)
 # The output report types
 output_types("html,junit")
 
+# The output report names
+output_files("html-TEST-report,TEST-report")
+
 # The output directory for the test reports
 output_directory("./sonar-reports")
 

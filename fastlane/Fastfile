@@ -39,19 +39,19 @@ platform :ios do
   
     # Run slather to generate code coverage
     slather(proj: "TreasureHuntApp.xcodeproj", 
-      workspace: "TreasureHuntApp.xcworkspace",
+      #workspace: "TreasureHuntApp.xcworkspace",
       cobertura_xml: true,
       jenkins: true,
       scheme: "TreasureHuntApp",
       configuration: "Debug",
-      html: true,
+      #html: true,
       #build_directory: "./build",
       output_directory: "./sonar-reports"
     )
     
     # Run swiftlint to detect code smells (you might need to specify the executable path
   	swiftlint(
-  		output_file: 'fastlane/sonar-reports/swiftlint.txt',
+  		output_file: 'sonar-reports/swiftlint.txt',
    		config_file: 'fastlane/.swiftlint.yml', 
       ignore_exit_status: true
     )
