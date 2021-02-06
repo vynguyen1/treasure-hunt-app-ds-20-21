@@ -15,19 +15,20 @@
 		161A6AFE259BE6D7009EBFB4 /* CheckpointRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A6AFD259BE6D7009EBFB4 /* CheckpointRow.swift */; };
 		16202782259E511E00756385 /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16202781259E511E00756385 /* InstructionsView.swift */; };
 		16202787259FB50800756385 /* CreateTreasureHuntView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16202786259FB50800756385 /* CreateTreasureHuntView.swift */; };
-		1620279725A0E05400756385 /* TreasureHunts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1620279625A0E05400756385 /* TreasureHunts.swift */; };
-		16259DDC259959D500A5C475 /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16259DDB259959D500A5C475 /* UserLocation.swift */; };
 		16259DE4259962B300A5C475 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16259DE3259962B300A5C475 /* StartView.swift */; };
 		16259DF2259963E500A5C475 /* TreasureHuntsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16259DF1259963E500A5C475 /* TreasureHuntsListView.swift */; };
 		16259DFA259964C300A5C475 /* DetailedHuntView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16259DF9259964C300A5C475 /* DetailedHuntView.swift */; };
+		1625DBF225CF3E8D00C3175E /* DSL_Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1625DBF125CF3E8D00C3175E /* DSL_Example.swift */; };
+		1625DBF925CF5DFE00C3175E /* TreasureHunts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1625DBF625CF5DFE00C3175E /* TreasureHunts.swift */; };
+		1625DBFA25CF5DFE00C3175E /* Checkpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1625DBF725CF5DFE00C3175E /* Checkpoint.swift */; };
+		1625DBFB25CF5DFE00C3175E /* TreasureHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1625DBF825CF5DFE00C3175E /* TreasureHunt.swift */; };
+		1639A83825CF1C6C006A39EF /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1639A83725CF1C6C006A39EF /* UserLocation.swift */; };
 		1646F5EF259778590073714B /* TreasureHuntAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646F5EE259778590073714B /* TreasureHuntAppApp.swift */; };
 		1646F5F1259778590073714B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646F5F0259778590073714B /* MapView.swift */; };
 		1646F5F32597785A0073714B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1646F5F22597785A0073714B /* Assets.xcassets */; };
 		1646F5F62597785A0073714B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1646F5F52597785A0073714B /* Preview Assets.xcassets */; };
 		1646F6012597785A0073714B /* TreasureHuntAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646F6002597785A0073714B /* TreasureHuntAppTests.swift */; };
 		1646F60C2597785A0073714B /* TreasureHuntAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646F60B2597785A0073714B /* TreasureHuntAppUITests.swift */; };
-		1646F61E2598D4C20073714B /* TreasureHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646F61D2598D4C20073714B /* TreasureHunt.swift */; };
-		1646F6232598D5E30073714B /* Checkpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646F6222598D5E30073714B /* Checkpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,11 +57,14 @@
 		161A6AFD259BE6D7009EBFB4 /* CheckpointRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckpointRow.swift; sourceTree = "<group>"; };
 		16202781259E511E00756385 /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
 		16202786259FB50800756385 /* CreateTreasureHuntView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTreasureHuntView.swift; sourceTree = "<group>"; };
-		1620279625A0E05400756385 /* TreasureHunts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureHunts.swift; sourceTree = "<group>"; };
-		16259DDB259959D500A5C475 /* UserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
 		16259DE3259962B300A5C475 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		16259DF1259963E500A5C475 /* TreasureHuntsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureHuntsListView.swift; sourceTree = "<group>"; };
 		16259DF9259964C300A5C475 /* DetailedHuntView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedHuntView.swift; sourceTree = "<group>"; };
+		1625DBF125CF3E8D00C3175E /* DSL_Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSL_Example.swift; sourceTree = "<group>"; };
+		1625DBF625CF5DFE00C3175E /* TreasureHunts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureHunts.swift; sourceTree = "<group>"; };
+		1625DBF725CF5DFE00C3175E /* Checkpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkpoint.swift; sourceTree = "<group>"; };
+		1625DBF825CF5DFE00C3175E /* TreasureHunt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureHunt.swift; sourceTree = "<group>"; };
+		1639A83725CF1C6C006A39EF /* UserLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
 		1646F5EB259778590073714B /* TreasureHuntApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreasureHuntApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1646F5EE259778590073714B /* TreasureHuntAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureHuntAppApp.swift; sourceTree = "<group>"; };
 		1646F5F0259778590073714B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -73,8 +77,6 @@
 		1646F6072597785A0073714B /* TreasureHuntAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreasureHuntAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1646F60B2597785A0073714B /* TreasureHuntAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureHuntAppUITests.swift; sourceTree = "<group>"; };
 		1646F60D2597785A0073714B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1646F61D2598D4C20073714B /* TreasureHunt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureHunt.swift; sourceTree = "<group>"; };
-		1646F6222598D5E30073714B /* Checkpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		1625DBF025CF3E7000C3175E /* DSL-Example */ = {
+			isa = PBXGroup;
+			children = (
+				1625DBF125CF3E8D00C3175E /* DSL_Example.swift */,
+			);
+			path = "DSL-Example";
+			sourceTree = "<group>";
+		};
 		1646F5E2259778590073714B = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +161,7 @@
 		1646F5ED259778590073714B /* TreasureHuntApp */ = {
 			isa = PBXGroup;
 			children = (
+				1625DBF025CF3E7000C3175E /* DSL-Example */,
 				1646F61C2598D48F0073714B /* Model */,
 				16259DD72599574300A5C475 /* Controller */,
 				16259DD32599573A00A5C475 /* View */,
@@ -191,10 +202,10 @@
 		1646F61C2598D48F0073714B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1646F61D2598D4C20073714B /* TreasureHunt.swift */,
-				1646F6222598D5E30073714B /* Checkpoint.swift */,
-				16259DDB259959D500A5C475 /* UserLocation.swift */,
-				1620279625A0E05400756385 /* TreasureHunts.swift */,
+				1625DBF725CF5DFE00C3175E /* Checkpoint.swift */,
+				1625DBF825CF5DFE00C3175E /* TreasureHunt.swift */,
+				1625DBF625CF5DFE00C3175E /* TreasureHunts.swift */,
+				1639A83725CF1C6C006A39EF /* UserLocation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -350,19 +361,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				161A6AF4259BBB1B009EBFB4 /* CreateCheckpointView.swift in Sources */,
+				1625DBF225CF3E8D00C3175E /* DSL_Example.swift in Sources */,
+				1625DBFB25CF5DFE00C3175E /* TreasureHunt.swift in Sources */,
 				161A6ACA259A8423009EBFB4 /* TreasureHuntRow.swift in Sources */,
+				1639A83825CF1C6C006A39EF /* UserLocation.swift in Sources */,
 				161A6AE9259BB5E5009EBFB4 /* EditTreasureHuntView.swift in Sources */,
+				1625DBF925CF5DFE00C3175E /* TreasureHunts.swift in Sources */,
 				1646F5F1259778590073714B /* MapView.swift in Sources */,
-				1646F61E2598D4C20073714B /* TreasureHunt.swift in Sources */,
 				16259DFA259964C300A5C475 /* DetailedHuntView.swift in Sources */,
-				16259DDC259959D500A5C475 /* UserLocation.swift in Sources */,
 				16202782259E511E00756385 /* InstructionsView.swift in Sources */,
 				16259DE4259962B300A5C475 /* StartView.swift in Sources */,
+				1625DBFA25CF5DFE00C3175E /* Checkpoint.swift in Sources */,
 				16202787259FB50800756385 /* CreateTreasureHuntView.swift in Sources */,
 				1646F5EF259778590073714B /* TreasureHuntAppApp.swift in Sources */,
 				16259DF2259963E500A5C475 /* TreasureHuntsListView.swift in Sources */,
-				1620279725A0E05400756385 /* TreasureHunts.swift in Sources */,
-				1646F6232598D5E30073714B /* Checkpoint.swift in Sources */,
 				161A6AFE259BE6D7009EBFB4 /* CheckpointRow.swift in Sources */,
 				161A6AF9259BE2BC009EBFB4 /* CheckpointEditRow.swift in Sources */,
 			);

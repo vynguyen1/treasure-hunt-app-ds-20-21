@@ -13,28 +13,22 @@ struct TreasureHuntsListView: View {
     @ObservedObject var treasureHunts = TreasureHunts()
     
     var body: some View {
-        // NavigationView {
-        
-            VStack {
-                List {
-                    ForEach(treasureHunts.treasureHunts, id: \.id) { treasueHunt in
-                        NavigationLink(destination: DetailedHuntView(treasureHunt: treasueHunt, treasureHunts: treasureHunts)) {
-                            TreasureHuntRow(treasureHunt: treasueHunt)
-                        }
-                    }.onDelete(perform: deleteTreasureHunt)
-                }.listStyle(InsetGroupedListStyle())
-                
-                NavigationLink(
-                    destination: CreateTreasureHuntView(treasureHunt: TreasureHunt(name: "", description: "", checkpoints: [Checkpoint]()), treasureHunts: treasureHunts)) {
-                    Image(systemName: "plus.circle")
-                        .padding()
-                        .frame(width: 130, height: 50, alignment: .center/*@END_MENU_TOKEN@*/)
-                        .foregroundColor(.white)
-                        .background(Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
-                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                }.padding()
-            }.navigationBarTitle("Treasure Hunts", displayMode: .inline)
-        // }
+        VStack {
+            List {
+                ForEach(treasureHunts.treasureHunts, id: \.id) { treasueHunt in
+                    NavigationLink(destination: DetailedHuntView(treasureHunt: treasueHunt, treasureHunts: treasureHunts)) {
+                        TreasureHuntRow(treasureHunt: treasueHunt)
+                    }
+                }.onDelete(perform: deleteTreasureHunt)
+            }.listStyle(InsetGroupedListStyle())
+            
+            NavigationLink(
+                destination: CreateTreasureHuntView(treasureHunt: TreasureHunt(name: "", description: "", checkpoints: [Checkpoint]()), treasureHunts: treasureHunts)) {
+                Image(systemName: "plus.circle")
+                    .modifyButton(backgroundColor: Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
+                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+            }.padding()
+        }.navigationBarTitle("Treasure Hunts", displayMode: .inline)
     }
 
     func deleteTreasureHunt(at offsets: IndexSet) {

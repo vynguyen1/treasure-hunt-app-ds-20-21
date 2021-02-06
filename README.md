@@ -16,9 +16,8 @@ WS 2020/2021
 *In the making...*
 
 **5. Metrics**  
-*In the making...*  
-Planning on using SonarQube and gathering the SonarQube metrics using Fastlane.  
-The configuration for Swiftlint can be found in [.swiftlint.yml](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/fastlane/.swiftlint.yml)
+For metrics SonarQube is used and Fastlane for gathering the SonarQube metrics. The configuration can be found in the [sonar-project.properties file](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/sonar-project.properties). It, amongst other things, checks for Maintainability (Code Smells,...) and Coverage.  
+The configuration for Swiftlint (a tool to enforce Swift style and conventions, used for the code smells metric) can be found in [.swiftlint.yml](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/fastlane/.swiftlint.yml). This is also used with SonarQube.  
 
 **6. Clean Code Development (CCD)**  
 *In the making...*
@@ -66,7 +65,8 @@ For this project XCode 12.2 was used. Some very useful shortcuts were the follow
 This project uses the framework SwiftUI to build user interfaces. With that we're also able to quickly modify and build our views with the preview feature and attributes inspector in Xcode.
 
 **11. Domain-Specific Language (DSL)**  
-*This part is currently still missing, working on it.*
+You can find an example for internal DSL [here](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/DSL-Example/DSL_Example):  
+SwiftUI itself is already kind of a DSL that simplifies building a UI. The implemented ViewModifiers in this project can be used to modify views by just simply adding, here for example, modifyAdd(). It's a functional, Domain Specific Language for interface declaration.  
 
 **12. Functional Programming**  
 Only final data structures:  

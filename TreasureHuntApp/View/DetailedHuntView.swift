@@ -31,21 +31,11 @@ struct DetailedHuntView: View {
             // Start/Continue Hunt
             HStack {
                 NavigationLink(destination: MapView(treasureHunt: treasureHunt, treasureHuntId: treasureHunt.id, treasureHunts: treasureHunts, userLocation: UserLocation())) {
-                    Text(!treasureHunt.inProgress ? "Start" : "Continue")
-                        .padding()
-                        .frame(width: 130, height: 50, alignment: .center/*@END_MENU_TOKEN@*/)
-                        .foregroundColor(.white)
-                        .background(Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
-                        .cornerRadius(10.0)
+                    Text(!treasureHunt.inProgress ? "Start" : "Continue").modifyButton(backgroundColor: Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
                 }
 
                 NavigationLink(destination: EditTreasureHuntView(treasureHunt: treasureHunt)) {
-                    Text("Edit")
-                        .padding()
-                        .frame(width: 130, height: 50, alignment: .center/*@END_MENU_TOKEN@*/)
-                        .foregroundColor(.white)
-                        .background(Color.init(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
-                        .cornerRadius(10.0)
+                    Text("Edit").modifyButton(backgroundColor: Color.init(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
                 }
             }
             Divider()

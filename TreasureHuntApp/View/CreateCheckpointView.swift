@@ -72,19 +72,11 @@ struct CreateCheckpointView: View {
                     }
                 }
             }
-            // TODO: Buttons als eigene View auslagern damit überall einheitlich
             // Create Checkpoint
-//            NavigationLink(destination: CreateTreasureHuntView(treasureHunt: TreasureHunt("", "", [Checkpoint](), false, false))) {
             Button(action: addCheckpointToHunt()) {
-                Text("Create")
-                    .padding()
-                    .frame(width: 130, height: 50, alignment: .center/*@END_MENU_TOKEN@*/)
-                    .foregroundColor(.white)
-                    .background(Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
-                    .cornerRadius(10.0)
+                Text("Create").modifyButton(backgroundColor: Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
             }.padding()
-            
-        }// .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        }
     }
     
     func addCheckpointToHunt() -> () -> Void {
