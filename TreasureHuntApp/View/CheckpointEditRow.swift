@@ -20,12 +20,9 @@ struct CheckpointEditRow: View {
 //                Button(action: {print("Edit Checkpoint with id: \(checkpoint.id)")}) {
 //                    Image(systemName: "pencil.circle")
 //                }
-                Button(action: {
-                    print("Delete Checkpoint with id: \(checkpoint.id)")
-                    deleteCheckpoint()
-                }) {
-                    Image(systemName: "trash")
-                }.buttonStyle(BorderlessButtonStyle())
+                Button(action: {deleteCheckpoint()},
+                       label: {Image(systemName: "trash")})
+                .buttonStyle(BorderlessButtonStyle())
             }
         }
     }

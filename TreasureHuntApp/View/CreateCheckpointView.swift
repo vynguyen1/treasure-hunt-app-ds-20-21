@@ -51,22 +51,22 @@ struct CreateCheckpointView: View {
                 Label("Put a question", systemImage: "questionmark.circle")
             }.padding().disabled(true)
             if putQuestion {
-                TextField("Question...", text: .constant("")/*@END_MENU_TOKEN@*/)
+                TextField("Question...", text: .constant(""))
                     .padding()
                 HStack {
-                    TextField("Answer 1...", text: .constant("")/*@END_MENU_TOKEN@*/)
+                    TextField("Answer 1...", text: .constant(""))
                     Toggle(isOn: $answer1) {
                         Label("", systemImage: "checkmark.circle")
                     }
                 }
                 HStack {
-                    TextField("Answer 2...", text: .constant("")/*@END_MENU_TOKEN@*/)
+                    TextField("Answer 2...", text: .constant(""))
                     Toggle(isOn: $answer2) {
                         Label("", systemImage: "checkmark.circle")
                     }
                 }
                 HStack {
-                    TextField("Answer 3...", text: .constant("")/*@END_MENU_TOKEN@*/)
+                    TextField("Answer 3...", text: .constant(""))
                     Toggle(isOn: $answer3) {
                         Label("", systemImage: "checkmark.circle")
                     }
@@ -81,7 +81,7 @@ struct CreateCheckpointView: View {
     
     func addCheckpointToHunt() -> () -> Void {
         return {
-            if let _ = Double(latitude), let _ = Double(longitude) {
+            if Double(latitude) != nil, Double(longitude) != nil {
                 let checkpoint = createCheckpoint()
                 treasureHunt.checkpoints.append(checkpoint)
             } else {

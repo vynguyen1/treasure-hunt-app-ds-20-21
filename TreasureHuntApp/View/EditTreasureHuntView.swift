@@ -31,8 +31,8 @@ struct EditTreasureHuntView: View {
                 destination: CreateCheckpointView(treasureHunt: treasureHunt)) {
                 Text("Add Checkpoint").modifyAdd()
             }
-            List(treasureHunt.checkpoints) {
-                checkpoint in CheckpointEditRow(treasureHunt: treasureHunt, checkpoint: checkpoint)
+            List(treasureHunt.checkpoints) { checkpoint in
+                CheckpointEditRow(treasureHunt: treasureHunt, checkpoint: checkpoint)
             }
         }
     }

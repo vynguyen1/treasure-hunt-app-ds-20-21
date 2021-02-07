@@ -10,7 +10,7 @@ import SwiftUI
 extension View {
     
     // Used in TreasureHuntsListView, DetailedHuntView, CreateCheckpointView and CreateTreasureHuntView
-    func modifyButton(backgroundColor:Color) -> some View {
+    func modifyButton(backgroundColor: Color) -> some View {
         self.modifier(ButtonModifier(backgroundColor: backgroundColor))
     }
     

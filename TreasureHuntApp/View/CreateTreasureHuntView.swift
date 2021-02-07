@@ -32,8 +32,8 @@ struct CreateTreasureHuntView: View {
                 destination: CreateCheckpointView(treasureHunt: treasureHunt)) {
                 Text("Add Checkpoint").modifyAdd()
             }
-            List(treasureHunt.checkpoints) {
-                checkpoint in CheckpointEditRow(treasureHunt: treasureHunt, checkpoint: checkpoint)
+            List(treasureHunt.checkpoints) { checkpoint in
+                CheckpointEditRow(treasureHunt: treasureHunt, checkpoint: checkpoint)
             }
             Button(action: addTreasureHunt) {
                 Image(systemName: "checkmark").modifyButton(backgroundColor: Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
@@ -42,7 +42,6 @@ struct CreateTreasureHuntView: View {
     }
     
     func addTreasureHunt() {
-        // TODO
         treasureHunts.treasureHunts.append(treasureHunt)
     }
 }

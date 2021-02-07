@@ -25,12 +25,13 @@ struct DetailedHuntView: View {
                 .padding()
             Text("Checkpoints:")
                 .font(.system(size: 18, weight: .light))
-            List(treasureHunt.checkpoints) {
-                checkpoint in CheckpointRow(checkpoint: checkpoint)
+            List(treasureHunt.checkpoints) { checkpoint in
+                CheckpointRow(checkpoint: checkpoint)
             }
             // Start/Continue Hunt
             HStack {
-                NavigationLink(destination: MapView(treasureHunt: treasureHunt, treasureHuntId: treasureHunt.id, treasureHunts: treasureHunts, userLocation: UserLocation())) {
+                NavigationLink(destination: MapView(
+                        treasureHunt: treasureHunt, treasureHuntId: treasureHunt.uuid, treasureHunts: treasureHunts, userLocation: UserLocation())) {
                     Text(!treasureHunt.inProgress ? "Start" : "Continue").modifyButton(backgroundColor: Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
                 }
 

@@ -25,8 +25,9 @@ class TreasureHunts: ObservableObject {
                                               coordinate: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0))],
                      finished: false, inProgress: true),
         TreasureHunt(name: "Test 3", description: "Lorem Ipsum", checkpoints: [], finished: true, inProgress: false),
-        TreasureHunt(name: "Test 4", description: "", checkpoints: [Checkpoint(name: "Home", hint: "Hier wohnst du.",
-                                                                               coordinate: CLLocationCoordinate2D(latitude: 52.39949, longitude: 8.006106),
-                                                                               checked: false)])]
+        TreasureHunt(name: "Test 4", description: "", checkpoints:
+                        [Checkpoint(name: "Home", hint: "Hier wohnst du.",
+                                    coordinate: CLLocationCoordinate2D(latitude: 52.39949, longitude: 8.006106),
+                                    checked: false)])]
     
 }

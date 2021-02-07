@@ -137,7 +137,7 @@ struct MapView: View {
             treasureHunt.inProgress = true
         }
         self.treasureHuntIndex = treasureHunts.treasureHunts.firstIndex(where: { (item) -> Bool in
-            item.id == treasureHuntId
+            item.uuid == treasureHuntId
         })!
         self.treasureHunts = treasureHunts
         _region = State(initialValue: MKCoordinateRegion(center: CLLocationCoordinate2D(
@@ -158,7 +158,7 @@ struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         let treasureHunts = TreasureHunts()
         let treasureHunt = treasureHunts.treasureHunts.first!
-        MapView(treasureHunt: treasureHunt, treasureHuntId: treasureHunt.id,
+        MapView(treasureHunt: treasureHunt, treasureHuntId: treasureHunt.uuid,
                 treasureHunts: treasureHunts, userLocation: UserLocation())
     }
 }

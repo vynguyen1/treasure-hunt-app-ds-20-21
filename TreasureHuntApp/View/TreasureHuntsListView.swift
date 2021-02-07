@@ -23,7 +23,8 @@ struct TreasureHuntsListView: View {
             }.listStyle(InsetGroupedListStyle())
             
             NavigationLink(
-                destination: CreateTreasureHuntView(treasureHunt: TreasureHunt(name: "", description: "", checkpoints: [Checkpoint]()), treasureHunts: treasureHunts)) {
+                destination: CreateTreasureHuntView(
+                    treasureHunt: TreasureHunt(name: "", description: "", checkpoints: [Checkpoint]()), treasureHunts: treasureHunts)) {
                 Image(systemName: "plus.circle")
                     .modifyButton(backgroundColor: Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
                     .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
