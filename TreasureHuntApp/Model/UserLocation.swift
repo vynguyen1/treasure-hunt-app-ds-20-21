@@ -11,6 +11,7 @@ import CoreLocation
 
 class UserLocation: NSObject, ObservableObject {
     
+    // Berlin coordinates as default
     @Published var userLatitude: Double = 52.520008
     @Published var userLongitude: Double = 13.404954
     
