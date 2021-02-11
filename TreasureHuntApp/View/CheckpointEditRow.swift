@@ -7,10 +7,11 @@
 
 import SwiftUI
 
+// TODO: Delete?
 struct CheckpointEditRow: View {
     
-    @ObservedObject var treasureHunt: TreasureHunt
-    var checkpoint: Checkpoint
+    // @ObservedObject var treasureHunt: TreasureHunt
+    var checkpoint: CheckpointCreateModel
     
     var body: some View {
         HStack {
@@ -28,15 +29,15 @@ struct CheckpointEditRow: View {
     }
     
     func deleteCheckpoint() {
-        let index = findCheckpoint()
-        if index != nil {
-            treasureHunt.checkpoints.remove(at: index!)
-        }
+//        let index = findCheckpoint()
+//        if index != nil {
+//            treasureHunt.checkpoints.remove(at: index!)
+//        }
     }
     
-    func findCheckpoint() -> Int? {
-        let index = treasureHunt.checkpoints.firstIndex {$0.id == checkpoint.id}
-        return index
-    }
+//    func findCheckpoint() -> Int? {
+//        let index = treasureHunt.checkpoints.firstIndex {$0.id == checkpoint.id}
+//        return index
+//    }
 
 }

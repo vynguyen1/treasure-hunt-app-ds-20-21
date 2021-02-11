@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19E2265" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Checkpoint" representedClassName=".Checkpoint" syncable="YES">
+        <attribute name="checked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="hint" optional="YES" attributeType="String"/>
+        <attribute name="locationLatitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="locationLongitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="treasureHunt" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TreasureHunt" inverseName="checkpoints" inverseEntity="TreasureHunt"/>
+    </entity>
+    <entity name="TreasureHunt" representedClassName=".TreasureHunt" syncable="YES">
+        <attribute name="finished" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="huntDescription" optional="YES" attributeType="String"/>
+        <attribute name="inProgress" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="checkpoints" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Checkpoint" inverseName="treasureHunt" inverseEntity="Checkpoint"/>
+    </entity>
+    <elements>
+        <element name="Checkpoint" positionX="0" positionY="81" width="128" height="148"/>
+        <element name="TreasureHunt" positionX="-36" positionY="9" width="128" height="133"/>
+    </elements>
+</model>

@@ -5,12 +5,12 @@ WS 2020/2021
 
 **1. UML Diagrams**
 
-1. Class Diagram  
-	*In the making...*
+1. [Class Diagram](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML/Class_Diagram.png)  
+	<img src="https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML/Class_Diagram.png" width="200">  
 2. [Use-Case Diagram](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML/Use_Case_Diagram.png)  
-	![Use-Case](UML/Use_Case_Diagram.png =150x)
+	<img src="https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML/Use_Case_Diagram.png" width="200">  
 3. [Sequence Diagram](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML/Sequence_Diagram.png)  
-	![Sequence](UML/Sequence_Diagram.png =150x)
+	<img src="https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML/Sequence_Diagram.png" width="200">  
 
 **2. Domain-Driven Design (DDD)**  
 *In the making...*
@@ -65,7 +65,7 @@ For this project XCode 12.2 was used. Some very useful shortcuts were the follow
 This project uses the framework SwiftUI to build user interfaces. With that we're also able to quickly modify and build our views with the preview feature and attributes inspector in Xcode.
 
 **11. Domain-Specific Language (DSL)**  
-You can find an example for internal DSL [here](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/DSL-Example/DSL_Example):  
+You can find an example for internal DSL [here](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/TreasureHuntApp/View/DSL-Example/DSL_Example):  
 SwiftUI itself is already kind of a DSL that simplifies building a UI. The implemented ViewModifiers in this project can be used to modify views by just simply adding, here for example, modifyAdd().  
 It's a functional, Domain Specific Language for interface declaration.  
 

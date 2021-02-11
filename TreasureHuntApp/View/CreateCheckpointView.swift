@@ -10,7 +10,9 @@ import MapKit
 
 struct CreateCheckpointView: View {
     
-    @ObservedObject var treasureHunt: TreasureHunt
+    @Environment (\.presentationMode) var presentationMode
+    
+    @Binding var checkpoints: [CheckpointCreateModel]
     
     @State private var name: String = ""
     @State private var hint: String = ""
@@ -35,18 +37,15 @@ struct CreateCheckpointView: View {
             TextField("Name...", text: $name)
                 .padding()
                 .frame(height: 20, alignment: .leading)
-            TextField("Description...", text: $hint)
+            TextField("Add a hint...", text: $hint)
                 .padding()
                 .frame(height: 100, alignment: Alignment.topLeading)
             TextField("Latitude...", text: $latitude)
                 .padding()
             TextField("Longitude...", text: $longitude)
                 .padding()
-            // TODO: Change to tap on map
-            // Map(coordinateRegion: $region)
-            
-            // Question feature disabled
-            // TODO: Use Picker View
+            // TODO: Nice-to-have: Change to tap on map: Map(coordinateRegion: $region)
+            // TODO: Nice-to-have: Question feature (Use Picker View)
             Toggle(isOn: $putQuestion) {
                 Label("Put a question", systemImage: "questionmark.circle")
             }.padding().disabled(true)
@@ -73,32 +72,36 @@ struct CreateCheckpointView: View {
                 }
             }
             // Create Checkpoint
-            Button(action: addCheckpointToHunt()) {
+            Button(action: createCheckpointCreateModel) {
                 Text("Create").modifyButton(backgroundColor: Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
             }.padding()
         }
     }
     
-    func addCheckpointToHunt() -> () -> Void {
-        return {
-            if Double(latitude) != nil, Double(longitude) != nil {
-                let checkpoint = createCheckpoint()
-                treasureHunt.checkpoints.append(checkpoint)
-            } else {
-                print("Not a valid number: \(latitude) and \(longitude)")
-            }
-        }
-    }
+//    func addCheckpointToHunt() -> () -> Void {
+//        return {
+//            if Double(latitude) != nil, Double(longitude) != nil {
+//                let checkpoint = createCheckpoint()
+//                treasureHunt.checkpoints.append(checkpoint)
+//            } else {
+//                print("Not a valid number: \(latitude) and \(longitude)")
+//            }
+//        }
+//    }
     
-    func createCheckpoint() -> Checkpoint {
-        let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: Double(latitude)!, longitude: Double(longitude)!)
-        return Checkpoint(name: name, hint: hint, coordinate: coordinate)
+    func createCheckpointCreateModel() {
+        if let locationLatitude = Double(latitude), let locationLongitude = Double(longitude) {
+            let checkpointCreateModel = CheckpointCreateModel(
+                uuid: UUID(), name: name, hint: hint, locationLatitude: locationLatitude, locationLongitude: locationLongitude)
+            checkpoints.append(checkpointCreateModel)
+            presentationMode.wrappedValue.dismiss()
+        }
     }
 
 }
 
 struct CreateCheckpointView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateCheckpointView(treasureHunt: TreasureHunts().treasureHunts.first!)
+        CreateCheckpointView(checkpoints: .constant([]))
     }
 }

@@ -8,7 +8,7 @@ import SwiftUI
 
 struct TreasureHuntRow: View {
     
-    @ObservedObject var treasureHunt: TreasureHunt
+    @State var treasureHunt: TreasureHunt
     
     var body: some View {
         VStack {
@@ -20,7 +20,7 @@ struct TreasureHuntRow: View {
                     Circle().stroke(Color.green, lineWidth: 1)
                 )
             }
-            Text(treasureHunt.description.count >= 100 ? treasureHunt.description.prefix(100) + "...":treasureHunt.description)
+            Text(treasureHunt.huntDescription.count >= 100 ? treasureHunt.huntDescription.prefix(100) + "...":treasureHunt.huntDescription)
                 .multilineTextAlignment(.leading)
                 .padding([.top, .leading], 0)
                 .font(.system(size: 16, weight: .light))

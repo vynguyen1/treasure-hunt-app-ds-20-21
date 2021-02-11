@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct TreasureHuntAppApp: App {
+    let persistenceController = PersistenceController.shared
+    
     var body: some Scene {
         WindowGroup {
             StartView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

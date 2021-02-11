@@ -6,11 +6,19 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct CreateTreasureHuntView: View {
     
-    @ObservedObject var treasureHunt: TreasureHunt
-    @ObservedObject var treasureHunts: TreasureHunts
+    // @ObservedObject var treasureHunt: TreasureHunt
+    // @ObservedObject var treasureHunts: TreasureHunts
+    @Environment(\.managedObjectContext) private var viewContext
+    @Environment (\.presentationMode) var presentationMode
+    
+    @State var showCreateCheckpointSheet = false
+    @State var huntDescription: String = ""
+    @State var name: String = ""
+    @State var checkpoints: [CheckpointCreateModel] = []
     
     var body: some View {
         VStack {
@@ -21,33 +29,57 @@ struct CreateTreasureHuntView: View {
             Text("Create a treasure hunt")
                 .padding()
                 .font(.system(size: 24, weight: .light))
-            TextField("Name...", text: $treasureHunt.name)
+            TextField("Name...", text: $name)
                 .padding()
                 .frame(height: 10, alignment: .center)
-            TextEditor(text: $treasureHunt.description)
+            TextEditor(text: $huntDescription)
                 .padding()
                 .frame(width: UIScreen.main.bounds.width, height: 80, alignment: .topLeading)
             
-            NavigationLink(
-                destination: CreateCheckpointView(treasureHunt: treasureHunt)) {
+            Button(action: {
+                showCreateCheckpointSheet = true
+            }, label: {
                 Text("Add Checkpoint").modifyAdd()
-            }
-            List(treasureHunt.checkpoints) { checkpoint in
-                CheckpointEditRow(treasureHunt: treasureHunt, checkpoint: checkpoint)
+            })
+            List {
+                ForEach(checkpoints) { checkpoint in
+                    Text("\(checkpoint.name)")
+                    //CheckpointEditRow(checkpoint: checkpoint)
+                }.onDelete(perform: deleteCheckpoint)
             }
             Button(action: addTreasureHunt) {
                 Image(systemName: "checkmark").modifyButton(backgroundColor: Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
             }.padding()
+        }.sheet(isPresented: $showCreateCheckpointSheet) {
+            CreateCheckpointView(checkpoints: $checkpoints)
         }
     }
     
+    func deleteCheckpoint(at offsets: IndexSet) {
+        checkpoints.remove(atOffsets: offsets)
+    }
+    
     func addTreasureHunt() {
-        treasureHunts.treasureHunts.append(treasureHunt)
+        let treasureHuntDescription = NSEntityDescription.entity(forEntityName: "TreasureHunt", in: viewContext)
+        let treasureHunt = TreasureHunt(entity: treasureHuntDescription!, insertInto: viewContext)
+        treasureHunt.uuid = UUID()
+        treasureHunt.name = self.name
+        treasureHunt.huntDescription = self.huntDescription
+        for checkpoint in checkpoints {
+            let checkpoint = CheckpointCreateModel.createModelToCheckpoint(checkpoint, viewContext)
+            treasureHunt.addToCheckpoints(checkpoint)
+        }
+        treasureHunt.inProgress = false
+        treasureHunt.finished = false
+        try? viewContext.save()
+        self.presentationMode.wrappedValue.dismiss()
+        // treasureHunts.treasureHunts.append(treasureHunt)
     }
 }
 
 struct CreateTreasureHuntView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateTreasureHuntView(treasureHunt: TreasureHunt(name: "", description: "", checkpoints: [Checkpoint]()), treasureHunts: TreasureHunts())
+        CreateTreasureHuntView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        // CreateTreasureHuntView(treasureHunt: TreasureHunt(name: "", description: "", checkpoints: [Checkpoint]()))
     }
 }
