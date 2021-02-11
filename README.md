@@ -5,12 +5,16 @@ WS 2020/2021
 
 **1. UML Diagrams**
 
-1. [Class Diagram](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML/Class_Diagram.png)  
-	<img src="https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML/Class_Diagram.png" width="200">  
-2. [Use-Case Diagram](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML/Use_Case_Diagram.png)  
-	<img src="https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML/Use_Case_Diagram.png" width="200">  
-3. [Sequence Diagram](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML/Sequence_Diagram.png)  
-	<img src="https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML/Sequence_Diagram.png" width="200">  
+All UML diagrams can be found in the [UML folder](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML).  
+
+1. For the Class Diagram click [here](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML/Class_Diagram.png)  
+	<img src="UML/Class_Diagram.png" width="400">  
+	<br>
+2. For the Use-Case Diagram click [here](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML/Use_Case_Diagram.png)  
+	<img src="UML/Use_Case_Diagram.png" width="350">  
+	<br>
+3. For the Sequence Diagram click [here](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML/Sequence_Diagram.png)  
+	<img src="UML/Sequence_Diagram.png" width="400">  
 
 **2. Domain-Driven Design (DDD)**  
 *In the making...*
