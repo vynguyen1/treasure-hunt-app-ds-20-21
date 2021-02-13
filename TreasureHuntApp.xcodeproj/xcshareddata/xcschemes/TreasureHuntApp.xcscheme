@@ -37,14 +37,9 @@
                BlueprintName = "TreasureHuntAppTests"
                ReferencedContainer = "container:TreasureHuntApp.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "TreasureHuntAppTests">
-               </Test>
-            </SkippedTests>
          </TestableReference>
          <TestableReference
-            skipped = "YES">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1646F6062597785A0073714B"
