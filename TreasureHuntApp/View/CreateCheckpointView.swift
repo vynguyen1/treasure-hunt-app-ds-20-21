@@ -36,18 +36,26 @@ struct CreateCheckpointView: View {
 //                    .font(.system(size: 24, weight: .light))
 //                    .padding()
                 Section(header: Text("Details")) {
-                    TextField("Name...", text: $name)
+                    TextField("Name...", text: $name, onCommit:  {
+                        UIApplication.shared.endEditing()
+                    })
                         .padding()
                         .frame(height: 20, alignment: .leading)
-                    TextField("Add a hint...", text: $hint)
+                    TextField("Add a hint...", text: $hint, onCommit:  {
+                        UIApplication.shared.endEditing()
+                    })
                         .padding()
                         .frame(height: 80, alignment: Alignment.topLeading)
                 }
                 Section(header: Text("Coordinates")) {
                     // TODO: Nice-to-have: Change to tap on map: Map(coordinateRegion: $region)
-                    TextField("Latitude...", text: $latitude)
+                    TextField("Latitude...", text: $latitude, onCommit:  {
+                        UIApplication.shared.endEditing()
+                    })
                         .padding()
-                    TextField("Longitude...", text: $longitude)
+                    TextField("Longitude...", text: $longitude, onCommit:  {
+                        UIApplication.shared.endEditing()
+                    })
                         .padding()
                 }
                 

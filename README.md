@@ -3,6 +3,8 @@
 "Forgeschrittene Softwaretechnik"  
 WS 2020/2021
 
+*<div>Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>*
+
 **1. UML Diagrams**
 
 All UML diagrams can be found in the [UML folder](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML).  

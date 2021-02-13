@@ -35,6 +35,7 @@
 		16A108F925D4A267007C9E70 /* TreasureHunt+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A108F525D4A267007C9E70 /* TreasureHunt+CoreDataProperties.swift */; };
 		16A1090125D5DE6B007C9E70 /* CheckpointCreateModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A1090025D5DE6B007C9E70 /* CheckpointCreateModelTest.swift */; };
 		16A1090625D5E818007C9E70 /* MapTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A1090525D5E818007C9E70 /* MapTest.swift */; };
+		16A1090B25D838E7007C9E70 /* FinishedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A1090A25D838E7007C9E70 /* FinishedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		16A108F525D4A267007C9E70 /* TreasureHunt+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TreasureHunt+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		16A1090025D5DE6B007C9E70 /* CheckpointCreateModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckpointCreateModelTest.swift; sourceTree = "<group>"; };
 		16A1090525D5E818007C9E70 /* MapTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTest.swift; sourceTree = "<group>"; };
+		16A1090A25D838E7007C9E70 /* FinishedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				161A6AFD259BE6D7009EBFB4 /* CheckpointRow.swift */,
 				16202781259E511E00756385 /* InstructionsView.swift */,
 				16202786259FB50800756385 /* CreateTreasureHuntView.swift */,
+				16A1090A25D838E7007C9E70 /* FinishedView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 			files = (
 				161A6AF4259BBB1B009EBFB4 /* CreateCheckpointView.swift in Sources */,
 				1625DBF225CF3E8D00C3175E /* DSL_Example.swift in Sources */,
+				16A1090B25D838E7007C9E70 /* FinishedView.swift in Sources */,
 				16A108F825D4A267007C9E70 /* TreasureHunt+CoreDataClass.swift in Sources */,
 				16A108F925D4A267007C9E70 /* TreasureHunt+CoreDataProperties.swift in Sources */,
 				161A6ACA259A8423009EBFB4 /* TreasureHuntRow.swift in Sources */,

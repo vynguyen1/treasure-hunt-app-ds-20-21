@@ -82,7 +82,15 @@ struct EditTreasureHuntView: View {
     func finishAndSaveTreasureHuntEdit() {
         let checkpoints = CheckpointCreateModel.createModelsToCheckpoints(self.checkpoints, self.viewContext)
         let checkpointsToAdd = checkpoints.filter { checkpoint -> Bool in
-            !(treasureHunt.checkpoints?.contains(checkpoint) ?? false)
+            !(treasureHunt.checkpoints?.contains {
+                $0.name == checkpoint.name &&
+                $0.uuid == checkpoint.uuid &&
+                $0.hint == checkpoint.hint &&
+                $0.locationLatitude == checkpoint.locationLatitude &&
+                $0.locationLongitude == checkpoint.locationLongitude &&
+                $0.checked == checkpoint.checked &&
+                $0.rank == checkpoint.rank
+            } ?? false)
         }
         treasureHunt.addToCheckpoints(Set(checkpointsToAdd))
         treasureHunt.setValue(self.name, forKey: "name")

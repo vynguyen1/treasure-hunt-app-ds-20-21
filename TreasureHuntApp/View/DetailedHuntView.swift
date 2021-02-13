@@ -40,7 +40,7 @@ struct DetailedHuntView: View {
                 NavigationLink(destination: MapView(
                                 treasureHunt: treasureHunt, userLocation: userLocation)
                                 .environment(\.managedObjectContext, self.viewContext)) {
-                    Text(!(treasureHunt.inProgress && treasureHunt.finished) ? "Start" : "Continue").modifyButton(backgroundColor: Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
+                    Text((treasureHunt.inProgress && !treasureHunt.finished) ? "Continue" : "Start").modifyButton(backgroundColor: Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
                 }
 
                 NavigationLink(destination: EditTreasureHuntView(

@@ -11,9 +11,12 @@ import SwiftUI
 struct MapView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
+    @Environment (\.presentationMode) var presentationMode
+    
+    @State var showFinishedSheet = false
     
     private let errorThreshold: Double = 0.001 // 0.0002
-    private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    let timer = Timer.publish(every: 1, on: .current, in: .common).autoconnect()
     
     @State private var finished: Bool = false
     
@@ -24,6 +27,7 @@ struct MapView: View {
     
     @State private var messageText: String = ""
     @State private var hintText: String = ""
+    @State private var hintHeadline: String = "Hint:"
     
     @ObservedObject var treasureHunt: TreasureHunt
     @ObservedObject var userLocation: UserLocation
@@ -44,10 +48,10 @@ struct MapView: View {
                         self.timer.upstream.connect().cancel()
                     })
                 Divider()
-                Text("Checkpoints completed: \(treasureHunt.checkpoints?.filter {$0.checked == true}.count ?? 0)/\(treasureHunt.checkpoints?.count ?? 0)")
+                Text("Checkpoints completed:\(treasureHunt.checkpoints?.filter {$0.checked == true}.count ?? 0)/\(treasureHunt.checkpoints?.count ?? 0)")
                     .onReceive(timer) { _ in
                         updateCheckpoint()()
-                        if finished == true {
+                        if self.finished == true {
                             self.timer.upstream.connect().cancel()
                         }
                 }
@@ -55,40 +59,50 @@ struct MapView: View {
 //                    Text("Your Location").font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
 //                    Text("Latitude: \(userLocation.userLatitude)\nLongitude: \(userLocation.userLongitude)")
 //                        .multilineTextAlignment(.center)
-                    Text("Hint:").font(.title3)
+                    Text(hintHeadline).font(.title3)
                     Text(hintText)
                 }
                 Divider()
                 Text(messageText).padding()
             }
-            if self.finished {
-                Text("Congratulations!!\nYou’ve reached the goal! Hope you’ve enjoyed this little adventure :)")
-                    .frame(width: UIScreen.main.bounds.width-20, height: 300)
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .multilineTextAlignment(.center)
-                    .background(Color.init(#colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)))
-                    .foregroundColor(.white)
-            }
-        }.navigationTitle(treasureHunt.name)
+//            if self.finished {
+//                Text("Congratulations!!\nYou’ve reached the goal! Hope you’ve enjoyed this little adventure :)")
+//                    .frame(width: UIScreen.main.bounds.width-20, height: 300)
+//                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+//                    .multilineTextAlignment(.center)
+//                    .background(Color.init(#colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)))
+//                    .foregroundColor(.white)
+//            }
+        }
+        .sheet(isPresented: $showFinishedSheet) {
+            FinishedView(name: treasureHunt.name)
+        }
+        .navigationTitle(treasureHunt.name)
     }
 
     func updateCheckpoint() -> () -> Void {
         return {
-            if checkpointHasBeenReached() {
-                viewContext.performAndWait {
-                    treasureHunt.checkpoints!.filter {
-                        $0.id == getCurrentCheckpoint()!.id
-                    }.first!.checked = true
-                    try? viewContext.save()
-                }
-                messageText = "Checkpoint has been reached."
-            } else {
-                messageText = "Not quite there yet!"
-                hintText = getCurrentCheckpoint()!.hint
-            }
             self.finished = isFinished()
-            if self.finished {
+            if !self.finished {
+                if checkpointHasBeenReached() {
+                    viewContext.performAndWait {
+                        treasureHunt.checkpoints!.filter {
+                            $0.id == getCurrentCheckpoint()!.id
+                        }.first!.checked = true
+                        try? viewContext.save()
+                    }
+                    messageText = "Checkpoint has been reached."
+                } else {
+                    messageText = "Not quite there yet!"
+                    hintText = getCurrentCheckpoint()?.hint ?? ""
+                }
+            } else {
                 messageText = "Finished!"
+                hintHeadline = ""
+                hintText = ""
+                if finished && treasureHunt.inProgress {
+                    showFinishedSheet = true
+                }
                 viewContext.performAndWait {
                     treasureHunt.setValue(true, forKey: "finished")
                     treasureHunt.setValue(false, forKey: "inProgress")
