@@ -31,7 +31,7 @@ Once you've started a hunt the MapView looks like this. When you've reached a ch
 <img src="Screenshots/map_view_hint.png" width="150"> <img src="Screenshots/detailed_hunt_checked_view.png" width="150">  
 
 
-When you've finished a treasure hunt a finished view will appear and the map will have all checkpoints visible. They can also be seen in the detailed view.  
+When you've finished a treasure hunt a finished view will appearand the map will have all checkpoints visible. They can also be seen in the detailed view.  
 
 <img src="Screenshots/finished_view.png" width="150"> <img src="Screenshots/finished_map_view.png" width="150"> <img src="Screenshots/detailed_hunt_finished_view.png" width="150">  
 
@@ -53,21 +53,21 @@ All UML diagrams can be found in the [UML folder](https://github.com/vynguyen1/t
 **2. Domain-Driven Design (DDD)**  
 *In the making...*
 
-**3. Metrics**  
+**5. Metrics**  
 For metrics SonarQube is used and Fastlane for gathering the SonarQube metrics. The configuration can be found in the [sonar-project.properties file](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/sonar-project.properties). It, amongst other things, checks for Maintainability (Code Smells,...), Duplications and Code Coverage.  
 The configuration for Swiftlint (a tool to enforce Swift style and conventions, used for the code smells metric) can be found in [.swiftlint.yml](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/fastlane/.swiftlint.yml). This is also used with SonarQube.  
 
-**4. Clean Code Development (CCD)**  
+**6. Clean Code Development (CCD)**  
 *In the making...*
 
-**5. Build**  
+**7. Build**  
 For this project Fastlane is used which is an open source build automation tool for Android and iOS for developers. In [Gemfile](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/Gemfile) we describe the gem dependencies required (like Fastlane).
 The configuration files for Fastlane can be found in the [fastlane folder](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/fastlane):
 
 1. Appfile:  
 	The Appfile stores useful information that are used across all fastlane tools (e.g. Apple ID, application Bundle Identifier,...) to deploy lanes faster and tailored on the project needs.
 2. Fastfile:  
-	The Fastfile stores the automation configuration that can be run with fastlane. Here you find different lanes I implemented. For example one only for testing, one for building (produces, amongst other things, an ipa file - an iOS application archive file which stores an iOS app - and puts it in a build folder in the jenkins workspace (local) and also a lane which tests and builds the app.
+	The Fastfile stores the automation configuration that can be run with fastlane. Here you find different lanes I implemented. For example one for testing (and publishing the application reports to sonar), one for building (produces, amongst other things, an ipa file - an iOS application archive file which stores an iOS app - and puts it in a build folder in the jenkins workspace (local) and also a lane for testing swiftlint.
 3. Scanfile:  
 	Scan is an alias for the run_tests action. It's to run tests of the iOS app on a simulator or connected device. The configuration for that can be found in the Scanfile. Reports about the test results (in html and junit format) are put in the reports folder (also in the local workspace).
 4. Gymfile:  
@@ -76,10 +76,10 @@ The configuration files for Fastlane can be found in the [fastlane folder](https
 	Match is an alias for the sync\_code\_signing action. It's to simplify the codesigning setup and prevent code signing issues across a team of developers (if there's more than one).
 
 
-**6. Unit-Tests**  
+**8. Unit-Tests**  
 See Test Folders: [Tests](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/TreasureHuntAppTests) and [UITests](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/TreasureHuntAppUITests)  
 
-**7. Continuous Integration/Continuous Delivery (CI/CD)**  
+**9. Continuous Integration/Continuous Delivery (CI/CD)**  
 For CI/CD Jenkins + Fastlane are used. The configuration/pipeline can be found in the [Jenkinsfile](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/pipelines/Jenkinsfile).  
 You can also see the different stages in Jenkins' stage view:  
 
@@ -97,7 +97,7 @@ Defined recipients are notified via email when a build starts and also receive a
 
 <img src="Screenshots/mail_notification_build_started.png" width="400"> <img src="Screenshots/mail_notification_build_finished.png" width="400">  
 
-**8. IDE**  
+**10. IDE**  
 For this project XCode 12.2 was used. Some very useful shortcuts were the following:
 
 | Shortcut      			| Description                    				  			|
@@ -114,21 +114,14 @@ For this project XCode 12.2 was used. Some very useful shortcuts were the follow
 
 This project uses the framework SwiftUI to build user interfaces. With that we're also able to quickly modify and build our views with the preview feature and attributes inspector in Xcode.
 
-**9. Domain-Specific Language (DSL)**  
+**11. Domain-Specific Language (DSL)**  
 You can find an example for internal DSL [here](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/blob/main/TreasureHuntApp/View/DSL-Example/DSL_Example.swift):  
-SwiftUI itself is already kind of a DSL that simplifies building a UI. The implemented ViewModifiers in this project can be used to modify views by just simply adding, here for example, modifyAdd(). In CreateTreasureHuntView it is used like this:  
-```swift
-Button(action: {
-    showCreateCheckpointSheet = true
-}, label: {
-    Text("Add Checkpoint").modifyAdd()
-})
-```
+SwiftUI itself is already kind of a DSL that simplifies building a UI. The implemented ViewModifiers in this project can be used to modify views by just simply adding, here for example, modifyAdd().  
 It's a functional, Domain Specific Language for interface declaration.  
 
-**10. Functional Programming**  
-For final data structures: For example almost all variables of the [CheckpointCreateModel](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/blob/main/TreasureHuntApp/Model/CheckpointCreateModel.swift) viewmodel are declared as let variables which means they are final.  
-And the Views are of type struct which are also immutable, so their var's are also final.  
-Different functionalities are also separated into different methods in order to provide side-effect free functions (e.g. the functions in [MapView](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/blob/main/TreasureHuntApp/View/MapView.swift)).  
-Use of higher-order functions (when functions are used as parameters and/or return values and closures/anonymous functions are used.): This is, for example, the case with the timer and updateCheckpoint() method in the MapView.  
-And throughout almost all View classes you can find closures as parameters for functions: For example with buttons, functions are given as closures for the action parameter. The functions are then being run when the button is clicked.
+**12. Functional Programming**  
+Only final data structures:  
+All variables of the Viewmodels are declared as let variables which means they are final. Views are of type struct which are also immutable, so their var's are also final.
+Use of higher-order functions (When functions are used as parameters and/or return values and closures / anonymous functions are used.):    
+This is the case with the map, reduce and filter functions used on arrays. In this project see for example the use of filter in LocationComponent.getLocationOfCurrentCheckpoint() or closures as predicate parameter for the firstIndex function in CheckpointComponent.findCheckpoint().  
+Also for example with buttons, functions are also given as closures for the action parameter. The functions are then being run when the button is clicked.

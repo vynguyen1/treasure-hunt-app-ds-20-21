@@ -16,20 +16,13 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Does a static analysis of the project. Configure the options in .swiftlint.yml"
-  lane :lint do
-  	swiftlint(
-  		mode: :lint,
-  		output_file: 'sonar-reports/swiftlint.txt',
-   		config_file: 'fastlane/.swiftlint.yml'
-  	)
-  end
   
   desc "Test the application. Configure options in fastlane/Scanfile"
   lane :test_app do |options|
     publish_reports = options[:publish_reports]
     scan
     if publish_reports
+      # see the following lane for details
       publish_reports_to_sonar
     end 
   end
@@ -71,10 +64,14 @@ platform :ios do
     gym(scheme: "TreasureHuntApp")
   end
   
-  desc "Test and build the application"
-  lane :test_build_app do
-    scan
-    gym(scheme: "TreasureHuntApp")
+  # For testing swiftlint
+  desc "Does a static analysis of the project. Configure the options in .swiftlint.yml"
+  lane :lint do
+  	swiftlint(
+  		mode: :lint,
+  		output_file: 'sonar-reports/swiftlint.txt',
+   		config_file: 'fastlane/.swiftlint.yml'
+  	)
   end
   
 end
