@@ -12,33 +12,28 @@ The app enables you to create own treasure hunts that you can use to go on littl
 You have a StartView from which you get to a list of available treasure hunts where you can also delete them.  
 With the button at the bottom you can create new ones.   
 
-<img src="Screenshots/phone.png" width="150"> 
-<img src="Screenshots/start_view.png" width="150"> 
-<img src="Screenshots/list_view.png" width="150"> 
-<img src="Screenshots/list_view_delete.png" width="150">  
+<img src="Screenshots/phone.png" width="150"> <img src="Screenshots/start_view.png" width="150"> <img src="Screenshots/list_view.png" width="150"> <img src="Screenshots/list_view_delete.png" width="150">  
+
 
 This is what the view for creating a hunt looks like. You can pass in a name, description and also add several checkpoints.  
 
-<img src="Screenshots/create_hunt_filled_out.png" width="150"> 
-<img src="Screenshots/create_checkpoint_view.png" width="150">  
+<img src="Screenshots/create_hunt_filled_out.png" width="150"> <img src="Screenshots/create_checkpoint_view.png" width="150">  
 
 
 This is what the detailed view of a treasure hunt looks like. If the checkpoints haven't been reached/checked off yet they are hidden.  
 With the edit option you can also change the hunts after you've created them (e.g. delete a checkpoint again).
 
-<img src="Screenshots/detailed_hunt_view.png" width="150"> 
-<img src="Screenshots/edit_hunt_view_del.png" width="150">  
+<img src="Screenshots/detailed_hunt_view.png" width="150"> <img src="Screenshots/edit_hunt_view_del.png" width="150">  
+
 
 Once you've started a hunt the MapView looks like this. When you've reached a checkpoint it will be annotated on the map with a pin and the detailed view will also be updated:  
 
-<img src="Screenshots/map_view_hint.png" width="150"> 
-<img src="Screenshots/detailed_hunt_checked_view.png" width="150">  
+<img src="Screenshots/map_view_hint.png" width="150"> <img src="Screenshots/detailed_hunt_checked_view.png" width="150">  
+
 
 When you've finished a treasure hunt a finished view will appearand the map will have all checkpoints visible. They can also be seen in the detailed view.  
 
-<img src="Screenshots/finished_view.png" width="150"> 
-<img src="Screenshots/finished_map_view.png" width="150"> 
-<img src="Screenshots/detailed_hunt_finished_view.png" width="150">  
+<img src="Screenshots/finished_view.png" width="150"> <img src="Screenshots/finished_map_view.png" width="150"> <img src="Screenshots/detailed_hunt_finished_view.png" width="150">  
 
 
 
@@ -96,13 +91,11 @@ And also the changes that have been made:
 
 When something is being pushed to the git repository a job in Jenkins is being triggered via webhook. Since Jenkins is run locally ngrok is used which provides public URLs (creates a secure tunnel from a public endpoint to a locally running web service).  
 
-<img src="Screenshots/ngrok.png" width="250">
-<img src="Screenshots/git_webhook.png" width="300">  
+<img src="Screenshots/ngrok.png" width="250"> <img src="Screenshots/git_webhook.png" width="300">  
 
 Defined recipients are notified via email when a build starts and also receive an email when a build has finished with the respective build status:  
 
-<img src="Screenshots/mail_notification_build_started.png" width="400">
-<img src="Screenshots/mail_notification_build_finished.png" width="400">  
+<img src="Screenshots/mail_notification_build_started.png" width="400"> <img src="Screenshots/mail_notification_build_finished.png" width="400">  
 
 **10. IDE**  
 For this project XCode 12.2 was used. Some very useful shortcuts were the following:
