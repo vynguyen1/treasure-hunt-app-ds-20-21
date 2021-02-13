@@ -23,40 +23,41 @@ struct EditTreasureHuntView: View {
             Image("treasure-hunt-test-image")
                 .resizable()
                 .frame(height: 200.0)
-            
-            Text("Edit treasure hunt")
-                .padding()
-                .font(.system(size: 24, weight: .light))
-            TextField("Name...", text: $name)
-                .padding()
-                .frame(height: 10, alignment: .center)
-            TextEditor(text: $huntDescription)
-                .padding()
-                .frame(width: UIScreen.main.bounds.width, height: 80, alignment: .topLeading)
-            
-//            NavigationLink(
-//                destination: CreateCheckpointView(checkpoints: $checkpoints)) {
-//                Text("Add Checkpoint").modifyAdd()
-//            }
-            Button(action: {
-                showCreateCheckpointSheet = true
-            }, label: {
-                Text("Add Checkpoint").modifyAdd()
-            })
-            List {
-                ForEach(checkpoints) { checkpoint in
-                    Text("\(checkpoint.name)")
-                }.onDelete(perform: deleteCheckpoint)
+//                Text("Edit treasure hunt")
+//                    .padding()
+//                    .font(.system(size: 24, weight: .light))
+            Form {
+                Section(header: Text("Details")) {
+                    TextField("Name...", text: $name)
+                        .padding()
+                        .frame(height: 10, alignment: .center)
+                    TextField("Description...", text: $huntDescription)
+                        .padding()
+                        // .frame(width: UIScreen.main.bounds.width, height: 80, alignment: .topLeading)
+                }
+                Section(header: Text("Checkpoints")) {
+                    List {
+                        ForEach(checkpoints.sorted(by: { $0.rank < $1.rank })) { checkpoint in
+                            Text("\(checkpoint.name)")
+                        }.onDelete(perform: deleteCheckpoint)
+                    }
+                }
             }
-//            List(checkpoints) { checkpoint in
-//                CheckpointEditRow(treasureHunt: treasureHunt, checkpoint: checkpoint)
-//            }
-            Button(action: finishAndSaveTreasureHuntEdit) {
-                Image(systemName: "checkmark").modifyButton(backgroundColor: Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
-            }.padding()
-        }.sheet(isPresented: $showCreateCheckpointSheet) {
+            HStack {
+                Button(action: {
+                    showCreateCheckpointSheet = true
+                }, label: {
+                    Text("Add Checkpoint").modifyAdd()
+                })
+                Button(action: finishAndSaveTreasureHuntEdit) {
+                    Image(systemName: "checkmark").modifyButton(backgroundColor: Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
+                }.padding()
+            }
+        }
+        .sheet(isPresented: $showCreateCheckpointSheet) {
             CreateCheckpointView(checkpoints: $checkpoints)
         }
+        .navigationTitle("Edit Treasure Hunt")
     }
     
     func deleteCheckpoint(at offsets: IndexSet) {
@@ -102,7 +103,5 @@ struct EditTreasureHuntView_Previews: PreviewProvider {
         EditTreasureHuntView(treasureHunt: treasureHunt,
                              checkpoints: CheckpointCreateModel.checkpointsToCreateModels(Array(treasureHunt.checkpoints! as Set)))
             .environment(\.managedObjectContext, viewContext)
-//        let treasureHunt = TreasureHunts().treasureHunts.first!
-//        EditTreasureHuntView(treasureHunt: treasureHunt)
     }
 }

@@ -12,30 +12,33 @@ struct DetailedHuntView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var treasureHunt: TreasureHunt
-    // @ObservedObject var treasureHunts: TreasureHunts
     
     @State var userLocation = UserLocation()
     
     var body: some View {
         VStack {
             Image("andrew-neel-unsplash").resizable()
-                // .scaledToFit()
                 .frame(height: 200.0, alignment: .leading)
-            Text(treasureHunt.name)
-                .padding()
-                .font(.system(size: 28, weight: .light))
-            
-            Text(treasureHunt.huntDescription)
-                .padding()
-            Text("Checkpoints:")
-                .font(.system(size: 18, weight: .light))
-            List(Array(treasureHunt.checkpoints!), id: \.self) { checkpoint in
-                CheckpointRow(checkpoint: checkpoint)
+            Section {
+                Text(treasureHunt.name)
+                    .padding()
+                    .font(.system(size: 28, weight: .light))
+                Text(treasureHunt.huntDescription)
+                    .padding()
+            }
+            Form {
+//                Text("Checkpoints:")
+//                    .font(.system(size: 18, weight: .light))
+                Section(header: Text("Checkpoints")) {
+                    List(Array(treasureHunt.checkpoints!).sorted(by: { $0.rank < $1.rank }), id: \.self) { checkpoint in
+                        CheckpointRow(checkpoint: checkpoint)
+                    }
+                }
             }
             // Start/Continue Hunt
             HStack {
                 NavigationLink(destination: MapView(
-                                treasureHunt: treasureHunt, userLocation: userLocation, region: getDefaultRegion())
+                                treasureHunt: treasureHunt, userLocation: userLocation)
                                 .environment(\.managedObjectContext, self.viewContext)) {
                     Text(!(treasureHunt.inProgress && treasureHunt.finished) ? "Start" : "Continue").modifyButton(backgroundColor: Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
                 }
@@ -53,17 +56,15 @@ struct DetailedHuntView: View {
         }
     }
     
-    private func getDefaultRegion() -> MKCoordinateRegion {
-        return MKCoordinateRegion(center: CLLocationCoordinate2D(
-            latitude: userLocation.userLatitude, longitude: userLocation.userLongitude),
-            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-    }
+//    private func getDefaultRegion() -> MKCoordinateRegion {
+//        return MKCoordinateRegion(center: CLLocationCoordinate2D(
+//            latitude: userLocation.userLatitude, longitude: userLocation.userLongitude),
+//            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+//    }
 }
 
 struct DetailedHuntView_Previews: PreviewProvider {
     static var previews: some View {
-        // let treasureHunts = TreasureHunts()
-        // let treasureHunt = treasureHunts.treasureHunts.first!
         let viewContext = PersistenceController.preview.container.viewContext
         let treasureHunt = PersistenceController.createTreasureHuntForPreview(viewContext: viewContext)
         DetailedHuntView(treasureHunt: treasureHunt).environment(\.managedObjectContext, viewContext)

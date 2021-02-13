@@ -8,6 +8,8 @@
 import XCTest
 @testable import TreasureHuntApp
 
+
+// TODO: Delete
 class TreasureHuntAppTests: XCTestCase {
 
     override func setUpWithError() throws {

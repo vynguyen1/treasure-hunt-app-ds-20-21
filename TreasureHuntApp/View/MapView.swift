@@ -14,7 +14,6 @@ struct MapView: View {
     
     private let errorThreshold: Double = 0.001 // 0.0002
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    // private let treasureHuntIndex: Int
     
     @State private var finished: Bool = false
     
@@ -36,7 +35,7 @@ struct MapView: View {
                     interactionModes: .all,
                     showsUserLocation: true,
                     userTrackingMode: $trackingMode,
-                    annotationItems: treasureHunt.checkpoints?.filter {$0.checked == true} ?? [],
+                    annotationItems: treasureHunt.checkpoints?.filter {($0.checked == true)} ?? [],
                     annotationContent: { loc in
                         MapMarker(coordinate: CLLocationCoordinate2D(latitude: loc.locationLatitude, longitude: loc.locationLongitude),
                                   tint: .blue)
@@ -45,7 +44,7 @@ struct MapView: View {
                         self.timer.upstream.connect().cancel()
                     })
                 Divider()
-                Text("\(treasureHunt.checkpoints?.filter {$0.checked == true}.count ?? 0)/\(treasureHunt.checkpoints?.count ?? 0)")
+                Text("Checkpoints completed: \(treasureHunt.checkpoints?.filter {$0.checked == true}.count ?? 0)/\(treasureHunt.checkpoints?.count ?? 0)")
                     .onReceive(timer) { _ in
                         updateCheckpoint()()
                         if finished == true {
@@ -53,10 +52,13 @@ struct MapView: View {
                         }
                 }
                 if !self.finished {
-                    Text("Your Location").font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
-                    Text("Latitude: \(userLocation.userLatitude)\nLongitude: \(userLocation.userLongitude)")
-                        .multilineTextAlignment(.center)
+//                    Text("Your Location").font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
+//                    Text("Latitude: \(userLocation.userLatitude)\nLongitude: \(userLocation.userLongitude)")
+//                        .multilineTextAlignment(.center)
+                    Text("Hint:").font(.title3)
+                    Text(hintText)
                 }
+                Divider()
                 Text(messageText).padding()
             }
             if self.finished {
@@ -67,7 +69,7 @@ struct MapView: View {
                     .background(Color.init(#colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)))
                     .foregroundColor(.white)
             }
-        }// .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        }.navigationTitle(treasureHunt.name)
     }
 
     func updateCheckpoint() -> () -> Void {
@@ -79,10 +81,10 @@ struct MapView: View {
                     }.first!.checked = true
                     try? viewContext.save()
                 }
-                // treasureHunts.treasureHunts[treasureHuntIndex] = treasureHunt
                 messageText = "Checkpoint has been reached."
             } else {
                 messageText = "Not quite there yet!"
+                hintText = getCurrentCheckpoint()!.hint
             }
             self.finished = isFinished()
             if self.finished {
@@ -92,9 +94,7 @@ struct MapView: View {
                     treasureHunt.setValue(false, forKey: "inProgress")
                     try? viewContext.save()
                 }
-                // treasureHunts.treasureHunts[treasureHuntIndex] = treasureHunt
             }
-            //try? viewContext.save()
         }
     }
 
@@ -116,15 +116,22 @@ struct MapView: View {
     }
 
     func getCurrentCheckpoint() -> Checkpoint? {
-        return treasureHunt.checkpoints!.filter { checkpoint in
-            return checkpoint.checked == false
-        }.first
+        return treasureHunt.checkpoints!
+            .sorted(by: { $0.rank < $1.rank })
+            .filter { checkpoint in
+                return checkpoint.checked == false
+            }
+            .first
     }
 
-    init(treasureHunt: TreasureHunt, userLocation: UserLocation, region: MKCoordinateRegion) {
+    init(treasureHunt: TreasureHunt, userLocation: UserLocation) {
         self.treasureHunt = treasureHunt
         self.userLocation = userLocation
-        self.region = region
+        self.region = // State(initialValue:
+                                MKCoordinateRegion(center: CLLocationCoordinate2D(
+            latitude: userLocation.userLatitude, longitude: userLocation.userLongitude),
+            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)) // )
+        // self.region = region
         if treasureHunt.finished == false && treasureHunt.inProgress == false {
             treasureHunt.setValue(true, forKey: "inProgress")
             try? viewContext.save()
@@ -133,9 +140,6 @@ struct MapView: View {
 //            item.uuid == treasureHuntId
 //        })!
 //        self.treasureHunts = treasureHunts
-//        _region = State(initialValue: MKCoordinateRegion(center: CLLocationCoordinate2D(
-//            latitude: userLocation.userLatitude, longitude: userLocation.userLongitude),
-//            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)))
         if let checkpoint = getCurrentCheckpoint() {
             self.hintText = checkpoint.hint
         }
@@ -152,8 +156,8 @@ struct MapView_Previews: PreviewProvider {
         let viewContext = PersistenceController.preview.container.viewContext
         let treasureHunt = PersistenceController.createTreasureHuntForPreview(viewContext: viewContext)
         let userLocation = UserLocation()
-        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 52.520008, longitude: 13.404954),
-                                            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-        MapView(treasureHunt: treasureHunt, userLocation: userLocation, region: region).environment(\.managedObjectContext, viewContext)
+//        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 52.520008, longitude: 13.404954),
+//                                            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        MapView(treasureHunt: treasureHunt, userLocation: userLocation).environment(\.managedObjectContext, viewContext)
     }
 }

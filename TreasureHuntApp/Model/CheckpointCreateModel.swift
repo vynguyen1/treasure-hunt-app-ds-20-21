@@ -11,20 +11,22 @@ import MapKit
 
 class CheckpointCreateModel: Identifiable {
     
-    var uuid: UUID
-    var name: String
-    var hint: String
-    var locationLatitude: Double
-    var locationLongitude: Double
-    var checked: Bool
+    let uuid: UUID
+    let name: String
+    let hint: String
+    let locationLatitude: Double
+    let locationLongitude: Double
+    let checked: Bool
+    var rank: Int
     
-    init(uuid: UUID, name: String, hint: String, locationLatitude: Double, locationLongitude: Double, checked: Bool = false) {
+    init(uuid: UUID, name: String, hint: String, locationLatitude: Double, locationLongitude: Double, checked: Bool = false, rank: Int) {
         self.uuid = uuid
         self.name = name
         self.hint = hint
         self.locationLatitude = locationLatitude
         self.locationLongitude = locationLongitude
         self.checked = checked
+        self.rank = rank
     }
     
     static func createModelsToCheckpoints(_ createModels: [CheckpointCreateModel], _ viewContext: NSManagedObjectContext) -> [Checkpoint] {
@@ -44,6 +46,7 @@ class CheckpointCreateModel: Identifiable {
         checkpoint.hint = checkpointCreateModel.hint
         checkpoint.locationLatitude = checkpointCreateModel.locationLatitude
         checkpoint.locationLongitude = checkpointCreateModel.locationLongitude
+        checkpoint.rank = checkpointCreateModel.rank
         return checkpoint
     }
     
@@ -62,11 +65,26 @@ class CheckpointCreateModel: Identifiable {
         let hint = checkpoint.hint
         let locationLatitude = checkpoint.locationLatitude
         let locationLongitude = checkpoint.locationLongitude
+        let rank = checkpoint.rank
         return CheckpointCreateModel(uuid: uuid,
                                      name: name,
                                      hint: hint,
                                      locationLatitude: locationLatitude,
                                      locationLongitude: locationLongitude,
-                                     checked: checked)
+                                     checked: checked,
+                                     rank: rank)
     }
+}
+
+extension CheckpointCreateModel: Equatable {
+    static func == (model1: CheckpointCreateModel, model2: CheckpointCreateModel) -> Bool {
+            return
+                model1.uuid == model2.uuid &&
+                model1.name == model2.name &&
+                model1.hint == model2.hint &&
+                model1.locationLatitude == model2.locationLatitude &&
+                model1.locationLongitude == model2.locationLongitude &&
+                model1.checked == model2.checked &&
+                model1.rank == model2.rank
+        }
 }

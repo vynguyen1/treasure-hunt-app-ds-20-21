@@ -22,6 +22,7 @@ extension Checkpoint {
     @NSManaged public var hint: String
     @NSManaged public var uuid: UUID
     @NSManaged public var name: String
+    @NSManaged public var rank: Int
     @NSManaged public var treasureHunt: TreasureHunt?
 
 }

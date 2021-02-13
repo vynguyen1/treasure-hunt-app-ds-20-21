@@ -44,7 +44,7 @@ struct AddModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding()
-            .frame(width: 170, height: 40, alignment: .center)
+            .frame(width: 170, height: 50, alignment: .center)
             .foregroundColor(.white)
             .background(Color.init(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
             .cornerRadius(10.0)
