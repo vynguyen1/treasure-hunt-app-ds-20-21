@@ -18,6 +18,7 @@ class CheckpointCreateModelTest: XCTestCase {
     private let locationLatitude = 52.545175
     private let locationLongitude = 13.3494393
     private let checked = false
+    private let rank = 0
 
     func test_checkpoint_to_create_model() {
         
@@ -50,7 +51,8 @@ class CheckpointCreateModelTest: XCTestCase {
                                      hint: self.hint,
                                      locationLatitude: self.locationLatitude,
                                      locationLongitude: self.locationLongitude,
-                                     checked: self.checked)
+                                     checked: self.checked,
+                                     rank: self.rank)
     }
     
     private func createCheckpoint() -> Checkpoint {
