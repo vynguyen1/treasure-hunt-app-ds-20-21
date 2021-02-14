@@ -6,7 +6,7 @@ WS 2020/2021
 *<div>App Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>  
 Picture in Create- and EditTreasureHuntView made by <a href="https://unsplash.com/photos/RFId0_7kep4">N.</a>  
 Picture in DetailedHuntView made by <a href="https://unsplash.com/photos/1-29wyvvLJA">Andrew Neel</a>.  
-Both taken from <a href="https://unsplash.com/">www.unsplash.com</a></div>*
+Both pictures were taken from <a href="https://unsplash.com/">www.unsplash.com</a></div>*
 
 **The Application**  
 
@@ -56,14 +56,14 @@ All UML diagrams can be found in the [UML folder](https://github.com/vynguyen1/t
 **2. Domain-Driven Design (DDD)**  
 <img src="Diagrams/DDD_Diagram.png" width="400">  
 This is what the Domain could look like (With investors, third parties, a user management system etc.)  
-For the DDD Diagram in large click [here](ttps://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/Diagrams/DDD_Diagram.png)  
+For the DDD Diagram in large click [here](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/Diagrams/DDD_Diagram.png).  
 
 **3. Metrics**  
 For metrics SonarQube is used and Fastlane for gathering the SonarQube metrics. The configuration can be found in the [sonar-project.properties file](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/sonar-project.properties). It, amongst other things, checks for Maintainability (Code Smells,...), Duplications and Code Coverage.  
 The configuration for Swiftlint (a tool to enforce Swift style and conventions, used for the code smells metric) can be found in [.swiftlint.yml](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/fastlane/.swiftlint.yml). This is also used with SonarQube.  
 
 **4. Clean Code Development (CCD)**  
-For the CCD cheat-sheet click [here](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/Diagrams/CCD_Sheet.png):  
+For the CCD cheat-sheet in large click [here](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/Diagrams/CCD_Sheet.png).  
 <img src="Diagrams/CCD_Sheet.png" width="500">  
 
 1. Naming  
@@ -88,7 +88,8 @@ The configuration files for Fastlane can be found in the [fastlane folder](https
 1. Appfile:  
 	The Appfile stores useful information that are used across all fastlane tools (e.g. Apple ID, application Bundle Identifier,...) to deploy lanes faster and tailored on the project needs.
 2. Fastfile:  
-	The Fastfile stores the automation configuration that can be run with fastlane. Here you find different lanes I implemented. For example one for testing (and publishing the application reports to sonar), one for building (produces, amongst other things, an ipa file - an iOS application archive file which stores an iOS app - and puts it in a build folder in the jenkins workspace (local) and also a lane for testing swiftlint.
+	The Fastfile stores the automation configuration that can be run with fastlane. Here you find different lanes I implemented. For example one called _test\_app_ for testing (and publishing the application reports to sonar via the _publish\_reports\_to\_sonar_ lane), one called _beta_ for building (produces, amongst other things, an ipa file - an iOS application archive file which stores an iOS app - and puts it in a build folder in the jenkins workspace (local) and also a lane called _lint_ for testing swiftlint.  
+	We can use these lanes with, for example, this command executed in the project folder: _fastlane test\_app_
 3. Scanfile:  
 	Scan is an alias for the run_tests action. It's to run tests of the iOS app on a simulator or connected device. The configuration for that can be found in the Scanfile. Reports about the test results (in html and junit format) are put in the reports folder (also in the local workspace).
 4. Gymfile:  

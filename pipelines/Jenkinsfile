@@ -8,7 +8,7 @@ pipeline {
         }
 		stage('Checkout and Setup') {
 	        steps {
-			    echo 'Checkout and Setup..'
+                echo 'Checkout and Setup..'
                 checkout scm
                 sh 'cd fastlane'
             }
@@ -16,7 +16,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-   	            sh 'fastlane test_app publish_reports:true'
+                sh 'fastlane test_app publish_reports:true'
             }
         }
         stage('Build') {
