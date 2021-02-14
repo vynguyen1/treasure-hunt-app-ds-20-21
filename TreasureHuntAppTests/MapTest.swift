@@ -14,23 +14,58 @@ class MapTest: XCTestCase {
     private let viewContext = PersistenceController.preview.container.viewContext
 
     func test_get_current_checkpoint() {
-
+        let treasureHunt = createTreasureHunt()
+        let userLocation = UserLocation()
+        let currentCheckpoint = MapView(treasureHunt: treasureHunt, userLocation: userLocation).getCurrentCheckpoint()
+        
+        let controlCheckpoint = treasureHunt.checkpoints?.sorted(by: { $0.rank < $1.rank })[1]
+        
+        XCTAssertTrue(
+            controlCheckpoint!.uuid == currentCheckpoint!.uuid &&
+            controlCheckpoint!.name == currentCheckpoint!.name &&
+            controlCheckpoint!.hint == currentCheckpoint!.hint &&
+            controlCheckpoint!.locationLatitude == currentCheckpoint!.locationLatitude &&
+            controlCheckpoint!.locationLongitude == currentCheckpoint!.locationLongitude &&
+            controlCheckpoint!.checked == currentCheckpoint!.checked &&
+            controlCheckpoint!.rank == currentCheckpoint!.rank
+        )
     }
     
     func test_get_location_of_current_checkpoint() {
+        let treasureHunt = createTreasureHunt()
+        let userLocation = UserLocation()
+        let locationOfCurrentCheckpoint = MapView(treasureHunt: treasureHunt, userLocation: userLocation).getLocationOfCurrentCheckpoint()
         
+        let locationControl = CLLocationCoordinate2D(latitude: 52.5274805, longitude: 13.342754)
+        
+        XCTAssertTrue(locationControl.latitude == locationOfCurrentCheckpoint.latitude &&
+                        locationControl.longitude == locationOfCurrentCheckpoint.longitude)
     }
     
     func test_if_checkpoint_has_been_reached() {
+        let treasureHunt = createTreasureHunt()
+        let userLocation = UserLocation()
+        let hasBeenReached = MapView(treasureHunt: treasureHunt, userLocation: userLocation).checkpointHasBeenReached()
         
+        XCTAssertFalse(hasBeenReached)
     }
     
     func test_is_finished() {
+        let treasureHunt = createTreasureHunt()
+        let userLocation = UserLocation()
+        let isFinished = MapView(treasureHunt: treasureHunt, userLocation: userLocation).isFinished()
         
+        XCTAssertFalse(isFinished)
     }
     
-    func test_update_checkpoint() {
+    func test_update_checkpoint_when_not_reached() {
+        let treasureHunt = createTreasureHunt()
+        let userLocation = UserLocation()
         
+        MapView(treasureHunt: treasureHunt, userLocation: userLocation).updateCheckpoint()()
+        let checked = treasureHunt.checkpoints?.sorted(by: { $0.rank < $1.rank })[1].checked
+        
+        XCTAssertFalse(checked!)
     }
     
     private func createTreasureHunt() -> TreasureHunt {
@@ -46,7 +81,7 @@ class MapTest: XCTestCase {
         let checkpoint = Checkpoint(entity: checkpointDescription!, insertInto: viewContext)
         checkpoint.uuid = UUID(uuidString: "960bfe9c-42dc-4652-ba98-7364f0a4f568")!
         checkpoint.name = "Beuth"
-        checkpoint.checked = false
+        checkpoint.checked = true
         checkpoint.hint = "You study here."
         checkpoint.locationLatitude = 52.545175
         checkpoint.locationLongitude = 13.3494393

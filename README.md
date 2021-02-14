@@ -3,7 +3,11 @@
 "Forgeschrittene Softwaretechnik"  
 WS 2020/2021
 
-*<div>App Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>*
+*<div>App Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>  
+Picture in Create- and EditTreasureHuntView made by <a href="https://unsplash.com/photos/RFId0_7kep4">N.</a>  
+Picture in DetailedHuntView made by <a href="https://unsplash.com/photos/1-29wyvvLJA">Andrew Neel</a>.  
+Both taken from <a href="https://unsplash.com/">www.unsplash.com</a>
+</div>*
 
 **The Application**  
 
