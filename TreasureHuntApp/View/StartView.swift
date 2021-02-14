@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StartView: View {
     
+    // TODO: Nice-to-have: Add login and different users and distinguish between user's own and other user's hunts etc.
     var body: some View {
         NavigationView {
             VStack {

@@ -27,15 +27,12 @@ struct DetailedHuntView: View {
                     .padding()
             }
             Form {
-//                Text("Checkpoints:")
-//                    .font(.system(size: 18, weight: .light))
                 Section(header: Text("Checkpoints")) {
                     List(Array(treasureHunt.checkpoints!).sorted(by: { $0.rank < $1.rank }), id: \.self) { checkpoint in
                         CheckpointRow(checkpoint: checkpoint)
                     }
                 }
             }
-            // Start/Continue Hunt
             HStack {
                 NavigationLink(destination: MapView(
                                 treasureHunt: treasureHunt, userLocation: userLocation)
@@ -55,12 +52,6 @@ struct DetailedHuntView: View {
             Divider()
         }
     }
-    
-//    private func getDefaultRegion() -> MKCoordinateRegion {
-//        return MKCoordinateRegion(center: CLLocationCoordinate2D(
-//            latitude: userLocation.userLatitude, longitude: userLocation.userLongitude),
-//            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-//    }
 }
 
 struct DetailedHuntView_Previews: PreviewProvider {

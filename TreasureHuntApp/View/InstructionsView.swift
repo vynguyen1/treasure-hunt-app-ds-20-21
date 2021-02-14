@@ -10,8 +10,14 @@ import SwiftUI
 struct InstructionsView: View {
     var body: some View {
         VStack {
-            Text("Instructions here coming soon...")
-        }.navigationBarTitle("Instructions")
+            Image(systemName: "mappin.and.ellipse")
+            Text("This app enables you to create your own treasure hunts that you can use to go on little adventures with. :)")
+                .font(.title2)
+                .multilineTextAlignment(.center)
+                .padding()
+            Image(systemName: "map")
+            Text("Further instructions here coming soon...").padding()        }
+        .navigationBarTitle("Instructions")
     }
 }
 

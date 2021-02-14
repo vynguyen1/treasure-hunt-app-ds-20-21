@@ -9,10 +9,10 @@ WS 2020/2021
 
 The app enables you to create own treasure hunts that you can use to go on little adventures with.  
 
-You have a StartView from which you get to a list of available treasure hunts where you can also delete them.  
+You have a StartView from which you get to the instructions and a list of available treasure hunts where you can also delete them.  
 With the button at the bottom you can create new ones.   
 
-<img src="Screenshots/phone.png" width="150"> <img src="Screenshots/start_view.png" width="150"> <img src="Screenshots/list_view.png" width="150"> <img src="Screenshots/list_view_delete.png" width="150">  
+<img src="Screenshots/phone.png" width="150"> <img src="Screenshots/start_view.png" width="150"> <img src="Screenshots/instructions_view.png" width="150"> <img src="Screenshots/list_view.png" width="150"> <img src="Screenshots/list_view_delete.png" width="150">  
 
 
 This is what the view for creating a hunt looks like. You can pass in a name, description and also add several checkpoints.  

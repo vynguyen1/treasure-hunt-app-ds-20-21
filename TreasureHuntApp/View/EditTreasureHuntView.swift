@@ -23,17 +23,17 @@ struct EditTreasureHuntView: View {
             Image("treasure-hunt-test-image")
                 .resizable()
                 .frame(height: 200.0)
-//                Text("Edit treasure hunt")
-//                    .padding()
-//                    .font(.system(size: 24, weight: .light))
             Form {
                 Section(header: Text("Details")) {
-                    TextField("Name...", text: $name)
+                    TextField("Name...", text: $name, onCommit: {
+                        UIApplication.shared.endEditing()
+                    })
                         .padding()
                         .frame(height: 10, alignment: .center)
-                    TextField("Description...", text: $huntDescription)
+                    TextField("Description...", text: $huntDescription, onCommit: {
+                        UIApplication.shared.endEditing()
+                    })
                         .padding()
-                        // .frame(width: UIScreen.main.bounds.width, height: 80, alignment: .topLeading)
                 }
                 Section(header: Text("Checkpoints")) {
                     List {

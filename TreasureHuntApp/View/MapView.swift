@@ -15,7 +15,7 @@ struct MapView: View {
     
     @State var showFinishedSheet = false
     
-    private let errorThreshold: Double = 0.001 // 0.0002
+    private let errorThreshold: Double = 0.001
     let timer = Timer.publish(every: 1, on: .current, in: .common).autoconnect()
     
     @State private var finished: Bool = false
@@ -48,7 +48,10 @@ struct MapView: View {
                         self.timer.upstream.connect().cancel()
                     })
                 Divider()
-                Text("Checkpoints completed:\(treasureHunt.checkpoints?.filter {$0.checked == true}.count ?? 0)/\(treasureHunt.checkpoints?.count ?? 0)")
+                Text("""
+                        Checkpoints completed:
+                        \(treasureHunt.checkpoints?.filter {$0.checked == true}.count ?? 0)/\(treasureHunt.checkpoints?.count ?? 0)
+                    """)
                     .onReceive(timer) { _ in
                         updateCheckpoint()()
                         if self.finished == true {
@@ -56,23 +59,12 @@ struct MapView: View {
                         }
                 }
                 if !self.finished {
-//                    Text("Your Location").font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
-//                    Text("Latitude: \(userLocation.userLatitude)\nLongitude: \(userLocation.userLongitude)")
-//                        .multilineTextAlignment(.center)
                     Text(hintHeadline).font(.title3)
                     Text(hintText)
                 }
                 Divider()
                 Text(messageText).padding()
             }
-//            if self.finished {
-//                Text("Congratulations!!\nYou’ve reached the goal! Hope you’ve enjoyed this little adventure :)")
-//                    .frame(width: UIScreen.main.bounds.width-20, height: 300)
-//                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-//                    .multilineTextAlignment(.center)
-//                    .background(Color.init(#colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)))
-//                    .foregroundColor(.white)
-//            }
         }
         .sheet(isPresented: $showFinishedSheet) {
             FinishedView(name: treasureHunt.name)
@@ -150,10 +142,6 @@ struct MapView: View {
             treasureHunt.setValue(true, forKey: "inProgress")
             try? viewContext.save()
         }
-//        self.treasureHuntIndex = treasureHunts.treasureHunts.firstIndex(where: { (item) -> Bool in
-//            item.uuid == treasureHuntId
-//        })!
-//        self.treasureHunts = treasureHunts
         if let checkpoint = getCurrentCheckpoint() {
             self.hintText = checkpoint.hint
         }

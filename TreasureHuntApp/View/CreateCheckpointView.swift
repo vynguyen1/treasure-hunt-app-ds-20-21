@@ -19,7 +19,7 @@ struct CreateCheckpointView: View {
     @State private var latitude: String = ""
     @State private var longitude: String = ""
     
-    // Not used yet
+    // TODO: Nice-to-have: Question feature (below variables not used yet)
     @State private var putQuestion = false
     @State private var answer1 = false
     @State private var answer2 = false
@@ -32,16 +32,13 @@ struct CreateCheckpointView: View {
     var body: some View {
         VStack {
             Form {
-//                Text("Add a Checkpoint")
-//                    .font(.system(size: 24, weight: .light))
-//                    .padding()
                 Section(header: Text("Details")) {
-                    TextField("Name...", text: $name, onCommit:  {
+                    TextField("Name...", text: $name, onCommit: {
                         UIApplication.shared.endEditing()
                     })
                         .padding()
                         .frame(height: 20, alignment: .leading)
-                    TextField("Add a hint...", text: $hint, onCommit:  {
+                    TextField("Add a hint...", text: $hint, onCommit: {
                         UIApplication.shared.endEditing()
                     })
                         .padding()
@@ -49,11 +46,11 @@ struct CreateCheckpointView: View {
                 }
                 Section(header: Text("Coordinates")) {
                     // TODO: Nice-to-have: Change to tap on map: Map(coordinateRegion: $region)
-                    TextField("Latitude...", text: $latitude, onCommit:  {
+                    TextField("Latitude...", text: $latitude, onCommit: {
                         UIApplication.shared.endEditing()
                     })
                         .padding()
-                    TextField("Longitude...", text: $longitude, onCommit:  {
+                    TextField("Longitude...", text: $longitude, onCommit: {
                         UIApplication.shared.endEditing()
                     })
                         .padding()
@@ -88,7 +85,6 @@ struct CreateCheckpointView: View {
                     }
                 }.hidden()
             }
-            // Create Checkpoint
             Button(action: createCheckpointCreateModel) {
                 Text("Create").modifyButton(backgroundColor: Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
             }.padding()
