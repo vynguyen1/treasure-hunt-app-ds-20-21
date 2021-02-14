@@ -6,8 +6,7 @@ WS 2020/2021
 *<div>App Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>  
 Picture in Create- and EditTreasureHuntView made by <a href="https://unsplash.com/photos/RFId0_7kep4">N.</a>  
 Picture in DetailedHuntView made by <a href="https://unsplash.com/photos/1-29wyvvLJA">Andrew Neel</a>.  
-Both taken from <a href="https://unsplash.com/">www.unsplash.com</a>
-</div>*
+Both taken from <a href="https://unsplash.com/">www.unsplash.com</a></div>*
 
 **The Application**  
 
@@ -55,7 +54,9 @@ All UML diagrams can be found in the [UML folder](https://github.com/vynguyen1/t
 	<img src="Diagrams/Sequence_Diagram.png" width="400">  
 
 **2. Domain-Driven Design (DDD)**  
-*In the making...*
+<img src="Diagrams/DDD_Diagram.png" width="400">  
+This is what the Domain could look like (With investors, third parties, a user management system etc.)  
+For the DDD Diagram in large click [here](ttps://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/Diagrams/DDD_Diagram.png)  
 
 **3. Metrics**  
 For metrics SonarQube is used and Fastlane for gathering the SonarQube metrics. The configuration can be found in the [sonar-project.properties file](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/sonar-project.properties). It, amongst other things, checks for Maintainability (Code Smells,...), Duplications and Code Coverage.  
