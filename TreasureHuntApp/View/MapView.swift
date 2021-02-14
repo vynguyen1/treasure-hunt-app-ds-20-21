@@ -48,10 +48,8 @@ struct MapView: View {
                         self.timer.upstream.connect().cancel()
                     })
                 Divider()
-                Text("""
-                        Checkpoints completed:
-                        \(treasureHunt.checkpoints?.filter {$0.checked == true}.count ?? 0)/\(treasureHunt.checkpoints?.count ?? 0)
-                    """)
+                Text("Checkpoints completed: " +
+                    "\(treasureHunt.checkpoints?.filter {$0.checked == true}.count ?? 0)/\(treasureHunt.checkpoints?.count ?? 0)")
                     .onReceive(timer) { _ in
                         updateCheckpoint()()
                         if self.finished == true {
@@ -133,11 +131,9 @@ struct MapView: View {
     init(treasureHunt: TreasureHunt, userLocation: UserLocation) {
         self.treasureHunt = treasureHunt
         self.userLocation = userLocation
-        self.region = // State(initialValue:
-                                MKCoordinateRegion(center: CLLocationCoordinate2D(
+        self.region = MKCoordinateRegion(center: CLLocationCoordinate2D(
             latitude: userLocation.userLatitude, longitude: userLocation.userLongitude),
-            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)) // )
-        // self.region = region
+            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         if treasureHunt.finished == false && treasureHunt.inProgress == false {
             treasureHunt.setValue(true, forKey: "inProgress")
             try? viewContext.save()
@@ -158,8 +154,6 @@ struct MapView_Previews: PreviewProvider {
         let viewContext = PersistenceController.preview.container.viewContext
         let treasureHunt = PersistenceController.createTreasureHuntForPreview(viewContext: viewContext)
         let userLocation = UserLocation()
-//        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 52.520008, longitude: 13.404954),
-//                                            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         MapView(treasureHunt: treasureHunt, userLocation: userLocation).environment(\.managedObjectContext, viewContext)
     }
 }
