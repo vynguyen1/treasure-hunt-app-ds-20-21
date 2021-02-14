@@ -19,16 +19,6 @@ struct CreateCheckpointView: View {
     @State private var latitude: String = ""
     @State private var longitude: String = ""
     
-    // TODO: Nice-to-have: Question feature (below variables not used yet)
-    @State private var putQuestion = false
-    @State private var answer1 = false
-    @State private var answer2 = false
-    @State private var answer3 = false
-    
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: UserLocation().userLatitude,
-                                                                                  longitude: UserLocation().userLongitude),
-                                                   span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-    
     var body: some View {
         VStack {
             Form {
@@ -45,7 +35,7 @@ struct CreateCheckpointView: View {
                         .frame(height: 80, alignment: Alignment.topLeading)
                 }
                 Section(header: Text("Coordinates")) {
-                    // TODO: Nice-to-have: Change to tap on map: Map(coordinateRegion: $region)
+                    // TODO: Nice-to-have: Change to tap on map
                     TextField("Latitude...", text: $latitude, onCommit: {
                         UIApplication.shared.endEditing()
                     })
@@ -55,35 +45,6 @@ struct CreateCheckpointView: View {
                     })
                         .padding()
                 }
-                
-                Section {
-                    // TODO: Nice-to-have: Question feature (Use Picker View)
-                    Toggle(isOn: $putQuestion) {
-                        Label("Put a question", systemImage: "questionmark.circle")
-                    }.padding().disabled(true)
-                    if putQuestion {
-                        TextField("Question...", text: .constant(""))
-                            .padding()
-                        HStack {
-                            TextField("Answer 1...", text: .constant(""))
-                            Toggle(isOn: $answer1) {
-                                Label("", systemImage: "checkmark.circle")
-                            }
-                        }
-                        HStack {
-                            TextField("Answer 2...", text: .constant(""))
-                            Toggle(isOn: $answer2) {
-                                Label("", systemImage: "checkmark.circle")
-                            }
-                        }
-                        HStack {
-                            TextField("Answer 3...", text: .constant(""))
-                            Toggle(isOn: $answer3) {
-                                Label("", systemImage: "checkmark.circle")
-                            }
-                        }
-                    }
-                }.hidden()
             }
             Button(action: createCheckpointCreateModel) {
                 Text("Create").modifyButton(backgroundColor: Color.init(#colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)))
