@@ -39,16 +39,16 @@ When you've finished a treasure hunt a finished view will appearand the map will
 
 **1. UML Diagrams**
 
-All UML diagrams can be found in the [UML folder](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML).  
+All UML diagrams can be found in the [UML folder](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/Diagrams).  
 
-1. For the Class Diagram click [here](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML/Class_Diagram.png)  
-	<img src="UML/Class_Diagram.png" width="400">  
+1. For the Class Diagram click [here](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/Diagrams/Class_Diagram.png)  
+	<img src="Diagrams/Class_Diagram.png" width="400">  
 	<br>
-2. For the Use-Case Diagram click [here](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML/Use_Case_Diagram.png)  
-	<img src="UML/Use_Case_Diagram.png" width="350">  
+2. For the Use-Case Diagram click [here](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/Diagrams/Use_Case_Diagram.png)  
+	<img src="Diagrams/Use_Case_Diagram.png" width="350">  
 	<br>
-3. For the Sequence Diagram click [here](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/UML/Sequence_Diagram.png)  
-	<img src="UML/Sequence_Diagram.png" width="400">  
+3. For the Sequence Diagram click [here](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/Diagrams/Sequence_Diagram.png)  
+	<img src="Diagrams/Sequence_Diagram.png" width="400">  
 
 **2. Domain-Driven Design (DDD)**  
 *In the making...*
@@ -58,7 +58,23 @@ For metrics SonarQube is used and Fastlane for gathering the SonarQube metrics. 
 The configuration for Swiftlint (a tool to enforce Swift style and conventions, used for the code smells metric) can be found in [.swiftlint.yml](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/fastlane/.swiftlint.yml). This is also used with SonarQube.  
 
 **6. Clean Code Development (CCD)**  
-*In the making...*
+For the CCD cheat-sheet click [here](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/Diagrams/CCD_Sheet.png):  
+<img src="Diagrams/CCD_Sheet.png" width="500">  
+
+1. Naming  
+	Naming conventions described in the cheat sheet are being kept.  
+	For example: The methods in the [CreateTreasureHuntView](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/blob/main/TreasureHuntApp/View/CreateTreasureHuntView.swift) class are named according to what they do. And all Views and Models have descriptive names.
+2. Class Design  
+	Different functionalities are separated into different classes and methods. You can see this in the above mentioned example as well.  
+	Extensions can be added to classes without modifying them. For example see the [Checkpoint](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/blob/main/TreasureHuntApp/Model/Checkpoint%2BCoreDataProperties.swift) or [TreasureHunt](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/blob/main/TreasureHuntApp/Model/TreasureHunt%2BCoreDataProperties.swift) classes.
+3. Maintainability  
+	Duplications are avoided. For example: The [ViewModifiers](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/blob/main/TreasureHuntApp/View/DSL-Example/DSL_Example.swift) are being kept at a common place to avoid repetition.
+4. Testing  
+	Unit tests are implemented which are fast, repeatable and independent from one another. See the [test folder](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/TreasureHuntAppTests).  
+	Code Coverage and other metrics are also being tested with [SonarQube](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/blob/main/sonar-project.properties).
+5. Code Smells  
+	Source code conventions like line length, function length and number of parameters are not being violated.  
+	These Code Smells are also being checked with [swiftlint](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/fastlane/.swiftlint.yml).
 
 **7. Build**  
 For this project Fastlane is used which is an open source build automation tool for Android and iOS for developers. In [Gemfile](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/Gemfile) we describe the gem dependencies required (like Fastlane).
