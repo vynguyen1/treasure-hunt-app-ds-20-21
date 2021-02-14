@@ -48,6 +48,16 @@
                ReferencedContainer = "container:TreasureHuntApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "163C322825D9D32C002FBC95"
+               BuildableName = "TreasureHuntUITests.xctest"
+               BlueprintName = "TreasureHuntUITests"
+               ReferencedContainer = "container:TreasureHuntApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
