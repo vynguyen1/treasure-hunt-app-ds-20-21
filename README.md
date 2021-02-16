@@ -104,7 +104,8 @@ The configuration files for Fastlane can be found in the [fastlane folder](https
 
 **6. Unit-Tests**  
 See Test Folders: [Tests](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/TreasureHuntAppTests) and [UITests](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/TreasureHuntAppUITests)  
-Test reports can also be found in the [sonar-reports folder](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/sonar-reports) (html-TEST-report and TEST-report).
+Test reports can also be found in the [sonar-reports folder](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/sonar-reports) (html-TEST-report and TEST-report). This is what the html-report looks like:  
+<img src="Screenshots/html_test_report.png" width="500"> 
 
 **7. Continuous Integration/Continuous Delivery (CI/CD)**  
 For CI/CD Jenkins + Fastlane are used. The configuration/pipeline can be found in the [Jenkinsfile](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/pipelines/Jenkinsfile).  
