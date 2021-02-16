@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='TreasureHuntAppUITests.xctest' tests='13' failures='0'>
+  <testsuite name='TreasureHuntAppTests.CheckpointCreateModelTest' tests='2' failures='0'>
+    <testcase classname='TreasureHuntAppTests.CheckpointCreateModelTest' name='test_checkpoint_to_create_model' time='0.002'/>
+    <testcase classname='TreasureHuntAppTests.CheckpointCreateModelTest' name='test_create_model_to_checkpoint' time='0.001'/>
+  </testsuite>
+  <testsuite name='TreasureHuntAppTests.CreateTreasureHuntTest' tests='1' failures='0'>
+    <testcase classname='TreasureHuntAppTests.CreateTreasureHuntTest' name='test_create_view' time='0.001'/>
+  </testsuite>
+  <testsuite name='TreasureHuntAppTests.MapTest' tests='5' failures='0'>
+    <testcase classname='TreasureHuntAppTests.MapTest' name='test_get_current_checkpoint' time='0.008'/>
+    <testcase classname='TreasureHuntAppTests.MapTest' name='test_get_location_of_current_checkpoint' time='0.007'/>
+    <testcase classname='TreasureHuntAppTests.MapTest' name='test_if_checkpoint_has_been_reached' time='0.012'/>
+    <testcase classname='TreasureHuntAppTests.MapTest' name='test_is_finished' time='0.008'/>
+    <testcase classname='TreasureHuntAppTests.MapTest' name='test_update_checkpoint_when_not_reached' time='0.008'/>
+  </testsuite>
+  <testsuite name='TreasureHuntAppTests.UserLocationTest' tests='1' failures='0'>
+    <testcase classname='TreasureHuntAppTests.UserLocationTest' name='test_user_location_updates' time='0.010'/>
+  </testsuite>
+  <testsuite name='TreasureHuntAppUITests.CreateCheckpointViewTest' tests='1' failures='0'>
+    <testcase classname='TreasureHuntAppUITests.CreateCheckpointViewTest' name='test_create_hunt' time='4.120'/>
+  </testsuite>
+  <testsuite name='TreasureHuntAppUITests.InstructionsViewUITest' tests='1' failures='0'>
+    <testcase classname='TreasureHuntAppUITests.InstructionsViewUITest' name='test_instructions_view' time='2.863'/>
+  </testsuite>
+  <testsuite name='TreasureHuntAppUITests.StartViewTest' tests='2' failures='0'>
+    <testcase classname='TreasureHuntAppUITests.StartViewTest' name='test_launch_app' time='2.676'/>
+    <testcase classname='TreasureHuntAppUITests.StartViewTest' name='test_launch_performance' time='15.140'/>
+  </testsuite>
+</testsuites>

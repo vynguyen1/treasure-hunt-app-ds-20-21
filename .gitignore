@@ -50,7 +50,7 @@ playground.xcworkspace
 
 .build/
 .scannerwork/
-sonar-reports/
+# sonar-reports/
 
 # CocoaPods
 #

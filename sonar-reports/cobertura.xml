@@ -1,0 +1,787 @@
+<?xml version="1.0"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+<coverage line-rate="0.4985119047619048" branch-rate="1.0000000000000000" lines-covered="335" lines-valid="672" branches-covered="0" branches-valid="0" complexity="0.0" timestamp="1613477278" version="Slather 2.6.1">
+  <sources>
+    <source>/Users/vy/Desktop/treasure-hunt-app-ds-20-21</source>
+  </sources>
+  <packages>
+    <package name="TreasureHuntApp.Controller" line-rate="0.7246376811594203" branch-rate="1.0000000000000000" complexity="0.0">
+      <classes>
+        <class name="PersistenceController" filename="TreasureHuntApp/Controller/PersistenceController.swift" line-rate="0.7288135593220338" branch-rate="1.0000000000000000" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="14" branch="false" hits="1"/>
+            <line number="15" branch="false" hits="1"/>
+            <line number="16" branch="false" hits="1"/>
+            <line number="17" branch="false" hits="10"/>
+            <line number="18" branch="false" hits="10"/>
+            <line number="19" branch="false" hits="10"/>
+            <line number="20" branch="false" hits="1"/>
+            <line number="21" branch="false" hits="1"/>
+            <line number="22" branch="false" hits="1"/>
+            <line number="23" branch="false" hits="0"/>
+            <line number="24" branch="false" hits="0"/>
+            <line number="25" branch="false" hits="0"/>
+            <line number="26" branch="false" hits="0"/>
+            <line number="27" branch="false" hits="1"/>
+            <line number="28" branch="false" hits="1"/>
+            <line number="29" branch="false" hits="1"/>
+            <line number="31" branch="false" hits="10"/>
+            <line number="32" branch="false" hits="10"/>
+            <line number="33" branch="false" hits="10"/>
+            <line number="34" branch="false" hits="10"/>
+            <line number="35" branch="false" hits="10"/>
+            <line number="36" branch="false" hits="10"/>
+            <line number="37" branch="false" hits="10"/>
+            <line number="38" branch="false" hits="10"/>
+            <line number="39" branch="false" hits="10"/>
+            <line number="40" branch="false" hits="10"/>
+            <line number="41" branch="false" hits="10"/>
+            <line number="42" branch="false" hits="10"/>
+            <line number="43" branch="false" hits="10"/>
+            <line number="44" branch="false" hits="10"/>
+            <line number="45" branch="false" hits="10"/>
+            <line number="46" branch="false" hits="10"/>
+            <line number="47" branch="false" hits="10"/>
+            <line number="48" branch="false" hits="10"/>
+            <line number="49" branch="false" hits="10"/>
+            <line number="50" branch="false" hits="10"/>
+            <line number="51" branch="false" hits="10"/>
+            <line number="55" branch="false" hits="11"/>
+            <line number="56" branch="false" hits="11"/>
+            <line number="57" branch="false" hits="11"/>
+            <line number="58" branch="false" hits="1"/>
+            <line number="59" branch="false" hits="11"/>
+            <line number="60" branch="false" hits="11"/>
+            <line number="61" branch="false" hits="11"/>
+            <line number="62" branch="false" hits="0"/>
+            <line number="63" branch="false" hits="0"/>
+            <line number="64" branch="false" hits="0"/>
+            <line number="65" branch="false" hits="0"/>
+            <line number="66" branch="false" hits="0"/>
+            <line number="67" branch="false" hits="0"/>
+            <line number="68" branch="false" hits="0"/>
+            <line number="69" branch="false" hits="0"/>
+            <line number="70" branch="false" hits="0"/>
+            <line number="71" branch="false" hits="0"/>
+            <line number="72" branch="false" hits="0"/>
+            <line number="73" branch="false" hits="0"/>
+            <line number="74" branch="false" hits="11"/>
+            <line number="75" branch="false" hits="11"/>
+            <line number="76" branch="false" hits="11"/>
+          </lines>
+        </class>
+        <class name="TreasureHuntAppApp" filename="TreasureHuntApp/Controller/TreasureHuntAppApp.swift" line-rate="0.7000000000000000" branch-rate="1.0000000000000000" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="12" branch="false" hits="10"/>
+            <line number="14" branch="false" hits="10"/>
+            <line number="15" branch="false" hits="10"/>
+            <line number="16" branch="false" hits="10"/>
+            <line number="17" branch="false" hits="10"/>
+            <line number="18" branch="false" hits="10"/>
+            <line number="19" branch="false" hits="10"/>
+            <line number="23" branch="false" hits="0"/>
+            <line number="24" branch="false" hits="0"/>
+            <line number="25" branch="false" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="TreasureHuntApp.Model" line-rate="0.7530864197530864" branch-rate="1.0000000000000000" complexity="0.0">
+      <classes>
+        <class name="Checkpoint+CoreDataProperties" filename="TreasureHuntApp/Model/Checkpoint+CoreDataProperties.swift" line-rate="0.0000000000000000" branch-rate="1.0000000000000000" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="15" branch="false" hits="0"/>
+            <line number="16" branch="false" hits="0"/>
+            <line number="17" branch="false" hits="0"/>
+          </lines>
+        </class>
+        <class name="CheckpointCreateModel" filename="TreasureHuntApp/Model/CheckpointCreateModel.swift" line-rate="0.7704918032786885" branch-rate="1.0000000000000000" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="22" branch="false" hits="3"/>
+            <line number="23" branch="false" hits="3"/>
+            <line number="24" branch="false" hits="3"/>
+            <line number="25" branch="false" hits="3"/>
+            <line number="26" branch="false" hits="3"/>
+            <line number="27" branch="false" hits="3"/>
+            <line number="28" branch="false" hits="3"/>
+            <line number="29" branch="false" hits="3"/>
+            <line number="30" branch="false" hits="3"/>
+            <line number="32" branch="false" hits="0"/>
+            <line number="33" branch="false" hits="0"/>
+            <line number="34" branch="false" hits="0"/>
+            <line number="35" branch="false" hits="0"/>
+            <line number="36" branch="false" hits="0"/>
+            <line number="37" branch="false" hits="0"/>
+            <line number="38" branch="false" hits="0"/>
+            <line number="40" branch="false" hits="1"/>
+            <line number="41" branch="false" hits="1"/>
+            <line number="42" branch="false" hits="1"/>
+            <line number="43" branch="false" hits="1"/>
+            <line number="44" branch="false" hits="1"/>
+            <line number="45" branch="false" hits="1"/>
+            <line number="46" branch="false" hits="1"/>
+            <line number="47" branch="false" hits="1"/>
+            <line number="48" branch="false" hits="1"/>
+            <line number="49" branch="false" hits="1"/>
+            <line number="50" branch="false" hits="1"/>
+            <line number="51" branch="false" hits="1"/>
+            <line number="53" branch="false" hits="0"/>
+            <line number="54" branch="false" hits="0"/>
+            <line number="55" branch="false" hits="0"/>
+            <line number="56" branch="false" hits="0"/>
+            <line number="57" branch="false" hits="0"/>
+            <line number="58" branch="false" hits="0"/>
+            <line number="59" branch="false" hits="0"/>
+            <line number="61" branch="false" hits="1"/>
+            <line number="62" branch="false" hits="1"/>
+            <line number="63" branch="false" hits="1"/>
+            <line number="64" branch="false" hits="1"/>
+            <line number="65" branch="false" hits="1"/>
+            <line number="66" branch="false" hits="1"/>
+            <line number="67" branch="false" hits="1"/>
+            <line number="68" branch="false" hits="1"/>
+            <line number="69" branch="false" hits="1"/>
+            <line number="70" branch="false" hits="1"/>
+            <line number="71" branch="false" hits="1"/>
+            <line number="72" branch="false" hits="1"/>
+            <line number="73" branch="false" hits="1"/>
+            <line number="74" branch="false" hits="1"/>
+            <line number="75" branch="false" hits="1"/>
+            <line number="76" branch="false" hits="1"/>
+            <line number="80" branch="false" hits="1"/>
+            <line number="81" branch="false" hits="1"/>
+            <line number="82" branch="false" hits="1"/>
+            <line number="83" branch="false" hits="1"/>
+            <line number="84" branch="false" hits="1"/>
+            <line number="85" branch="false" hits="1"/>
+            <line number="86" branch="false" hits="1"/>
+            <line number="87" branch="false" hits="1"/>
+            <line number="88" branch="false" hits="1"/>
+            <line number="89" branch="false" hits="1"/>
+          </lines>
+        </class>
+        <class name="TreasureHunt+CoreDataProperties" filename="TreasureHuntApp/Model/TreasureHunt+CoreDataProperties.swift" line-rate="0.0000000000000000" branch-rate="1.0000000000000000" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="14" branch="false" hits="0"/>
+            <line number="15" branch="false" hits="0"/>
+            <line number="16" branch="false" hits="0"/>
+          </lines>
+        </class>
+        <class name="UserLocation" filename="TreasureHuntApp/Model/UserLocation.swift" line-rate="1.0000000000000000" branch-rate="1.0000000000000000" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="18" branch="false" hits="9"/>
+            <line number="20" branch="false" hits="9"/>
+            <line number="21" branch="false" hits="9"/>
+            <line number="22" branch="false" hits="9"/>
+            <line number="23" branch="false" hits="9"/>
+            <line number="24" branch="false" hits="9"/>
+            <line number="25" branch="false" hits="9"/>
+            <line number="26" branch="false" hits="9"/>
+            <line number="31" branch="false" hits="1"/>
+            <line number="32" branch="false" hits="1"/>
+            <line number="33" branch="false" hits="1"/>
+            <line number="34" branch="false" hits="1"/>
+            <line number="35" branch="false" hits="1"/>
+            <line number="36" branch="false" hits="1"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="TreasureHuntApp.View" line-rate="0.3905930470347648" branch-rate="1.0000000000000000" complexity="0.0">
+      <classes>
+        <class name="CheckpointRow" filename="TreasureHuntApp/View/CheckpointRow.swift" line-rate="0.0000000000000000" branch-rate="1.0000000000000000" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="14" branch="false" hits="0"/>
+            <line number="15" branch="false" hits="0"/>
+            <line number="16" branch="false" hits="0"/>
+            <line number="17" branch="false" hits="0"/>
+            <line number="18" branch="false" hits="0"/>
+            <line number="19" branch="false" hits="0"/>
+            <line number="20" branch="false" hits="0"/>
+            <line number="21" branch="false" hits="0"/>
+            <line number="22" branch="false" hits="0"/>
+            <line number="23" branch="false" hits="0"/>
+            <line number="24" branch="false" hits="0"/>
+            <line number="25" branch="false" hits="0"/>
+            <line number="26" branch="false" hits="0"/>
+          </lines>
+        </class>
+        <class name="CreateCheckpointView" filename="TreasureHuntApp/View/CreateCheckpointView.swift" line-rate="0.5681818181818182" branch-rate="1.0000000000000000" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="13" branch="false" hits="3"/>
+            <line number="22" branch="false" hits="1"/>
+            <line number="23" branch="false" hits="1"/>
+            <line number="24" branch="false" hits="1"/>
+            <line number="25" branch="false" hits="1"/>
+            <line number="26" branch="false" hits="1"/>
+            <line number="27" branch="false" hits="0"/>
+            <line number="28" branch="false" hits="0"/>
+            <line number="29" branch="false" hits="1"/>
+            <line number="30" branch="false" hits="1"/>
+            <line number="31" branch="false" hits="1"/>
+            <line number="32" branch="false" hits="0"/>
+            <line number="33" branch="false" hits="0"/>
+            <line number="34" branch="false" hits="1"/>
+            <line number="35" branch="false" hits="1"/>
+            <line number="36" branch="false" hits="1"/>
+            <line number="37" branch="false" hits="1"/>
+            <line number="38" branch="false" hits="1"/>
+            <line number="39" branch="false" hits="1"/>
+            <line number="40" branch="false" hits="0"/>
+            <line number="41" branch="false" hits="0"/>
+            <line number="42" branch="false" hits="1"/>
+            <line number="43" branch="false" hits="1"/>
+            <line number="44" branch="false" hits="0"/>
+            <line number="45" branch="false" hits="0"/>
+            <line number="46" branch="false" hits="1"/>
+            <line number="47" branch="false" hits="1"/>
+            <line number="48" branch="false" hits="1"/>
+            <line number="49" branch="false" hits="1"/>
+            <line number="50" branch="false" hits="1"/>
+            <line number="51" branch="false" hits="1"/>
+            <line number="52" branch="false" hits="1"/>
+            <line number="53" branch="false" hits="1"/>
+            <line number="55" branch="false" hits="0"/>
+            <line number="56" branch="false" hits="0"/>
+            <line number="57" branch="false" hits="0"/>
+            <line number="58" branch="false" hits="0"/>
+            <line number="59" branch="false" hits="0"/>
+            <line number="60" branch="false" hits="0"/>
+            <line number="61" branch="false" hits="0"/>
+            <line number="62" branch="false" hits="0"/>
+            <line number="67" branch="false" hits="0"/>
+            <line number="68" branch="false" hits="0"/>
+            <line number="69" branch="false" hits="0"/>
+          </lines>
+        </class>
+        <class name="CreateTreasureHuntView" filename="TreasureHuntApp/View/CreateTreasureHuntView.swift" line-rate="0.5652173913043478" branch-rate="1.0000000000000000" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="13" branch="false" hits="2"/>
+            <line number="14" branch="false" hits="2"/>
+            <line number="19" branch="false" hits="2"/>
+            <line number="21" branch="false" hits="6"/>
+            <line number="22" branch="false" hits="6"/>
+            <line number="23" branch="false" hits="6"/>
+            <line number="24" branch="false" hits="6"/>
+            <line number="25" branch="false" hits="6"/>
+            <line number="26" branch="false" hits="6"/>
+            <line number="27" branch="false" hits="6"/>
+            <line number="28" branch="false" hits="6"/>
+            <line number="29" branch="false" hits="0"/>
+            <line number="30" branch="false" hits="0"/>
+            <line number="31" branch="false" hits="6"/>
+            <line number="32" branch="false" hits="6"/>
+            <line number="33" branch="false" hits="6"/>
+            <line number="34" branch="false" hits="0"/>
+            <line number="35" branch="false" hits="0"/>
+            <line number="36" branch="false" hits="6"/>
+            <line number="37" branch="false" hits="6"/>
+            <line number="38" branch="false" hits="6"/>
+            <line number="39" branch="false" hits="6"/>
+            <line number="40" branch="false" hits="6"/>
+            <line number="41" branch="false" hits="0"/>
+            <line number="42" branch="false" hits="6"/>
+            <line number="43" branch="false" hits="6"/>
+            <line number="44" branch="false" hits="6"/>
+            <line number="45" branch="false" hits="6"/>
+            <line number="46" branch="false" hits="6"/>
+            <line number="47" branch="false" hits="6"/>
+            <line number="48" branch="false" hits="1"/>
+            <line number="49" branch="false" hits="6"/>
+            <line number="50" branch="false" hits="6"/>
+            <line number="51" branch="false" hits="6"/>
+            <line number="52" branch="false" hits="6"/>
+            <line number="53" branch="false" hits="6"/>
+            <line number="54" branch="false" hits="6"/>
+            <line number="55" branch="false" hits="6"/>
+            <line number="56" branch="false" hits="6"/>
+            <line number="57" branch="false" hits="6"/>
+            <line number="58" branch="false" hits="3"/>
+            <line number="59" branch="false" hits="3"/>
+            <line number="60" branch="false" hits="6"/>
+            <line number="61" branch="false" hits="6"/>
+            <line number="63" branch="false" hits="0"/>
+            <line number="64" branch="false" hits="0"/>
+            <line number="65" branch="false" hits="0"/>
+            <line number="66" branch="false" hits="0"/>
+            <line number="67" branch="false" hits="0"/>
+            <line number="68" branch="false" hits="0"/>
+            <line number="69" branch="false" hits="0"/>
+            <line number="71" branch="false" hits="0"/>
+            <line number="72" branch="false" hits="0"/>
+            <line number="73" branch="false" hits="0"/>
+            <line number="74" branch="false" hits="0"/>
+            <line number="75" branch="false" hits="0"/>
+            <line number="76" branch="false" hits="0"/>
+            <line number="77" branch="false" hits="0"/>
+            <line number="78" branch="false" hits="0"/>
+            <line number="79" branch="false" hits="0"/>
+            <line number="80" branch="false" hits="0"/>
+            <line number="81" branch="false" hits="0"/>
+            <line number="82" branch="false" hits="0"/>
+            <line number="83" branch="false" hits="0"/>
+            <line number="84" branch="false" hits="0"/>
+            <line number="85" branch="false" hits="0"/>
+            <line number="89" branch="false" hits="0"/>
+            <line number="90" branch="false" hits="0"/>
+            <line number="91" branch="false" hits="0"/>
+          </lines>
+        </class>
+        <class name="DetailedHuntView" filename="TreasureHuntApp/View/DetailedHuntView.swift" line-rate="0.0227272727272727" branch-rate="1.0000000000000000" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="13" branch="false" hits="0"/>
+            <line number="16" branch="false" hits="3"/>
+            <line number="18" branch="false" hits="0"/>
+            <line number="19" branch="false" hits="0"/>
+            <line number="20" branch="false" hits="0"/>
+            <line number="21" branch="false" hits="0"/>
+            <line number="22" branch="false" hits="0"/>
+            <line number="23" branch="false" hits="0"/>
+            <line number="24" branch="false" hits="0"/>
+            <line number="25" branch="false" hits="0"/>
+            <line number="26" branch="false" hits="0"/>
+            <line number="27" branch="false" hits="0"/>
+            <line number="28" branch="false" hits="0"/>
+            <line number="29" branch="false" hits="0"/>
+            <line number="30" branch="false" hits="0"/>
+            <line number="31" branch="false" hits="0"/>
+            <line number="32" branch="false" hits="0"/>
+            <line number="33" branch="false" hits="0"/>
+            <line number="34" branch="false" hits="0"/>
+            <line number="35" branch="false" hits="0"/>
+            <line number="36" branch="false" hits="0"/>
+            <line number="37" branch="false" hits="0"/>
+            <line number="38" branch="false" hits="0"/>
+            <line number="39" branch="false" hits="0"/>
+            <line number="40" branch="false" hits="0"/>
+            <line number="41" branch="false" hits="0"/>
+            <line number="42" branch="false" hits="0"/>
+            <line number="43" branch="false" hits="0"/>
+            <line number="44" branch="false" hits="0"/>
+            <line number="45" branch="false" hits="0"/>
+            <line number="46" branch="false" hits="0"/>
+            <line number="47" branch="false" hits="0"/>
+            <line number="48" branch="false" hits="0"/>
+            <line number="49" branch="false" hits="0"/>
+            <line number="50" branch="false" hits="0"/>
+            <line number="51" branch="false" hits="0"/>
+            <line number="52" branch="false" hits="0"/>
+            <line number="53" branch="false" hits="0"/>
+            <line number="54" branch="false" hits="0"/>
+            <line number="58" branch="false" hits="0"/>
+            <line number="59" branch="false" hits="0"/>
+            <line number="60" branch="false" hits="0"/>
+            <line number="61" branch="false" hits="0"/>
+            <line number="62" branch="false" hits="0"/>
+          </lines>
+        </class>
+        <class name="EditTreasureHuntView" filename="TreasureHuntApp/View/EditTreasureHuntView.swift" line-rate="0.0000000000000000" branch-rate="1.0000000000000000" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="12" branch="false" hits="0"/>
+            <line number="13" branch="false" hits="0"/>
+            <line number="19" branch="false" hits="0"/>
+            <line number="21" branch="false" hits="0"/>
+            <line number="22" branch="false" hits="0"/>
+            <line number="23" branch="false" hits="0"/>
+            <line number="24" branch="false" hits="0"/>
+            <line number="25" branch="false" hits="0"/>
+            <line number="26" branch="false" hits="0"/>
+            <line number="27" branch="false" hits="0"/>
+            <line number="28" branch="false" hits="0"/>
+            <line number="29" branch="false" hits="0"/>
+            <line number="30" branch="false" hits="0"/>
+            <line number="31" branch="false" hits="0"/>
+            <line number="32" branch="false" hits="0"/>
+            <line number="33" branch="false" hits="0"/>
+            <line number="34" branch="false" hits="0"/>
+            <line number="35" branch="false" hits="0"/>
+            <line number="36" branch="false" hits="0"/>
+            <line number="37" branch="false" hits="0"/>
+            <line number="38" branch="false" hits="0"/>
+            <line number="39" branch="false" hits="0"/>
+            <line number="40" branch="false" hits="0"/>
+            <line number="41" branch="false" hits="0"/>
+            <line number="42" branch="false" hits="0"/>
+            <line number="43" branch="false" hits="0"/>
+            <line number="44" branch="false" hits="0"/>
+            <line number="45" branch="false" hits="0"/>
+            <line number="46" branch="false" hits="0"/>
+            <line number="47" branch="false" hits="0"/>
+            <line number="48" branch="false" hits="0"/>
+            <line number="49" branch="false" hits="0"/>
+            <line number="50" branch="false" hits="0"/>
+            <line number="51" branch="false" hits="0"/>
+            <line number="52" branch="false" hits="0"/>
+            <line number="53" branch="false" hits="0"/>
+            <line number="54" branch="false" hits="0"/>
+            <line number="55" branch="false" hits="0"/>
+            <line number="56" branch="false" hits="0"/>
+            <line number="57" branch="false" hits="0"/>
+            <line number="58" branch="false" hits="0"/>
+            <line number="59" branch="false" hits="0"/>
+            <line number="60" branch="false" hits="0"/>
+            <line number="61" branch="false" hits="0"/>
+            <line number="63" branch="false" hits="0"/>
+            <line number="64" branch="false" hits="0"/>
+            <line number="65" branch="false" hits="0"/>
+            <line number="66" branch="false" hits="0"/>
+            <line number="67" branch="false" hits="0"/>
+            <line number="68" branch="false" hits="0"/>
+            <line number="69" branch="false" hits="0"/>
+            <line number="70" branch="false" hits="0"/>
+            <line number="71" branch="false" hits="0"/>
+            <line number="72" branch="false" hits="0"/>
+            <line number="73" branch="false" hits="0"/>
+            <line number="74" branch="false" hits="0"/>
+            <line number="75" branch="false" hits="0"/>
+            <line number="76" branch="false" hits="0"/>
+            <line number="77" branch="false" hits="0"/>
+            <line number="78" branch="false" hits="0"/>
+            <line number="79" branch="false" hits="0"/>
+            <line number="80" branch="false" hits="0"/>
+            <line number="82" branch="false" hits="0"/>
+            <line number="83" branch="false" hits="0"/>
+            <line number="84" branch="false" hits="0"/>
+            <line number="85" branch="false" hits="0"/>
+            <line number="86" branch="false" hits="0"/>
+            <line number="87" branch="false" hits="0"/>
+            <line number="88" branch="false" hits="0"/>
+            <line number="89" branch="false" hits="0"/>
+            <line number="90" branch="false" hits="0"/>
+            <line number="91" branch="false" hits="0"/>
+            <line number="92" branch="false" hits="0"/>
+            <line number="93" branch="false" hits="0"/>
+            <line number="94" branch="false" hits="0"/>
+            <line number="95" branch="false" hits="0"/>
+            <line number="96" branch="false" hits="0"/>
+            <line number="97" branch="false" hits="0"/>
+            <line number="98" branch="false" hits="0"/>
+            <line number="99" branch="false" hits="0"/>
+            <line number="100" branch="false" hits="0"/>
+            <line number="101" branch="false" hits="0"/>
+            <line number="102" branch="false" hits="0"/>
+            <line number="103" branch="false" hits="0"/>
+            <line number="104" branch="false" hits="0"/>
+            <line number="108" branch="false" hits="0"/>
+            <line number="109" branch="false" hits="0"/>
+            <line number="110" branch="false" hits="0"/>
+            <line number="111" branch="false" hits="0"/>
+            <line number="112" branch="false" hits="0"/>
+            <line number="113" branch="false" hits="0"/>
+            <line number="114" branch="false" hits="0"/>
+          </lines>
+        </class>
+        <class name="FinishedView" filename="TreasureHuntApp/View/FinishedView.swift" line-rate="0.0000000000000000" branch-rate="1.0000000000000000" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="12" branch="false" hits="0"/>
+            <line number="16" branch="false" hits="0"/>
+            <line number="17" branch="false" hits="0"/>
+            <line number="18" branch="false" hits="0"/>
+            <line number="19" branch="false" hits="0"/>
+            <line number="20" branch="false" hits="0"/>
+            <line number="21" branch="false" hits="0"/>
+            <line number="22" branch="false" hits="0"/>
+            <line number="23" branch="false" hits="0"/>
+            <line number="24" branch="false" hits="0"/>
+            <line number="25" branch="false" hits="0"/>
+            <line number="26" branch="false" hits="0"/>
+            <line number="27" branch="false" hits="0"/>
+            <line number="28" branch="false" hits="0"/>
+            <line number="32" branch="false" hits="0"/>
+            <line number="33" branch="false" hits="0"/>
+            <line number="34" branch="false" hits="0"/>
+          </lines>
+        </class>
+        <class name="InstructionsView" filename="TreasureHuntApp/View/InstructionsView.swift" line-rate="0.7857142857142857" branch-rate="1.0000000000000000" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="11" branch="false" hits="1"/>
+            <line number="12" branch="false" hits="1"/>
+            <line number="13" branch="false" hits="1"/>
+            <line number="14" branch="false" hits="1"/>
+            <line number="15" branch="false" hits="1"/>
+            <line number="16" branch="false" hits="1"/>
+            <line number="17" branch="false" hits="1"/>
+            <line number="18" branch="false" hits="1"/>
+            <line number="19" branch="false" hits="1"/>
+            <line number="20" branch="false" hits="1"/>
+            <line number="21" branch="false" hits="1"/>
+            <line number="25" branch="false" hits="0"/>
+            <line number="26" branch="false" hits="0"/>
+            <line number="27" branch="false" hits="0"/>
+          </lines>
+        </class>
+        <class name="MapView" filename="TreasureHuntApp/View/MapView.swift" line-rate="0.4710743801652892" branch-rate="1.0000000000000000" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="13" branch="false" hits="5"/>
+            <line number="14" branch="false" hits="5"/>
+            <line number="19" branch="false" hits="5"/>
+            <line number="23" branch="false" hits="5"/>
+            <line number="24" branch="false" hits="5"/>
+            <line number="26" branch="false" hits="5"/>
+            <line number="35" branch="false" hits="0"/>
+            <line number="36" branch="false" hits="0"/>
+            <line number="37" branch="false" hits="0"/>
+            <line number="38" branch="false" hits="0"/>
+            <line number="39" branch="false" hits="0"/>
+            <line number="40" branch="false" hits="0"/>
+            <line number="41" branch="false" hits="0"/>
+            <line number="42" branch="false" hits="0"/>
+            <line number="43" branch="false" hits="0"/>
+            <line number="44" branch="false" hits="0"/>
+            <line number="45" branch="false" hits="0"/>
+            <line number="46" branch="false" hits="0"/>
+            <line number="47" branch="false" hits="0"/>
+            <line number="48" branch="false" hits="0"/>
+            <line number="49" branch="false" hits="0"/>
+            <line number="50" branch="false" hits="0"/>
+            <line number="51" branch="false" hits="0"/>
+            <line number="52" branch="false" hits="0"/>
+            <line number="53" branch="false" hits="0"/>
+            <line number="54" branch="false" hits="0"/>
+            <line number="55" branch="false" hits="0"/>
+            <line number="56" branch="false" hits="0"/>
+            <line number="57" branch="false" hits="0"/>
+            <line number="58" branch="false" hits="0"/>
+            <line number="59" branch="false" hits="0"/>
+            <line number="60" branch="false" hits="0"/>
+            <line number="61" branch="false" hits="0"/>
+            <line number="62" branch="false" hits="0"/>
+            <line number="63" branch="false" hits="0"/>
+            <line number="64" branch="false" hits="0"/>
+            <line number="65" branch="false" hits="0"/>
+            <line number="66" branch="false" hits="0"/>
+            <line number="67" branch="false" hits="0"/>
+            <line number="68" branch="false" hits="0"/>
+            <line number="69" branch="false" hits="0"/>
+            <line number="70" branch="false" hits="0"/>
+            <line number="71" branch="false" hits="0"/>
+            <line number="73" branch="false" hits="1"/>
+            <line number="74" branch="false" hits="1"/>
+            <line number="75" branch="false" hits="1"/>
+            <line number="76" branch="false" hits="1"/>
+            <line number="77" branch="false" hits="1"/>
+            <line number="78" branch="false" hits="0"/>
+            <line number="79" branch="false" hits="0"/>
+            <line number="80" branch="false" hits="0"/>
+            <line number="81" branch="false" hits="0"/>
+            <line number="82" branch="false" hits="0"/>
+            <line number="83" branch="false" hits="0"/>
+            <line number="84" branch="false" hits="0"/>
+            <line number="85" branch="false" hits="1"/>
+            <line number="86" branch="false" hits="1"/>
+            <line number="87" branch="false" hits="1"/>
+            <line number="88" branch="false" hits="1"/>
+            <line number="89" branch="false" hits="1"/>
+            <line number="90" branch="false" hits="0"/>
+            <line number="91" branch="false" hits="0"/>
+            <line number="92" branch="false" hits="0"/>
+            <line number="93" branch="false" hits="0"/>
+            <line number="94" branch="false" hits="0"/>
+            <line number="95" branch="false" hits="0"/>
+            <line number="96" branch="false" hits="0"/>
+            <line number="97" branch="false" hits="0"/>
+            <line number="98" branch="false" hits="0"/>
+            <line number="99" branch="false" hits="0"/>
+            <line number="100" branch="false" hits="0"/>
+            <line number="101" branch="false" hits="1"/>
+            <line number="102" branch="false" hits="1"/>
+            <line number="103" branch="false" hits="1"/>
+            <line number="105" branch="false" hits="2"/>
+            <line number="106" branch="false" hits="2"/>
+            <line number="107" branch="false" hits="2"/>
+            <line number="108" branch="false" hits="2"/>
+            <line number="109" branch="false" hits="2"/>
+            <line number="110" branch="false" hits="2"/>
+            <line number="112" branch="false" hits="3"/>
+            <line number="113" branch="false" hits="3"/>
+            <line number="114" branch="false" hits="3"/>
+            <line number="115" branch="false" hits="3"/>
+            <line number="116" branch="false" hits="3"/>
+            <line number="117" branch="false" hits="3"/>
+            <line number="118" branch="false" hits="0"/>
+            <line number="119" branch="false" hits="0"/>
+            <line number="120" branch="false" hits="0"/>
+            <line number="122" branch="false" hits="10"/>
+            <line number="123" branch="false" hits="10"/>
+            <line number="124" branch="false" hits="30"/>
+            <line number="125" branch="false" hits="30"/>
+            <line number="126" branch="false" hits="30"/>
+            <line number="127" branch="false" hits="30"/>
+            <line number="128" branch="false" hits="10"/>
+            <line number="129" branch="false" hits="10"/>
+            <line number="131" branch="false" hits="5"/>
+            <line number="132" branch="false" hits="5"/>
+            <line number="133" branch="false" hits="5"/>
+            <line number="134" branch="false" hits="5"/>
+            <line number="135" branch="false" hits="5"/>
+            <line number="136" branch="false" hits="5"/>
+            <line number="137" branch="false" hits="5"/>
+            <line number="138" branch="false" hits="5"/>
+            <line number="139" branch="false" hits="5"/>
+            <line number="140" branch="false" hits="5"/>
+            <line number="141" branch="false" hits="5"/>
+            <line number="142" branch="false" hits="5"/>
+            <line number="143" branch="false" hits="5"/>
+            <line number="144" branch="false" hits="5"/>
+            <line number="145" branch="false" hits="5"/>
+            <line number="147" branch="false" hits="7"/>
+            <line number="148" branch="false" hits="21"/>
+            <line number="149" branch="false" hits="7"/>
+            <line number="153" branch="false" hits="0"/>
+            <line number="154" branch="false" hits="0"/>
+            <line number="155" branch="false" hits="0"/>
+            <line number="156" branch="false" hits="0"/>
+            <line number="157" branch="false" hits="0"/>
+            <line number="158" branch="false" hits="0"/>
+          </lines>
+        </class>
+        <class name="StartView" filename="TreasureHuntApp/View/StartView.swift" line-rate="0.8636363636363636" branch-rate="1.0000000000000000" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="13" branch="false" hits="10"/>
+            <line number="14" branch="false" hits="10"/>
+            <line number="15" branch="false" hits="10"/>
+            <line number="16" branch="false" hits="10"/>
+            <line number="17" branch="false" hits="10"/>
+            <line number="18" branch="false" hits="10"/>
+            <line number="19" branch="false" hits="10"/>
+            <line number="20" branch="false" hits="10"/>
+            <line number="21" branch="false" hits="10"/>
+            <line number="22" branch="false" hits="10"/>
+            <line number="23" branch="false" hits="10"/>
+            <line number="24" branch="false" hits="10"/>
+            <line number="25" branch="false" hits="10"/>
+            <line number="26" branch="false" hits="10"/>
+            <line number="27" branch="false" hits="10"/>
+            <line number="28" branch="false" hits="10"/>
+            <line number="29" branch="false" hits="10"/>
+            <line number="30" branch="false" hits="10"/>
+            <line number="31" branch="false" hits="10"/>
+            <line number="35" branch="false" hits="0"/>
+            <line number="36" branch="false" hits="0"/>
+            <line number="37" branch="false" hits="0"/>
+          </lines>
+        </class>
+        <class name="TreasureHuntRow" filename="TreasureHuntApp/View/TreasureHuntRow.swift" line-rate="1.0000000000000000" branch-rate="1.0000000000000000" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="13" branch="false" hits="3"/>
+            <line number="14" branch="false" hits="3"/>
+            <line number="15" branch="false" hits="3"/>
+            <line number="16" branch="false" hits="3"/>
+            <line number="17" branch="false" hits="3"/>
+            <line number="18" branch="false" hits="3"/>
+            <line number="19" branch="false" hits="3"/>
+            <line number="20" branch="false" hits="3"/>
+            <line number="21" branch="false" hits="3"/>
+            <line number="22" branch="false" hits="3"/>
+            <line number="23" branch="false" hits="3"/>
+            <line number="24" branch="false" hits="3"/>
+            <line number="25" branch="false" hits="3"/>
+            <line number="26" branch="false" hits="3"/>
+            <line number="27" branch="false" hits="3"/>
+            <line number="28" branch="false" hits="3"/>
+            <line number="29" branch="false" hits="3"/>
+          </lines>
+        </class>
+        <class name="TreasureHuntsListView" filename="TreasureHuntApp/View/TreasureHuntsListView.swift" line-rate="0.6111111111111112" branch-rate="1.0000000000000000" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="12" branch="false" hits="10"/>
+            <line number="13" branch="false" hits="10"/>
+            <line number="14" branch="false" hits="10"/>
+            <line number="15" branch="false" hits="10"/>
+            <line number="18" branch="false" hits="10"/>
+            <line number="20" branch="false" hits="1"/>
+            <line number="21" branch="false" hits="1"/>
+            <line number="22" branch="false" hits="1"/>
+            <line number="23" branch="false" hits="3"/>
+            <line number="24" branch="false" hits="3"/>
+            <line number="25" branch="false" hits="3"/>
+            <line number="26" branch="false" hits="3"/>
+            <line number="27" branch="false" hits="3"/>
+            <line number="28" branch="false" hits="1"/>
+            <line number="29" branch="false" hits="1"/>
+            <line number="30" branch="false" hits="1"/>
+            <line number="31" branch="false" hits="1"/>
+            <line number="32" branch="false" hits="1"/>
+            <line number="33" branch="false" hits="1"/>
+            <line number="34" branch="false" hits="1"/>
+            <line number="35" branch="false" hits="1"/>
+            <line number="36" branch="false" hits="1"/>
+            <line number="38" branch="false" hits="0"/>
+            <line number="39" branch="false" hits="0"/>
+            <line number="40" branch="false" hits="0"/>
+            <line number="41" branch="false" hits="0"/>
+            <line number="42" branch="false" hits="0"/>
+            <line number="43" branch="false" hits="0"/>
+            <line number="44" branch="false" hits="0"/>
+            <line number="45" branch="false" hits="0"/>
+            <line number="46" branch="false" hits="0"/>
+            <line number="47" branch="false" hits="0"/>
+            <line number="51" branch="false" hits="0"/>
+            <line number="52" branch="false" hits="0"/>
+            <line number="53" branch="false" hits="0"/>
+            <line number="54" branch="false" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="TreasureHuntApp.View.DSL-Example" line-rate="1.0000000000000000" branch-rate="1.0000000000000000" complexity="0.0">
+      <classes>
+        <class name="DSL_Example" filename="TreasureHuntApp/View/DSL-Example/DSL_Example.swift" line-rate="1.0000000000000000" branch-rate="1.0000000000000000" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="13" branch="false" hits="8"/>
+            <line number="14" branch="false" hits="8"/>
+            <line number="15" branch="false" hits="8"/>
+            <line number="18" branch="false" hits="6"/>
+            <line number="19" branch="false" hits="6"/>
+            <line number="20" branch="false" hits="6"/>
+            <line number="23" branch="false" hits="20"/>
+            <line number="24" branch="false" hits="20"/>
+            <line number="25" branch="false" hits="20"/>
+            <line number="32" branch="false" hits="3"/>
+            <line number="33" branch="false" hits="3"/>
+            <line number="34" branch="false" hits="3"/>
+            <line number="35" branch="false" hits="3"/>
+            <line number="36" branch="false" hits="3"/>
+            <line number="37" branch="false" hits="3"/>
+            <line number="38" branch="false" hits="3"/>
+            <line number="39" branch="false" hits="3"/>
+            <line number="44" branch="false" hits="1"/>
+            <line number="45" branch="false" hits="1"/>
+            <line number="46" branch="false" hits="1"/>
+            <line number="47" branch="false" hits="1"/>
+            <line number="48" branch="false" hits="1"/>
+            <line number="49" branch="false" hits="1"/>
+            <line number="50" branch="false" hits="1"/>
+            <line number="51" branch="false" hits="1"/>
+            <line number="57" branch="false" hits="20"/>
+            <line number="58" branch="false" hits="20"/>
+            <line number="59" branch="false" hits="20"/>
+            <line number="60" branch="false" hits="20"/>
+            <line number="61" branch="false" hits="20"/>
+            <line number="62" branch="false" hits="20"/>
+            <line number="63" branch="false" hits="20"/>
+            <line number="64" branch="false" hits="20"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>

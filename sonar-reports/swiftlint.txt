@@ -1,0 +1,3 @@
+/Users/vy/Desktop/treasure-hunt-app-ds-20-21/TreasureHuntApp/Controller/PersistenceController.swift:60:62: warning: Unused Closure Parameter Violation: Unused parameter "storeDescription" in a closure should be replaced with _. (unused_closure_parameter)
+/Users/vy/Desktop/treasure-hunt-app-ds-20-21/TreasureHuntApp/View/StartView.swift:12:8: warning: Todo Violation: TODOs should be resolved (Nice-to-have: Add login and di...). (todo)
+/Users/vy/Desktop/treasure-hunt-app-ds-20-21/TreasureHuntApp/View/CreateCheckpointView.swift:38:24: warning: Todo Violation: TODOs should be resolved (Nice-to-have: Change to tap on...). (todo)

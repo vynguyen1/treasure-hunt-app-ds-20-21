@@ -59,11 +59,12 @@ This is what the Domain could look like (With investors, third parties, a user m
 For the DDD Diagram in large click [here](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/Diagrams/DDD_Diagram.png).  
 
 **3. Metrics**  
-For metrics SonarQube is used (run locally) and Fastlane for gathering the SonarQube metrics. The configuration can be found in the [sonar-project.properties file](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/sonar-project.properties). It, amongst other things, checks for Maintainability (Code Smells,...), Duplications and Code Coverage.  
+For metrics SonarQube is used (run locally) and Fastlane for gathering the SonarQube metrics. The configuration can be found in the [sonar-project.properties file](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/sonar-project.properties). It, amongst other things, checks for Maintainability (Code Smells,...), Duplications and Code Coverage (with Cobertura) and Code Complexity (with Lizard).  
 The configuration for Swiftlint (a tool to enforce Swift style and conventions, used for the code smells metric) can be found in [.swiftlint.yml](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/fastlane/.swiftlint.yml). This is also used with SonarQube.  
 <img src="Screenshots/sonarqube.png" width="400">  
 <img src="Screenshots/sonarqube_overview.png" width="400">  
-(The project passes the quality gate because the minimum code coverage here was set to 45%. Normally this should be, in the best case, around 80%.)
+(The project passes the quality gate because the minimum code coverage here was set to 45%. Normally this should be, in the best case, around 80%.)  
+The reports can be found in the [sonar-reports folder](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/sonar-project.properties).
 
 **4. Clean Code Development (CCD)**  
 For the CCD cheat-sheet in large click [here](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/Diagrams/CCD_Sheet.png).  
@@ -103,6 +104,7 @@ The configuration files for Fastlane can be found in the [fastlane folder](https
 
 **6. Unit-Tests**  
 See Test Folders: [Tests](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/TreasureHuntAppTests) and [UITests](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/TreasureHuntAppUITests)  
+Test reports can also be found in the [sonar-reports folder](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/sonar-project.properties) (html-TEST-report and TEST-report).
 
 **7. Continuous Integration/Continuous Delivery (CI/CD)**  
 For CI/CD Jenkins + Fastlane are used. The configuration/pipeline can be found in the [Jenkinsfile](https://github.com/vynguyen1/treasure-hunt-app-ds-20-21/tree/main/pipelines/Jenkinsfile).  

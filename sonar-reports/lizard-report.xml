@@ -1,0 +1,308 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="https://raw.githubusercontent.com/terryyin/lizard/master/lizard.xsl"?>
+<cppncss>
+	<measure type="Function">
+		<labels>
+			<label>Nr.</label>
+			<label>NCSS</label>
+			<label>CCN</label>
+		</labels>
+		<item name="endEditing(...) at TreasureHuntApp/Controller/TreasureHuntAppApp.swift:23">
+			<value>1</value>
+			<value>3</value>
+			<value>1</value>
+		</item>
+		<average label="NCSS" value="3.0"/>
+		<average label="CCN" value="1.0"/>
+		<item name="createTreasureHuntForPreview(...) at TreasureHuntApp/Controller/PersistenceController.swift:31">
+			<value>2</value>
+			<value>19</value>
+			<value>1</value>
+		</item>
+		<item name="init(...) at TreasureHuntApp/Controller/PersistenceController.swift:55">
+			<value>3</value>
+			<value>11</value>
+			<value>3</value>
+		</item>
+		<average label="NCSS" value="11.0"/>
+		<average label="CCN" value="1.6666666666666667"/>
+		<item name="locationManager(...) at TreasureHuntApp/Model/UserLocation.swift:31">
+			<value>4</value>
+			<value>6</value>
+			<value>2</value>
+		</item>
+		<item name="init(...) at TreasureHuntApp/Model/UserLocation.swift:21">
+			<value>5</value>
+			<value>10</value>
+			<value>1</value>
+		</item>
+		<average label="NCSS" value="9.8"/>
+		<average label="CCN" value="1.6"/>
+		<average label="NCSS" value="9.8"/>
+		<average label="CCN" value="1.6"/>
+		<item name="fetchRequest(...) at TreasureHuntApp/Model/TreasureHunt+CoreDataProperties.swift:14">
+			<value>6</value>
+			<value>3</value>
+			<value>1</value>
+		</item>
+		<item name="addToCheckpoints(...) at TreasureHuntApp/Model/TreasureHunt+CoreDataProperties.swift:31">
+			<value>7</value>
+			<value>10</value>
+			<value>1</value>
+		</item>
+		<average label="NCSS" value="8.857142857142858"/>
+		<average label="CCN" value="1.4285714285714286"/>
+		<item name="init(...) at TreasureHuntApp/Model/CheckpointCreateModel.swift:22">
+			<value>8</value>
+			<value>9</value>
+			<value>1</value>
+		</item>
+		<item name="createModelsToCheckpoints(...) at TreasureHuntApp/Model/CheckpointCreateModel.swift:32">
+			<value>9</value>
+			<value>7</value>
+			<value>2</value>
+		</item>
+		<item name="createModelToCheckpoint(...) at TreasureHuntApp/Model/CheckpointCreateModel.swift:40">
+			<value>10</value>
+			<value>12</value>
+			<value>1</value>
+		</item>
+		<item name="checkpointsToCreateModels(...) at TreasureHuntApp/Model/CheckpointCreateModel.swift:53">
+			<value>11</value>
+			<value>7</value>
+			<value>2</value>
+		</item>
+		<item name="checkpointToCreateModel(...) at TreasureHuntApp/Model/CheckpointCreateModel.swift:61">
+			<value>12</value>
+			<value>16</value>
+			<value>1</value>
+		</item>
+		<item name="==(...) at TreasureHuntApp/Model/CheckpointCreateModel.swift:80">
+			<value>13</value>
+			<value>10</value>
+			<value>7</value>
+		</item>
+		<average label="NCSS" value="9.461538461538462"/>
+		<average label="CCN" value="1.8461538461538463"/>
+		<item name="fetchRequest(...) at TreasureHuntApp/Model/Checkpoint+CoreDataProperties.swift:15">
+			<value>14</value>
+			<value>3</value>
+			<value>1</value>
+		</item>
+		<average label="NCSS" value="9.0"/>
+		<average label="CCN" value="1.7857142857142858"/>
+		<average label="NCSS" value="9.0"/>
+		<average label="CCN" value="1.7857142857142858"/>
+		<item name="modifyButton(...) at TreasureHuntApp/View/DSL-Example/DSL_Example.swift:13">
+			<value>15</value>
+			<value>3</value>
+			<value>1</value>
+		</item>
+		<item name="modifyAdd(...) at TreasureHuntApp/View/DSL-Example/DSL_Example.swift:18">
+			<value>16</value>
+			<value>3</value>
+			<value>1</value>
+		</item>
+		<item name="modifyStartButton(...) at TreasureHuntApp/View/DSL-Example/DSL_Example.swift:23">
+			<value>17</value>
+			<value>3</value>
+			<value>1</value>
+		</item>
+		<item name="body(...) at TreasureHuntApp/View/DSL-Example/DSL_Example.swift:32">
+			<value>18</value>
+			<value>8</value>
+			<value>1</value>
+		</item>
+		<average label="NCSS" value="7.944444444444445"/>
+		<average label="CCN" value="1.6111111111111112"/>
+		<average label="NCSS" value="7.944444444444445"/>
+		<average label="CCN" value="1.6111111111111112"/>
+		<average label="NCSS" value="7.944444444444445"/>
+		<average label="CCN" value="1.6111111111111112"/>
+		<average label="NCSS" value="7.944444444444445"/>
+		<average label="CCN" value="1.6111111111111112"/>
+		<average label="NCSS" value="7.944444444444445"/>
+		<average label="CCN" value="1.6111111111111112"/>
+		<average label="NCSS" value="7.944444444444445"/>
+		<average label="CCN" value="1.6111111111111112"/>
+		<average label="NCSS" value="7.944444444444445"/>
+		<average label="CCN" value="1.6111111111111112"/>
+		<item name="updateCheckpoint(...) at TreasureHuntApp/View/MapView.swift:73">
+			<value>19</value>
+			<value>31</value>
+			<value>6</value>
+		</item>
+		<item name="checkpointHasBeenReached(...) at TreasureHuntApp/View/MapView.swift:105">
+			<value>20</value>
+			<value>6</value>
+			<value>2</value>
+		</item>
+		<item name="getLocationOfCurrentCheckpoint(...) at TreasureHuntApp/View/MapView.swift:112">
+			<value>21</value>
+			<value>9</value>
+			<value>2</value>
+		</item>
+		<item name="getCurrentCheckpoint(...) at TreasureHuntApp/View/MapView.swift:122">
+			<value>22</value>
+			<value>8</value>
+			<value>1</value>
+		</item>
+		<item name="init(...) at TreasureHuntApp/View/MapView.swift:131">
+			<value>23</value>
+			<value>15</value>
+			<value>4</value>
+		</item>
+		<item name="isFinished(...) at TreasureHuntApp/View/MapView.swift:147">
+			<value>24</value>
+			<value>3</value>
+			<value>1</value>
+		</item>
+		<average label="NCSS" value="8.958333333333334"/>
+		<average label="CCN" value="1.875"/>
+		<average label="NCSS" value="8.958333333333334"/>
+		<average label="CCN" value="1.875"/>
+		<average label="NCSS" value="8.958333333333334"/>
+		<average label="CCN" value="1.875"/>
+		<average label="NCSS" value="8.958333333333334"/>
+		<average label="CCN" value="1.875"/>
+		<average label="NCSS" value="8.958333333333334"/>
+		<average label="CCN" value="1.875"/>
+	</measure>
+	<measure type="File">
+		<labels>
+			<label>Nr.</label>
+			<label>NCSS</label>
+			<label>CCN</label>
+			<label>Functions</label>
+		</labels>
+		<item name="TreasureHuntApp/Controller/TreasureHuntAppApp.swift">
+			<value>1</value>
+			<value>16</value>
+			<value>1</value>
+			<value>1</value>
+		</item>
+		<item name="TreasureHuntApp/Controller/PersistenceController.swift">
+			<value>2</value>
+			<value>50</value>
+			<value>4</value>
+			<value>2</value>
+		</item>
+		<item name="TreasureHuntApp/Model/UserLocation.swift">
+			<value>3</value>
+			<value>23</value>
+			<value>3</value>
+			<value>2</value>
+		</item>
+		<item name="TreasureHuntApp/Model/Checkpoint+CoreDataClass.swift">
+			<value>4</value>
+			<value>5</value>
+			<value>0</value>
+			<value>0</value>
+		</item>
+		<item name="TreasureHuntApp/Model/TreasureHunt+CoreDataProperties.swift">
+			<value>5</value>
+			<value>25</value>
+			<value>2</value>
+			<value>2</value>
+		</item>
+		<item name="TreasureHuntApp/Model/CheckpointCreateModel.swift">
+			<value>6</value>
+			<value>75</value>
+			<value>14</value>
+			<value>6</value>
+		</item>
+		<item name="TreasureHuntApp/Model/Checkpoint+CoreDataProperties.swift">
+			<value>7</value>
+			<value>18</value>
+			<value>1</value>
+			<value>1</value>
+		</item>
+		<item name="TreasureHuntApp/Model/TreasureHunt+CoreDataClass.swift">
+			<value>8</value>
+			<value>5</value>
+			<value>0</value>
+			<value>0</value>
+		</item>
+		<item name="TreasureHuntApp/View/DSL-Example/DSL_Example.swift">
+			<value>9</value>
+			<value>44</value>
+			<value>4</value>
+			<value>4</value>
+		</item>
+		<item name="TreasureHuntApp/View/TreasureHuntsListView.swift">
+			<value>10</value>
+			<value>41</value>
+			<value>0</value>
+			<value>0</value>
+		</item>
+		<item name="TreasureHuntApp/View/TreasureHuntRow.swift">
+			<value>11</value>
+			<value>21</value>
+			<value>0</value>
+			<value>0</value>
+		</item>
+		<item name="TreasureHuntApp/View/StartView.swift">
+			<value>12</value>
+			<value>26</value>
+			<value>0</value>
+			<value>0</value>
+		</item>
+		<item name="TreasureHuntApp/View/CreateTreasureHuntView.swift">
+			<value>13</value>
+			<value>77</value>
+			<value>0</value>
+			<value>0</value>
+		</item>
+		<item name="TreasureHuntApp/View/EditTreasureHuntView.swift">
+			<value>14</value>
+			<value>101</value>
+			<value>0</value>
+			<value>0</value>
+		</item>
+		<item name="TreasureHuntApp/View/InstructionsView.swift">
+			<value>15</value>
+			<value>19</value>
+			<value>0</value>
+			<value>0</value>
+		</item>
+		<item name="TreasureHuntApp/View/MapView.swift">
+			<value>16</value>
+			<value>135</value>
+			<value>16</value>
+			<value>6</value>
+		</item>
+		<item name="TreasureHuntApp/View/CreateCheckpointView.swift">
+			<value>17</value>
+			<value>54</value>
+			<value>0</value>
+			<value>0</value>
+		</item>
+		<item name="TreasureHuntApp/View/CheckpointRow.swift">
+			<value>18</value>
+			<value>17</value>
+			<value>0</value>
+			<value>0</value>
+		</item>
+		<item name="TreasureHuntApp/View/DetailedHuntView.swift">
+			<value>19</value>
+			<value>50</value>
+			<value>0</value>
+			<value>0</value>
+		</item>
+		<item name="TreasureHuntApp/View/FinishedView.swift">
+			<value>20</value>
+			<value>23</value>
+			<value>0</value>
+			<value>0</value>
+		</item>
+		<average label="NCSS" value="41.25"/>
+		<average label="CCN" value="2.25"/>
+		<average label="Functions" value="1.2"/>
+		<sum label="NCSS" value="825"/>
+		<sum label="CCN" value="45"/>
+		<sum label="Functions" value="24"/>
+		<average label="NCSS" value="8.958333333333334"/>
+		<average label="CCN" value="1.875"/>
+	</measure>
+</cppncss>
+
